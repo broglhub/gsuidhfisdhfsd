@@ -275,6 +275,8 @@ exports.run = (client, message, args) => {
   message.channel.send({embed});
 }	
 
+}
+
 if(command === "suckadick") {
 	return message.channel.send(`imagine trying to be a gay faggot trap like *ahem* you know who *ahem*, <@!${message.author.id}>, just don't.`);
 }
