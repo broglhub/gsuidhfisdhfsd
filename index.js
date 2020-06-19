@@ -246,6 +246,12 @@ if(command === "suggest") {
 	message.channel.send(`sent suggestion succesfully, <@!${message.author.id}>`);
 	owner.send(suggestion + ` (suggested by ${message.author.tag})`);
 }
+
+client.on('message', function(message){
+    if(message.channel.type === 'dm'){
+        console.log("[" + message.author.username + "]: " + message.content)
+	}
+});
 	
 
 if(command === "poll") {
