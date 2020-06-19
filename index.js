@@ -1,6 +1,5 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
-const token = "NzE0ODc0OTA1NjY5NDAyNjM0.Xuizkw.ge3WIef1ansKGKQXW_prhZ5lUb0"
 const prefix = "."
 
 function sleep(milliseconds) {
@@ -278,4 +277,4 @@ if(message.content.includes(`<@!655714844695330854>`)) {
 
 });
 
-client.login(token)
+client.login(process.env.NzE0ODc0OTA1NjY5NDAyNjM0.XuykLw.ZcTlY7MteTSH95AR3m5T90QcbNE);
