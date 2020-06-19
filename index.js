@@ -87,14 +87,7 @@ if(command === "8ball") {
 	let result = Math.floor((Math.random() * replies.length));
 	let question = args.slice(0).join(" ");
 	
-	let embed = new Discord.MessageEmbed()
-	.setTitle("FUCKING MAGICAL 8BALL")
-	.setColor("#AA9900")
-	.addField("Q:", question)
-	.addField("A:", replies[result])
-	.setFooter(`hot bot by <@!655714844695330854>`);
-	
-	message.channel.send({embed});
+message.channel.send(result)
 }
 
 if(command === "download") {
