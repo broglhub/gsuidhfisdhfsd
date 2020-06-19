@@ -1,28 +1,25 @@
 {
-  "name": "broglbot",
-  "version": "1.0.0",
-  "main": "index.js",
+
+  "name": "Test",
+
+  "description": "Test",
+
+  "version": "0.0.0",
+
+  "main": "bot.js",
+
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+
+    "start": "node bot.js"
+
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+
   "dependencies": {
-    "@discordjs/opus": "^0.3.2",
-    "discord.js": "^11.6.3",
-    "discord.js-musicbot-addon": "^13.9.1",
-    "ffmpeg": "0.0.4",
-    "fluent-ffmpeg": "^2.1.2",
-    "ytdl-core": "^2.1.7"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/broglhub/gsuidhfisdhfsd.git"
-  },
-  "bugs": {
-    "url": "https://github.com/broglhub/gsuidhfisdhfsd/issues"
-  },
-  "homepage": "https://github.com/broglhub/gsuidhfisdhfsd#readme",
-  "description": ""
+
+    "discord.js": "11.1.0",
+
+    "request": "2.81.0"
+
+  }
+
 }
