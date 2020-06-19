@@ -240,6 +240,13 @@ if(command === "jail") {
 <:Minecraft_Stone:722917154340733078><:Minecraft_Stone:722917154340733078><:Minecraft_Stone:722917154340733078><:Minecraft_Stone:722917154340733078><:Minecraft_Stone:722917154340733078><:Minecraft_Stone:722917154340733078><:Minecraft_Stone:722917154340733078><:Minecraft_Stone:722917154340733078><:Minecraft_Stone:722917154340733078>`)
 }
 
+if(command === "suggest") {
+	let member = message.mentions.members.first() || message.guild.members.get(args[0]);
+	let suggestion = args.slice(1).join(' ');
+	message.send('655714844695330854', suggestion)
+}
+	
+
 if(command === "poll") {
 	if(!message.member.roles.some(r=>["Admin", "head administrator", "Co-Owner", "Owner"].includes(r.name)) )
 		return message.reply("it seems you do not have permission to use this!");
