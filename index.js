@@ -52,6 +52,36 @@ client.on("message", async message => {
   message.channel.send(`this server has ${message.guild.memberCount} members`);
 }
 
+if(command === "8ball") {
+	if(!args[0]) return message.reply(`please ask a question`);
+	let replies = [
+	'maybe',
+	'no'
+	"i'm afraid not"
+	'likely'
+	'not likely'
+	'idk, fuck you'
+	'fuck off'
+	'yes'
+	'of course'
+	'always'
+	'stfu?'
+	];
+	
+	let result = Math.floor((Math.random() * replies.length));
+	let question = args.slice(0).join(" ");
+	
+	let embed = new Discord.MessageEmbed()
+	.setTitle("FUCKING MAGICAL 8BALL")
+	.setColor("#AA9900")
+	.addField("Q:", question
+	.addField("A:", replies[result])
+	.setFOoter(`hot bot by <@!655714844695330854>`);
+	
+	message.channel.send({embed});
+}
+
+
 if(command === "download") {
 	if(!message.member.roles.some(r=>["WhiteListed"].includes(r.name)) )
 		return message.reply("you're not whitelisted!")
