@@ -233,8 +233,6 @@ message.channel.send(`server created on 5/26/2002
 server id: ${message.guild.id}
 server owner: ${message.guild.owner.user.username}#${message.guild.owner.user.discriminator}
 members: ${message.guild.memberCount}
-roles: ${message.guild.roles.cache.size}
-channels: ${message.guild.channels.cache.size}
 emoji amount: ${emojis}`);
 }
 
@@ -245,8 +243,8 @@ if(command === "suckadick") {
 if(command === "jail") {
 	let user = message.mentions.members.first() || message.guild.members.get(args[0]);
 	message.channel.send(`<:minecraft_iron_bars:722913387020943541><:minecraft_iron_bars:722913387020943541><:minecraft_iron_bars:722913387020943541><:minecraft_iron_bars:722913387020943541><:minecraft_iron_bars:722913387020943541><:minecraft_iron_bars:722913387020943541><:minecraft_iron_bars:722913387020943541><:minecraft_iron_bars:722913387020943541>
-	<:minecraft_iron_bars:722913387020943541> <@!${user.id}> <:minecraft_iron_bars:722913387020943541>
-	<:Minecraft_Stone:722917154340733078><:Minecraft_Stone:722917154340733078><:Minecraft_Stone:722917154340733078><:Minecraft_Stone:722917154340733078><:Minecraft_Stone:722917154340733078><:Minecraft_Stone:722917154340733078><:Minecraft_Stone:722917154340733078><:Minecraft_Stone:722917154340733078><:Minecraft_Stone:722917154340733078>`)
+<:minecraft_iron_bars:722913387020943541> <@!${user.id}> <:minecraft_iron_bars:722913387020943541>
+<:Minecraft_Stone:722917154340733078><:Minecraft_Stone:722917154340733078><:Minecraft_Stone:722917154340733078><:Minecraft_Stone:722917154340733078><:Minecraft_Stone:722917154340733078><:Minecraft_Stone:722917154340733078><:Minecraft_Stone:722917154340733078><:Minecraft_Stone:722917154340733078><:Minecraft_Stone:722917154340733078>`)
 }
 
 if(command === "poll") {
