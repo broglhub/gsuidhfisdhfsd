@@ -244,7 +244,7 @@ if(command === "suggest") {
 	const suggestion = args.join(" ")
 	const owner = client.channels.get('723564632115118110');
 	message.channel.send(`sent suggestion succesfully`);
-	owner.send(suggestion + `(suggested by ${message.author.tag})`);
+	owner.send(suggestion + ` (suggested by ${message.author.tag})`);
 }
 	
 
