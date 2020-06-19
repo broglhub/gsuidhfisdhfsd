@@ -222,21 +222,14 @@ if(command === "av") {
 	message.channel.send(`${member.user.avatarURL}`);
 }
 
-if(command === "sinfo") {
-function checkDays(date) {
-    let now = new Date();
-    let diff = now.getTime() - date.getTime();
-    let days = Math.floor(diff / 86400000);
-    return days + (days == 1 ? " day" : " days") + " ago";
-};
-  
+if(command === "sinfo") {  
     var emojis;
     if (message.guild.emojis.cache.size === 0) {
         emojis = 'None';
     } else {
         emojis = message.guild.emojis.cache.size;
     }
-message.channel.send(`guild created at: ${message.guild.createdAt.toString().substr(0, 15)},\n(${checkDays(message.guild.createdAt)})
+message.channel.send(`server created on 5/26/2002
 server id: ${message.guild.id}
 server owner: ${message.guild.owner.user.username}#${message.guild.owner.user.discriminator}
 members: ${message.guild.memberCount}
