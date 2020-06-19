@@ -17,6 +17,8 @@ client.user.setActivity(`over all epic broglhub users`,{type:"WATCHING"})
 client.user.setStatus('idle')
 });
 
+message.channel.send(`hi, i'm alive`)
+
 client.on("message", async message => {
 	
 	if(message.author.bot) return;
