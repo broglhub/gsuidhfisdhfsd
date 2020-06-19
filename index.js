@@ -201,6 +201,7 @@ if(command === "mute") {
 member.send(`you have been muted in brogl hub by ${message.author.tag}. if you wish to get unmuted, request an unmute at ${message.author.tag} with reason of why you were muted to see if we would unmute you.`);
 var logs = client.channels.get("722442447740731392")
 	logs.send(`${message.author.tag} muted ${member.user.tag}`);
+	message.channel.send(`muted ${member.user.tag}`);
 }
 
 if(command === "unmute") {
@@ -212,7 +213,7 @@ if(command === "unmute") {
 	member.send(`you have been unmuted in brogl. make sure to read rules to prevent another mute!`);
 	var logs = client.channels.get("722442447740731392")
 	logs.send(`${message.author.tag} unmuted ${member.user.tag}`);
-
+	message.channel.send(`unmuted ${member.user.tag}`);
 }
 	
 
