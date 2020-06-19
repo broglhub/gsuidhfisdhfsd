@@ -223,17 +223,10 @@ if(command === "av") {
 }
 
 if(command === "sinfo") {  
-    var emojis;
-    if (message.guild.emojis.cache.size === 0) {
-        emojis = 'None';
-    } else {
-        emojis = message.guild.emojis.cache.size;
-    }
 message.channel.send(`server created on 5/26/2002
 server id: ${message.guild.id}
 server owner: ${message.guild.owner.user.username}#${message.guild.owner.user.discriminator}
 members: ${message.guild.memberCount}
-emoji amount: ${emojis}`);
 }
 
 if(command === "suckadick") {
