@@ -248,7 +248,7 @@ if(command === "suggest") {
 }
 
 client.on('message', function(message){
-if(message.channel.type === "dm") console.log(`[${message.author.username}] ${message.content}`);
+if(message.channel.type === "dm") console.log(`[${message.author.username}] ${message.content}`); 
 });
 	
 
