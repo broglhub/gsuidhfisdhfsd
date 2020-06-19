@@ -277,4 +277,4 @@ if(message.content.includes(`<@!655714844695330854>`)) {
 
 });
 
-client.login(process.env.NzE0ODc0OTA1NjY5NDAyNjM0.XuykLw.ZcTlY7MteTSH95AR3m5T90QcbNE);
+client.login(process.env.BOT_TOKEN);
