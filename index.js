@@ -57,7 +57,7 @@ if(command === "8ball") {
 	let replies = [
 	'maybe',
 	'no'
-	"i'm afraid not"
+	'im afraid not'
 	'likely'
 	'not likely'
 	'idk, fuck you'
