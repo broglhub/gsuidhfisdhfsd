@@ -81,7 +81,6 @@ if(command === "8ball") {
 	message.channel.send({embed});
 }
 
-
 if(command === "download") {
 	if(!message.member.roles.some(r=>["WhiteListed"].includes(r.name)) )
 		return message.reply("you're not whitelisted!")
