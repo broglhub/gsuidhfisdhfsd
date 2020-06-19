@@ -13,7 +13,6 @@ function sleep(milliseconds) {
 
 client.on("ready", () => {
 console.log(`bot launched, watching ${client.users.size} users`)
-client.user.setActivity(`over all epic broglhub users`,{type:"WATCHING"})
 client.user.setStatus('idle')
 var gen = client.channels.get('714854815569543183')
 gen.send(`hi, i'm alive`);
