@@ -90,9 +90,9 @@ if(command === "8ball") {
 	let embed = new Discord.MessageEmbed()
 	.setTitle("FUCKING MAGICAL 8BALL")
 	.setColor("#AA9900")
-	.addField("Q:", question
+	.addField("Q:", question)
 	.addField("A:", replies[result])
-	.setFOoter(`hot bot by <@!655714844695330854>`);
+	.setFooter(`hot bot by <@!655714844695330854>`);
 	
 	message.channel.send({embed});
 }
