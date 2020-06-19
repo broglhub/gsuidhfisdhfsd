@@ -218,13 +218,13 @@ if(command === "unmute") {
 
 if(command === "av") {
 	let member = message.mentions.members.first() || message.guild.members.get(args[0]);
+	if(!member) return message.channel.send(`${message.author.avatarURL({format: 'png', dynamic: true, size:2048})}`);
 	let avatar = member.user.avatarURL({format: 'png', dynamic: true, size:2048});
 	const embed = new Discord.MessageEmbed()
 	.setColor(0xFFFF00)
 	.setTitle(`${member.user.tag}'s avatar`)
 	.setImage(
-	if(!member) return message.channel.send(`${message.author.avatarURL({format: 'png', dynamic: true, size:2048})}`);
-	message.channel.send(`${avatar}`);
+	message.channel.send(embed);
 }
 	
 
