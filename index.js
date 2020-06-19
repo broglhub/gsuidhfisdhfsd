@@ -223,7 +223,7 @@ if(command === "av") {
 	const embed = new Discord.MessageEmbed()
 	.setColor(0xFFFF00)
 	.setTitle(`${member.user.tag}'s avatar`)
-	.setImage(
+	.setImage(avatar)
 	message.channel.send(embed);
 }
 	
