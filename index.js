@@ -215,6 +215,12 @@ if(command === "unmute") {
 	logs.send(`${message.author.tag} unmuted ${member.user.tag}`);
 	message.channel.send(`unmuted ${member.user.tag}`);
 }
+
+if(command === "av") {
+	let member = message.mentions.members.first() || message.guild.members.get(args[0]);
+	if(!member) return message.channel.send(`${message.author.avatarURL}`);
+	message.channel.send(`${member.user.avatarURL}`);
+}
 	
 
 if(command === "suckadick") {
