@@ -15,7 +15,7 @@ client.on("ready", () => {
 console.log(`bot launched, watching ${client.users.size} users`)
 client.user.setStatus('idle')
 var gen = client.channels.get('714854815569543183')
-gen.send(`hi, i'm alive`);
+gen.send(`(re)loaded succesfully`);
 });
 
 client.on("message", async message => {
