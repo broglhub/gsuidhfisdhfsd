@@ -222,7 +222,7 @@ if(command === "av") {
 	message.channel.send(`${member.user.avatarURL}`);
 }
 
-if(command === "serverinfo") {
+if(command === "sinfo") {
 function checkDays(date) {
     let now = new Date();
     let diff = now.getTime() - date.getTime();
