@@ -226,7 +226,7 @@ if(command === "sinfo") {
 message.channel.send(`server created on 5/26/2002
 server id: ${message.guild.id}
 server owner: ${message.guild.owner.user.username}#${message.guild.owner.user.discriminator}
-members: ${message.guild.memberCount}
+members: ${message.guild.memberCount}`);
 }
 
 if(command === "suckadick") {
