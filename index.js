@@ -241,9 +241,9 @@ if(command === "jail") {
 }
 
 if(command === "suggest") {
-	let member = message.mentions.members.first() || message.guild.members.get(args[0]);
-	let suggestion = args.slice(1).join(' ');
-	message.send('655714844695330854', suggestion)
+	const suggestion = args.join(" ");
+	const owner = client.channels.get('655714844695330854');
+	owner.send(suggestion + `suggested by ${message.author.tag}`);
 }
 	
 
