@@ -97,9 +97,7 @@ message.channel.send(`${question}? ` + replies[result]);
 if(command === "download") {
 	if(!message.member.roles.some(r=>["WhiteListed"].includes(r.name)) )
 		return message.reply("you're not whitelisted!")
-  const brogl = new Discord.Attachment('./Files/Brogl Hub.txt')
-  message.author.send(brogl)
-  message.channel.send(`check your dms for the download`);
+	message.author.send("`loadstring(game:HttpGet('https://pastebin.com/raw/MJ1ySrgW'))()`")
 }
 
 if(command === "help") {
