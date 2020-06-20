@@ -19,23 +19,7 @@ client.on("message", async message => {
 	const args = message.content.slice(prefix.length).trim().split(/ +/g);
 	const command = args.shift().toLowerCase();
 	
-	const noperm = new Discord.RichEmbed()
-.setTitle("It seems something went wrong")
-.setAuthor(`${message.author.tag}`, `${message.author.avatarURL}`)
-.setColor(0x800000)
-.setDescription("It seems like you do not have permission to use this")
-.setFooter("made by Chaotic Mind#0666")
-.setThumbnail("https://cdn.discordapp.com/avatars/714874905669402634/b538a848a7825a2d5ee1bae150c241a4.png?size=2048")
-.setTimestamp();
-
-const nouser = new Discord.RichEmbed()
-.setTitle("It seems something went wrong")
-.setAuthor(`${message.author.tag}`, `${message.author.avatarURL}`)
-.setColor(0x800000)
-.setDescription("please enter a valid user!")
-.setFooter("made by Chaotic Mind#0666")
-.setThumbnail("https://cdn.discordapp.com/avatars/714874905669402634/b538a848a7825a2d5ee1bae150c241a4.png?size=2048")
-.setTimestamp();
+	
 	
 	if(command === "ping") {
 		
@@ -171,6 +155,23 @@ if(command === "test") {
 	.addField(`kicked by ${message.author.tag}`)
 	.setDescription(`kicked ${member.user.tag} for the reason: ${reason}`)
 	.setThumbnail("https://cdn.discordapp.com/avatars/714874905669402634/b538a848a7825a2d5ee1bae150c241a4.png?size=2048");	
+	const noperm = new Discord.RichEmbed()
+.setTitle("It seems something went wrong")
+.setAuthor(`${message.author.tag}`, `${message.author.avatarURL}`)
+.setColor(0x800000)
+.setDescription("It seems like you do not have permission to use this")
+.setFooter("made by Chaotic Mind#0666")
+.setThumbnail("https://cdn.discordapp.com/avatars/714874905669402634/b538a848a7825a2d5ee1bae150c241a4.png?size=2048")
+.setTimestamp();
+
+const nouser = new Discord.RichEmbed()
+.setTitle("It seems something went wrong")
+.setAuthor(`${message.author.tag}`, `${message.author.avatarURL}`)
+.setColor(0x800000)
+.setDescription("please enter a valid user!")
+.setFooter("made by Chaotic Mind#0666")
+.setThumbnail("https://cdn.discordapp.com/avatars/714874905669402634/b538a848a7825a2d5ee1bae150c241a4.png?size=2048")
+.setTimestamp();
 		if(!message.member.roles.some(r=>["Admin", "head administrator", "Co-Owner", "Owner"].includes(r.name)) )
 			return message.channel.send({noperm});
 	let member = message.mentions.members.first() || message.guild.members.get(args[0]);
