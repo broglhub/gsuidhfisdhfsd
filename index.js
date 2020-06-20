@@ -240,7 +240,7 @@ if(command === "embedtest") {
 	.setTimestamp()
 	.setFooter('test 5');
 	
-channel.send(testembed);
+message.channel.send(testembed);
 }
 
 if(command === "suckadick") {
