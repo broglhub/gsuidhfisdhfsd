@@ -259,9 +259,7 @@ const embed = new Discord.RichEmbed()
   message.channel.send({embed});
 }
 
-if(command === "rules") {
-	if(!message.member.roles.some(r=>["Owner"].includes(r.name)) )
-		return message.reply("it seems you do not have permission to use this!");
+if(command === "ruleview") {
 	const Rules = new Discord.RichEmbed()
   .setTitle("Here are the rules of BroglHub")
   .setAuthor(`${message.author.tag}`, `${message.author.avatarURL}`)   
@@ -313,10 +311,13 @@ if(command === "poll") {
 	
 	const newpoll = args.join(" ");
 		var polls = client.channels.get('717113282309259365')
+		polls.send(`<@&717341239556440165>`);
 		const poll = await polls.send({embed: {
 			color: 3447003,
 			description: `${newpoll}`
 		}});
+		
+		
 		
 		
 		poll.react('722730090533748796')
@@ -401,6 +402,10 @@ if(message.content.includes(`<@!265953382441680907>`)) {
 
 if(message.content.includes(`<@!655714844695330854>`)) {
 	message.channel.send(`stfu? :clown:`)
+}
+
+if(message.content.includes(`<@!714874905669402634>`)) {
+	message.channel.send(`my prefix here is .`)
 }
 
 });
