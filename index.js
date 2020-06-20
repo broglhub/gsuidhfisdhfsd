@@ -128,53 +128,53 @@ if(command === "test") {
 }
 	
 	if(command === "kick") {
-			const kicklog = new Discord.RichEmbed()
-	.setTitle("type: Kick")
-	.setAuthor(`${message.author.tag}`, `${message.author.avatarURL}`)
-	.setColor(0x800000)
-	.setFooter("made by Chaotic Mind#0666")
-	.setTimestamp()
-	.addField(`kicked by ${message.author.tag}`)
-	.setDescription(`${member.user.tag} got kicked by ${message.author.tag} for the reason: ${reason}`)
-	.setThumbnail("https://cdn.discordapp.com/avatars/714874905669402634/b538a848a7825a2d5ee1bae150c241a4.png?size=2048");
-	const kicked = new Discord.RichEmbed()
-	.setTitle("you were kicked from BroglHub")
-	.setAuthor(`${message.author.tag}`, `${message.author.avatarURL}`)
-	.setColor(0x800000)
-	.setDescription(`you were kicked from brogl hub: ${reason}`)
-	.setFooter("made by Chaotic Mind#0666")
-	.setTimestamp()
-	.addBlankField()
-	.setThumbnail("https://cdn.discordapp.com/avatars/714874905669402634/b538a848a7825a2d5ee1bae150c241a4.png?size=2048");
-		const kickreply = new Discord.RichEmbed()
-	.setTitle(`kicked ${member.user.tag} succesfully`)
-	.setAuthor(`${message.author.tag}`, `${message.author.avatarURL}`)
-	.setColor(0x800000)
-	.setFooter("made by Chaotic Mind#0666")
-	.setTimestamp()
-	.addField(`kicked by ${message.author.tag}`)
-	.setDescription(`kicked ${member.user.tag} for the reason: ${reason}`)
-	.setThumbnail("https://cdn.discordapp.com/avatars/714874905669402634/b538a848a7825a2d5ee1bae150c241a4.png?size=2048");	
-	const noperm = new Discord.RichEmbed()
-.setTitle("It seems something went wrong")
-.setAuthor(`${message.author.tag}`, `${message.author.avatarURL}`)
-.setColor(0x800000)
-.setDescription("It seems like you do not have permission to use this")
-.setFooter("made by Chaotic Mind#0666")
-.setThumbnail("https://cdn.discordapp.com/avatars/714874905669402634/b538a848a7825a2d5ee1bae150c241a4.png?size=2048")
-.setTimestamp();
-
-const nouser = new Discord.RichEmbed()
-.setTitle("It seems something went wrong")
-.setAuthor(`${message.author.tag}`, `${message.author.avatarURL}`)
-.setColor(0x800000)
-.setDescription("please enter a valid user!")
-.setFooter("made by Chaotic Mind#0666")
-.setThumbnail("https://cdn.discordapp.com/avatars/714874905669402634/b538a848a7825a2d5ee1bae150c241a4.png?size=2048")
-.setTimestamp();
+		let member = message.mentions.members.first() || message.guild.members.get(args[0]);
+const noperm = new Discord.RichEmbed()
+  .setTitle("Permission error")
+  .setAuthor(`${message.author.tag}`, `${message.author.avatarURL}`)
+  .setColor(0x800000)
+  .setDescription("it seems like you are missing some permissions there buddy")
+  .setFooter("Made by Chaotic Mind#0666", "https://cdn.discordapp.com/avatars/655714844695330854/a_ac9969af8c3d41eeac55fc134b0412a4.gif?size=2048")
+  .setThumbnail("https://cdn.discordapp.com/avatars/714874905669402634/b538a848a7825a2d5ee1bae150c241a4.png?size=2048")
+  .setTimestamp();
+  
+  const nouser = new Discord.RichEmbed()
+  .setTitle("user error")
+  .setAuthor(`${message.author.tag}`, `${message.author.avatarURL}`)
+  .setColor(0x800000)
+  .setDescription("it seems like you forgot to put a user there bud")
+  .setFooter("made by Chaotic Mind#0666", "https://cdn.discordapp.com/avatars/655714844695330854/a_ac9969af8c3d41eeac55fc134b0412a4.gif?size=2048")
+  .setThumbnail("https://cdn.discordapp.com/avatars/714874905669402634/b538a848a7825a2d5ee1bae150c241a4.png?size=2048")
+  .setTimestamp();
+  
+  const kicked = new Discord.RichEmbed()
+  .setTitle("Kick")
+  .setAuthor(`${message.author.tag}`, `${message.author.avatarURL}`)
+  .setColor(0x800000)
+  .setDescription(`you were kicked from broglhub for the reason: ${reason}`)
+  .setFooter("Made by Chaotic Mind#0666", "https://cdn.discordapp.com/avatars/655714844695330854/a_ac9969af8c3d41eeac55fc134b0412a4.gif?size=2048")
+  .setThumbnail("https://cdn.discordapp.com/avatars/714874905669402634/b538a848a7825a2d5ee1bae150c241a4.png?size=2048")
+  .setTimestamp();
+  
+  const kickreply = new Discord.RichEmbed()
+  .setTitle("kicked succesfully")
+  .setAuthor(`${message.author.tag}`, `${message.author.avatarURL}`)
+  .setColor(0x800000)
+  .setDescription(`succesfully kicked ${member.user.tag} for the reason: ${reason} (kicked by ${member.author.tag}`)
+  .setFooter("Made by Chaotic Mind", "https://cdn.discordapp.com/avatars/655714844695330854/a_ac9969af8c3d41eeac55fc134b0412a4.gif?size=2048")
+  .setThumbnail("https://cdn.discordapp.com/avatars/714874905669402634/b538a848a7825a2d5ee1bae150c241a4.png?size=2048")
+  .setTimestamp();
+  
+  const kicklog = new Discord.RichEmbed()
+  .setTitle("issued: Kick")
+  .setAuthor(`${message.author.tag}`, `${message.author.avatarURL}`)
+  .setColor(0x800000)
+  .setDescription(`${member.user.tag} was kicked by ${message.author.tag} for the reason: ${reason}`)
+  .setFooter("Made by Chaotic Mind#0666", "https://cdn.discordapp.com/avatars/655714844695330854/a_ac9969af8c3d41eeac55fc134b0412a4.gif?size=2048")
+  .setThumbnail("https://cdn.discordapp.com/avatars/714874905669402634/b538a848a7825a2d5ee1bae150c241a4.png?size=2048")
+  .setTimestamp();
 		if(!message.member.roles.some(r=>["Admin", "head administrator", "Co-Owner", "Owner"].includes(r.name)) )
 			return message.channel.send({noperm});
-	let member = message.mentions.members.first() || message.guild.members.get(args[0]);
 	if(!member)
 		return message.channel.send({nouser})
 	if(!member.kickable)
