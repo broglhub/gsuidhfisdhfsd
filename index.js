@@ -284,16 +284,11 @@ if(command === "poll") {
 	
 	const newpoll = args.join(" ");
 		var polls = client.channels.get('717113282309259365')
-		const poll = new Discord.RichEmbed()
-		.setTitle("new poll!")
-		.setAuthor(`${message.author.tag}`, `${message.author.avatarURL}`)
-		.setColor(0x800000)
-		.setDescription(`new poll is: ${newpoll}`)
-		.setFooter("made by Chaotic Mind#0666", "https://cdn.discordapp.com/avatars/655714844695330854/a_ac9969af8c3d41eeac55fc134b0412a4.gif?size=2048")
-		.setThumbnail("https://cdn.discordapp.com/avatars/714874905669402634/b538a848a7825a2d5ee1bae150c241a4.png?size=2048")
-		.setTimestamp();
+		const poll = await polls.send({embed: {
+			color: 3447003,
+			description: `${newpoll}`
+		}});
 		
-		await polls.send({poll});
 		
 		poll.react('722730090533748796')
 		poll.react('722730090307518566')
