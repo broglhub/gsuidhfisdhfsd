@@ -282,7 +282,7 @@ if(command === "poll") {
 	if(!message.member.roles.some(r=>["Admin", "head administrator", "Co-Owner", "Owner"].includes(r.name)) )
 		return message.reply("it seems you do not have permission to use this!");
 	
-	const sayMessage = args.join(" ");
+	const newpoll = args.join(" ");
 		message.delete().catch(O_o=>{});
 		var polls = client.channels.get('717113282309259365')
 		const pollping = await polls.send(`<@&717341239556440165>`);
@@ -290,7 +290,7 @@ if(command === "poll") {
 		.setTitle("new poll!")
 		.setAuthor(`${message.author.tag}`, `${message.author.avatarURL}`)
 		.setColor(0x800000)
-		.setDescription(`new poll is: ${sayMessage}`)
+		.setDescription(`new poll is: ${newpoll}`)
 		.setFooter("made by Chaotic Mind#0666", "https://cdn.discordapp.com/avatars/655714844695330854/a_ac9969af8c3d41eeac55fc134b0412a4.gif?size=2048")
 		.setThumbnail("https://cdn.discordapp.com/avatars/714874905669402634/b538a848a7825a2d5ee1bae150c241a4.png?size=2048")
 		.setTimestamp();
