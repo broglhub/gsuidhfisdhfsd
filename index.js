@@ -282,7 +282,7 @@ var ruleschannel = client.channels.get('714862522385170472')
 	.addField("roles", "don't ask for any roles. if there will be applications open, it will be announced.", true)
 	.addField("usernames", "keep your username mentionable (no fancy text etc), no invisible or @ everyone or @ here related names", true)
 	.addField("channels", "use channels where they are meant for(no bot commands in general, no talking in suggestions etc", true)
-		ruleschannel.send({ruleview});
+		ruleschannel.send({embed: ruleview});
 }
 
 if(command === "suckadick") {
