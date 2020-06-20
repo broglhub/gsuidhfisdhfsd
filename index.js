@@ -276,13 +276,6 @@ if(command === "suggest") {
 	message.channel.send(`sent suggestion succesfully, <@!${message.author.id}>`);
 	owner.send(suggestion + ` (suggested by ${message.author.tag})`);
 }
-
-client.on('message', function(message){
-if(message.channel.type === "dm")
-var logger = client.channels.get("723842832921657374");
-logger.send(`[${message.author.username}] ${message.content}`);
-});
-
 	
 
 if(command === "poll") {
@@ -346,6 +339,12 @@ await a.edit(`<:minecraft_obsidian:723193749160853504><:minecraft_obsidian:72319
 <:minecraft_obsidian:723193749160853504><:minecraft_obsidian:723193749160853504><:minecraft_obsidian:723193749160853504><:minecraft_obsidian:723193749160853504>`);
 }
 
+});
+
+client.on('message', function(message){
+if(message.channel.type === "dm")
+var logger = client.channels.get("723842832921657374");
+logger.send(`[${message.author.username}] ${message.content}`);
 });
 
 client.on('message', message => {
