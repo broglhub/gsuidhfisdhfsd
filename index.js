@@ -45,7 +45,7 @@ const embed = new Discord.RichEmbed()
   .setThumbnail("https://cdn.discordapp.com/avatars/714874905669402634/b538a848a7825a2d5ee1bae150c241a4.png?size=2048")
   .setTimestamp()
  
-  announcements.send(`@everyone` + {embed});
+  announcements.send({embed});
 	}
 	
 	if(command === "members") {
