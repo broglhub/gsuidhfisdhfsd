@@ -280,8 +280,9 @@ if(command === "ruleview") {
 	.addField("attachments", "allowed files are txt, mp3 and mp4 files, when sending them, keep it normal. don't spam them.", true)
 	.addField("roles", "don't ask for any roles. if there will be applications open, it will be announced.", true)
 	.addField("usernames", "keep your username mentionable (no fancy text etc), no invisible or @ everyone or @ here related names", true)
-	.addField("channels", "use channels where they are meant for(no bot commands in general, no talking in suggestions etc", true)
+	.addField("channels", "use channels where they are meant for(no bot commands in general, no talking in suggestions etc", true);
 		message.channel.send({Rules});
+	
 }
 
 if(command === "suckadick") {
