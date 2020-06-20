@@ -230,7 +230,7 @@ members: ${message.guild.memberCount}`);
 }
 
 if(command === "embedtest") {
-	const embed = new Discord.RichEmbed()
+	const testembed = new Discord.RichEmbed()
 	.setColor('#0099ff')
 	.setTitle('test1')
 	.setAuthor(`${message.author.tag}`, `${message.author.avatarURL}`)
@@ -240,7 +240,7 @@ if(command === "embedtest") {
 	.setTimestamp()
 	.setFooter('test 5');
 	
-channel.send(embed);
+channel.send(testembed);
 }
 
 if(command === "suckadick") {
