@@ -144,15 +144,15 @@ if(command === "test") {
 }
 	
 	if(command === "kick") {
-		if(!message.member.roles.some(r=>["Admin", "head administrator", "Co-Owner", "Owner"].includes(r.name)) )
-			return message.channel.send({noperm});
-	let member = message.mentions.members.first() || message.guild.members.get(args[0]);
-	if(!member)
-		return message.channel.send({nouser})
-	if(!member.kickable)
-		return message.reply("can't kick the owners faggot");
-	let reason = args.slice(1).join(' ');
-	if(!reason) reason = "no reason given";
+			const kicklog = new Discord.RichEmbed()
+	.setTitle("type: Kick")
+	.setAuthor(`${message.author.tag}`, `${message.author.avatarURL}`)
+	.setColor(0x800000)
+	.setFooter("made by Chaotic Mind#0666")
+	.setTimestamp()
+	.addField(`kicked by ${message.author.tag}`)
+	.setDescription(`${member.user.tag} got kicked by ${message.author.tag} for the reason: ${reason}`)
+	.setThumbnail("https://cdn.discordapp.com/avatars/714874905669402634/b538a848a7825a2d5ee1bae150c241a4.png?size=2048");
 	const kicked = new Discord.RichEmbed()
 	.setTitle("you were kicked from BroglHub")
 	.setAuthor(`${message.author.tag}`, `${message.author.avatarURL}`)
@@ -162,10 +162,7 @@ if(command === "test") {
 	.setTimestamp()
 	.addBlankField()
 	.setThumbnail("https://cdn.discordapp.com/avatars/714874905669402634/b538a848a7825a2d5ee1bae150c241a4.png?size=2048");
-	member.send({kicked});
-	await member.kick(reason)
-	.catch(error => message.reply(`${message.author.tag}, i couldn't kick this user: ${error}`));
-	const kickreply = new Discord.RichEmbed()
+		const kickreply = new Discord.RichEmbed()
 	.setTitle(`kicked ${member.user.tag} succesfully`)
 	.setAuthor(`${message.author.tag}`, `${message.author.avatarURL}`)
 	.setColor(0x800000)
@@ -173,18 +170,22 @@ if(command === "test") {
 	.setTimestamp()
 	.addField(`kicked by ${message.author.tag}`)
 	.setDescription(`kicked ${member.user.tag} for the reason: ${reason}`)
-	.setThumbnail("https://cdn.discordapp.com/avatars/714874905669402634/b538a848a7825a2d5ee1bae150c241a4.png?size=2048");
+	.setThumbnail("https://cdn.discordapp.com/avatars/714874905669402634/b538a848a7825a2d5ee1bae150c241a4.png?size=2048");	
+		if(!message.member.roles.some(r=>["Admin", "head administrator", "Co-Owner", "Owner"].includes(r.name)) )
+			return message.channel.send({noperm});
+	let member = message.mentions.members.first() || message.guild.members.get(args[0]);
+	if(!member)
+		return message.channel.send({nouser})
+	if(!member.kickable)
+		return message.reply("can't kick the owners faggot");
+	let reason = args.slice(1).join(' ');
+	if(!reason) reason = "no reason given";
+	
+	member.send({kicked});
+	await member.kick(reason)
+	.catch(error => message.reply(`${message.author.tag}, i couldn't kick this user: ${error}`));
 	message.channel.send({kickreply});
 	var logs = client.channels.get("722442447740731392");
-	const kicklog = new Discord.RichEmbed()
-	.setTitle("type: Kick")
-	.setAuthor(`${message.author.tag}`, `${message.author.avatarURL}`)
-	.setColor(0x800000)
-	.setFooter("made by Chaotic Mind#0666")
-	.setTimestamp()
-	.addField(`kicked by ${message.author.tag}`)
-	.setDescription(`${member.user.tag} got kicked by ${message.author.tag} for the reason: ${reason}`)
-	.setThumbnail("https://cdn.discordapp.com/avatars/714874905669402634/b538a848a7825a2d5ee1bae150c241a4.png?size=2048");
 	logs.send({kicklog});
 }
 
