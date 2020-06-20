@@ -165,7 +165,7 @@ if(command === "test") {
 	member.send({kicked});
 	await member.kick(reason)
 	.catch(error => message.reply(`${message.author.tag}, i couldn't kick this user: ${error}`));
-	const kickrepl = new Discord.RichEmbed()
+	const kickreply = new Discord.RichEmbed()
 	.setTitle(`kicked ${member.user.tag} succesfully`)
 	.setAuthor(`${message.author.tag}`, `${message.author.avatarURL}`)
 	.setColor(0x800000)
@@ -174,7 +174,7 @@ if(command === "test") {
 	.addBlankField()
 	.setDescription(`kicked ${member.user.tag} for the reason: ${reason}`)
 	.setThumbnail("https://cdn.discordapp.com/avatars/714874905669402634/b538a848a7825a2d5ee1bae150c241a4.png?size=2048");
-	message.channel.send({kickrepl});
+	message.channel.send({kickreply});
 	message.reply(`${member.user.tag} has been kicked by ${message.author.tag}: ${reason}`);
 	var logs = client.channels.get("722442447740731392");
 	const kicklog = new Discord.RichEmbed()
