@@ -260,7 +260,8 @@ const embed = new Discord.RichEmbed()
 }
 
 if(command === "rules") {
-	if(!message.member.id !== "655714844695330854") return;
+	if(!message.member.roles.some(r=>["Owner"].includes(r.name)) )
+		return message.reply("it seems you do not have permission to use this!");
 	const rules = new Discord.RichEmbed()
   .setTitle("Here are the rules of BroglHub")
   .setAuthor(`${message.author.tag}`, `${message.author.avatarURL}`)   
