@@ -314,7 +314,6 @@ if(command === "portal") {
 <:minecraft_obsidian:723193749160853504><:minecraft_obsidian:723193749160853504><:minecraft_obsidian:723193749160853504><:minecraft_obsidian:723193749160853504>`);
 await a.edit(`<:minecraft_obsidian:723193749160853504><:empty:723212183185653790><:empty:723212183185653790><:minecraft_obsidian:723193749160853504>
 <:minecraft_obsidian:723193749160853504><:minecraft_obsidian:723193749160853504><:minecraft_obsidian:723193749160853504><:minecraft_obsidian:723193749160853504>`);
-sleep(10000);
 await a.edit(`<:minecraft_obsidian:723193749160853504><:empty:723212183185653790><:empty:723212183185653790>
 <:minecraft_obsidian:723193749160853504><:empty:723212183185653790><:empty:723212183185653790><:minecraft_obsidian:723193749160853504>
 <:minecraft_obsidian:723193749160853504><:minecraft_obsidian:723193749160853504><:minecraft_obsidian:723193749160853504><:minecraft_obsidian:723193749160853504>`);
