@@ -146,15 +146,18 @@ if(command === "test") {
 	let reason = args.slice(1).join(' ');
 	if(!reason) reason = "no reason given";
 	
-	member.send({kicked});
+	member.send({embed: {
+  color: 3447003,
+  description: `you were kicked from brogl hub for the reason: ${reason}`
+}});
 	await member.kick(reason)
 	.catch(error => message.reply(`${message.author.tag}, i couldn't kick this user: ${error}`));
-	message.channel.send(message.channel.send({embed: {
+	message.channel.send({embed: {
   color: 3447003,
   description: `kicked ${member.user.tag} succesfully!`
 }});
 	var logs = client.channels.get("722442447740731392");
-	logs.send(message.channel.send({embed: {
+	logs.send({embed: {
   color: 3447003,
   description: `user ${member.user.tag} was kicked by ${message.author.tag} for the reason: ${reason}`
 }});
