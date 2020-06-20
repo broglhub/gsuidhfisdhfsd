@@ -283,7 +283,6 @@ if(command === "poll") {
 		return message.reply("it seems you do not have permission to use this!");
 	
 	const newpoll = args.join(" ");
-		message.delete().catch(O_o=>{});
 		var polls = client.channels.get('717113282309259365')
 		const poll = new Discord.RichEmbed()
 		.setTitle("new poll!")
@@ -296,6 +295,7 @@ if(command === "poll") {
 		await polls.send({poll});
 		poll.react('722730090533748796')
 		poll.react('722730090307518566')
+		message.delete().catch(O_o=>{});
 }
 
 if(command === "burger") {
