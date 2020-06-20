@@ -137,7 +137,7 @@ if(command === "test") {
   
 
 	if(!member)
-		return message.channel.send(message.channel.send({embed: {
+		return message.channel.send({embed: {
   color: 3447003,
   description: "Please mention a valid user!"
 }});
