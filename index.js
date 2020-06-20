@@ -285,7 +285,6 @@ if(command === "poll") {
 	const newpoll = args.join(" ");
 		message.delete().catch(O_o=>{});
 		var polls = client.channels.get('717113282309259365')
-		const pollping = await polls.send(`<@&717341239556440165>`);
 		const poll = new Discord.RichEmbed()
 		.setTitle("new poll!")
 		.setAuthor(`${message.author.tag}`, `${message.author.avatarURL}`)
