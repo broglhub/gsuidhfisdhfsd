@@ -247,12 +247,11 @@ members: ${message.guild.memberCount}`);
 
 if(command === "av") {
 	let member = message.mentions.members.first() || message.guild.members.get(args[0]);
-	if(!member)
-		return message.channel.send(`please provide a user(working on no user = message author)`)
+	if(!member) member = message.author.tag
 const embed = new Discord.RichEmbed()
   .setTitle("Here you go!")
   .setAuthor(`${member.user.tag}`, `${member.user.avatarURL}`)
-  .setColor(0x00AE86)
+  .setColor(0x800000)
   .setFooter("made by Chaotic Mind#0666", "https://cdn.discordapp.com/avatars/655714844695330854/a_ac9969af8c3d41eeac55fc134b0412a4.gif?size=2048")
   .setImage(`${member.user.avatarURL}`)
   .setThumbnail("https://cdn.discordapp.com/avatars/714874905669402634/b538a848a7825a2d5ee1bae150c241a4.png?size=2048")
