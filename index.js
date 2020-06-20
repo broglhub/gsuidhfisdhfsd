@@ -2,15 +2,6 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 const prefix = "."
 
-function sleep(milliseconds) {
-  var start = new Date().getTime();
-  for (var i = 0; i < 1e7; i++) {
-    if ((new Date().getTime() - start) > milliseconds){
-      break;
-    }
-  }
-}
-
 client.on("ready", () => {
 console.log(`bot launched, watching ${client.users.size} users`)
 client.user.setStatus('idle')
@@ -45,12 +36,24 @@ client.on("message", async message => {
 		var announcements = client.channels.get("714858360528437290")
 		const announce = args.join(" ");
 		message.delete().catch(O_o=>{});
-		announcements.send("@everyone" + announce)
+const embed = new Discord.RichEmbed()
+  .setTitle(`new announcement from ${message.author.tag}`)
+  .setAuthor(`${message.author.tag}`, "https://cdn.discordapp.com/avatars/655714844695330854/a_ac9969af8c3d41eeac55fc134b0412a4.gif?size=2048")
+  .setColor(0x800000)
+  .setDescription(`${announce}`)
+  .setFooter("made by Chaotic Mind#0666", "https://cdn.discordapp.com/avatars/655714844695330854/a_ac9969af8c3d41eeac55fc134b0412a4.gif?size=2048")
+  .setThumbnail("https://cdn.discordapp.com/avatars/714874905669402634/b538a848a7825a2d5ee1bae150c241a4.png?size=2048")
+  .setTimestamp()
+  .setURL("https://discord.js.org/#/docs/main/indev/class/RichEmbed")
+ 
+  message.channel.send({embed});
 	}
 	
 	if(command === "members") {
-  message.channel.send(`this server has ${message.guild.memberCount} members`);
-}
+message.channel.send({embed: {
+  color: 3447003,
+  description: `this server has ${client.guild.members} members`
+}});
 
 if(command === "8ball") {
 	if(!args[0]) return message.reply(`please ask a question`);
@@ -228,7 +231,7 @@ if(command === "av") {
 	if(!member)
 		return message.channel.send(`please provide a user(working on no user = message author)`)
 const embed = new Discord.RichEmbed()
-  .setTitle("Here's your avatar!")
+  .setTitle("Here you go!")
   .setAuthor(`${member.user.tag}`, `${member.user.avatarURL}`)
   .setColor(0x00AE86)
   .setFooter("made by Chaotic Mind#0666", "https://cdn.discordapp.com/avatars/655714844695330854/a_ac9969af8c3d41eeac55fc134b0412a4.gif?size=2048")
