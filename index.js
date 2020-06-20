@@ -159,6 +159,7 @@ if(command === "test") {
 	.setColor(0x800000)
 	.setFooter("made by Chaotic Mind#0666")
 	.setTimestamp()
+	.addBlankField()
 	.setDescription(`you were kicked from brogl hub: ${reason}`)
 	.setThumbnail("https://cdn.discordapp.com/avatars/714874905669402634/b538a848a7825a2d5ee1bae150c241a4.png?size=2048");
 	member.send({kicked});
@@ -170,6 +171,7 @@ if(command === "test") {
 	.setColor(0x800000)
 	.setFooter("made by Chaotic Mind#0666")
 	.setTimestamp()
+	.addBlankField()
 	.setDescription(`kicked ${member.user.tag} for the reason: ${reason}`)
 	.setThumbnail("https://cdn.discordapp.com/avatars/714874905669402634/b538a848a7825a2d5ee1bae150c241a4.png?size=2048");
 	message.channel.send({kickrepl});
@@ -181,6 +183,7 @@ if(command === "test") {
 	.setColor(0x800000)
 	.setFooter("made by Chaotic Mind#0666")
 	.setTimestamp()
+	.addBlankField()
 	.setDescription(`${member.user.tag} got kicked by ${message.author.tag} for the reason: ${reason}`)
 	.setThumbnail("https://cdn.discordapp.com/avatars/714874905669402634/b538a848a7825a2d5ee1bae150c241a4.png?size=2048");
 	logs.send({kicklog});
