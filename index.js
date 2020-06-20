@@ -261,7 +261,7 @@ const embed = new Discord.RichEmbed()
 
 if(command === "ruleview") {
 var ruleschannel = client.channels.get('714862522385170472')
-	const ruleview = new Discord.RichEmbed()
+	let ruleview = new Discord.RichEmbed()
 	.setTitle("Here are the rules of BroglHub")
 	.setAuthor(`${message.author.tag}`, `${message.author.avatarURL}`)   
 	.setColor(0x800000)
