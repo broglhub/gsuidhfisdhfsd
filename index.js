@@ -166,7 +166,7 @@ if(command === "test") {
 	.catch(error => message.reply(`${message.author}, i couldn't kick this user: ${error}`));
 	const kickrepl = new Discord.RichEmbed()
 	.setTitle(`kicked ${member.user.tag} succesfully`)
-	.setAuthor(`${message.author.tag}`, `${message.author.avatarURL`)
+	.setAuthor(`${message.author.tag}`, `${message.author.avatarURL}`)
 	.setColor(0x800000)
 	.setFooter("made by Chaotic Mind#0666")
 	.setTimestamp()
