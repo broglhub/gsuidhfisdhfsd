@@ -233,12 +233,15 @@ if(command === "embedtest") {
 	const testembed = new Discord.RichEmbed()
 	.setColor('#0099ff')
 	.setTitle('test1')
+	.setURL('roblox.com')
 	.setAuthor(`${message.author.tag}`, `${message.author.avatarURL}`)
 	.setDescription('test2')
 	.setThumbnail(`${message.author.avatarURL}`)
-	.addField('test3', 'test4')
+	.addField('test3', 'test4', true)
+	.addField('test 5', 'test6', true)
+	.addBlankField()
 	.setTimestamp()
-	.setFooter('test 5');
+	.setFooter('test 7');
 	
 message.channel.send(testembed);
 }
