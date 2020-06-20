@@ -216,12 +216,6 @@ if(command === "unmute") {
 	message.channel.send(`unmuted ${member.user.tag}`);
 }
 
-if(command === "av") {
-	let member = message.mentions.members.first() || message.guild.members.get(args[0]);
-	if(!member) return message.channel.send(`${message.author.avatarURL}`);
-	message.channel.send(`${member.user.avatarURL}`);
-}
-
 if(command === "sinfo") {  
 message.channel.send(`server created on 5/26/2002
 server id: ${message.guild.id}
@@ -229,7 +223,7 @@ server owner: ${message.guild.owner.user.username}#${message.guild.owner.user.di
 members: ${message.guild.memberCount}`);
 }
 
-if(command === "embedtest") {
+if(command === "av") {
 	let member = message.mentions.members.first() || message.guild.members.get(args[0]);
 	if(!member)
 		return message.channel.send(`please provide a user(working on no user = message author`)
