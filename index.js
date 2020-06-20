@@ -282,7 +282,6 @@ if(command === "ruleview") {
 	.addField("usernames", "keep your username mentionable (no fancy text etc), no invisible or @ everyone or @ here related names", true)
 	.addField("channels", "use channels where they are meant for(no bot commands in general, no talking in suggestions etc", true);
 		message.channel.send({Rules});
-	
 }
 
 if(command === "suckadick") {
