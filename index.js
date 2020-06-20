@@ -229,6 +229,20 @@ server owner: ${message.guild.owner.user.username}#${message.guild.owner.user.di
 members: ${message.guild.memberCount}`);
 }
 
+if(command === "embedtest") {
+	const embed = new Discord.RichEmbed()
+	.setColor('#0099ff')
+	.setTitle('test1')
+	.setAuthor(`${message.author.tag}`, `${message.author.avatarURL}`)
+	.setDescription('test2')
+	.setThumbnail(`${client.bot.avatarURL}`)
+	.addField('test3', 'test4')
+	.setTimestamp()
+	.setFooter('test 5');
+	
+channel.send(embed);
+}
+
 if(command === "suckadick") {
 	return message.channel.send(`imagine trying to be a gay faggot trap like *ahem* you know who *ahem*, <@!${message.author.id}>, just don't.`);
 }
@@ -250,6 +264,7 @@ if(command === "suggest") {
 client.on('message', function(message){
 if(message.channel.type === "dm") console.log(`[${message.author.username}] ${message.content}`); 
 });
+
 	
 
 if(command === "poll") {
