@@ -97,7 +97,8 @@ message.channel.send(`${question}? ` + replies[result]);
 if(command === "download") {
 	if(!message.member.roles.some(r=>["WhiteListed"].includes(r.name)) )
 		return message.reply("you're not whitelisted!")
-	message.author.send("`loadstring(game:HttpGet('https://pastebin.com/raw/MJ1ySrgW'))()`")
+	message.reply("check your dms")
+	message.author.send("brogl hub: `loadstring(game:HttpGet('https://pastebin.com/raw/MJ1ySrgW'))()`")
 }
 
 if(command === "help") {
