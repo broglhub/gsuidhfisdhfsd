@@ -230,7 +230,7 @@ members: ${message.guild.memberCount}`);
 }
 
 if(command === "embedtest") {
-	const testembed = new Discord.RichEmbed()
+	const testembed = new Discord.MessageEmbed()
 	.setColor('#0099ff')
 	.setTitle('test1')
 	.setURL('roblox.com')
