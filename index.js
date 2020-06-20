@@ -50,10 +50,8 @@ const embed = new Discord.RichEmbed()
 	}
 	
 	if(command === "members") {
-message.channel.send({embed: {
-  color: 3447003,
-  description: `this server has ${client.guild.members} members`
-}});
+	message.channel.send(`this server has ${message.guild.members} members`)
+	}
 
 if(command === "8ball") {
 	if(!args[0]) return message.reply(`please ask a question`);
