@@ -235,7 +235,7 @@ if(command === "embedtest") {
 	.setTitle('test1')
 	.setAuthor(`${message.author.tag}`, `${message.author.avatarURL}`)
 	.setDescription('test2')
-	.setThumbnail(`${client.bot.avatarURL}`)
+	.setThumbnail(`${message.author.avatarURL}`)
 	.addField('test3', 'test4')
 	.setTimestamp()
 	.setFooter('test 5');
