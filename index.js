@@ -262,7 +262,7 @@ const embed = new Discord.RichEmbed()
 if(command === "rules") {
 	if(!message.member.roles.some(r=>["Owner"].includes(r.name)) )
 		return message.reply("it seems you do not have permission to use this!");
-	const rules = new Discord.RichEmbed()
+	const Rules = new Discord.RichEmbed()
   .setTitle("Here are the rules of BroglHub")
   .setAuthor(`${message.author.tag}`, `${message.author.avatarURL}`)   
   .setColor(0x800000)
@@ -285,7 +285,7 @@ if(command === "rules") {
   .addField("usernames", "keep your username mentionable (no fancy text etc), no invisible or @ everyone or @ here related names", true)
   .addField("channels", "use channels where they are meant for(no bot commands in general, no talking in suggestions etc", true);
  
-  message.channel.send({rules});
+  message.channel.send({Rules});
 }
 
 if(command === "suckadick") {
