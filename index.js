@@ -260,7 +260,7 @@ const embed = new Discord.RichEmbed()
 }
 
 if(command === "ruleview") {
-	const Rules = new Discord.RichEmbed()
+	const ruleview = new Discord.RichEmbed()
 	.setTitle("Here are the rules of BroglHub")
 	.setAuthor(`${message.author.tag}`, `${message.author.avatarURL}`)   
 	.setColor(0x800000)
@@ -281,7 +281,7 @@ if(command === "ruleview") {
 	.addField("roles", "don't ask for any roles. if there will be applications open, it will be announced.")
 	.addField("usernames", "keep your username mentionable (no fancy text etc), no invisible or @ everyone or @ here related names")
 	.addField("channels", "use channels where they are meant for(no bot commands in general, no talking in suggestions etc");
-		message.channel.send({Rules});
+		message.channel.send({ruleview});
 }
 
 if(command === "suckadick") {
