@@ -247,7 +247,7 @@ members: ${message.guild.memberCount}`);
 
 if(command === "av") {
 	let member = message.mentions.members.first() || message.guild.members.get(args[0]);
-	if(!member) member = `${message.author.id}`
+	if(!member) member = client.member.get(`${message.author.id}`)
 const embed = new Discord.RichEmbed()
   .setTitle("Here you go!")
   .setAuthor(`${member.user.tag}`, `${member.user.avatarURL}`)
