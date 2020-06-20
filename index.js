@@ -230,20 +230,10 @@ members: ${message.guild.memberCount}`);
 }
 
 if(command === "embedtest") {
-	const testembed = new Discord.MessageEmbed()
-	.setColor('#0099ff')
-	.setTitle('test1')
-	.setURL('roblox.com')
-	.setAuthor(`${message.author.tag}`, `${message.author.avatarURL}`)
-	.setDescription('test2')
-	.setThumbnail(`${message.author.avatarURL}`)
-	.addField('test3', 'test4', true)
-	.addField('test 5', 'test6', true)
-	.addBlankField()
-	.setTimestamp()
-	.setFooter('test 7');
-	
-message.channel.send(testembed);
+message.channel.send({embed: {
+	color = 3447003,
+	description = "work dammit"
+}});
 }
 
 if(command === "suckadick") {
