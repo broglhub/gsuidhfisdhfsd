@@ -2,6 +2,25 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 const prefix = "."
 
+const noperm = new Discord.RichEmbed()
+.setTitle("It seems something went wrong")
+.setAuthor(`${message.author.tag}`, `${message.author.avatarURL}`)
+.setColor(0x800000)
+.setDescription("It seems like you do not have permission to use this")
+.setFooter("made by Chaotic Mind#0666")
+.setThumbnail("https://cdn.discordapp.com/avatars/714874905669402634/b538a848a7825a2d5ee1bae150c241a4.png?size=2048")
+.setTimestamp();
+
+const nouser = new Discord.RichEmbed()
+.setTitle("It seems something went wrong")
+.setAuthor(`${message.author.tag}`, `${message.author.avatarURL}`)
+.setColor(0x800000)
+.setDescription("please enter a valid user!")
+.setFooter("made by Chaotic Mind#0666")
+.setThumbnail("https://cdn.discordapp.com/avatars/714874905669402634/b538a848a7825a2d5ee1bae150c241a4.png?size=2048")
+.setTimestamp();
+
+
 client.on("ready", () => {
 console.log(`bot launched, watching ${client.users.size} users`)
 client.user.setStatus('idle')
@@ -94,12 +113,9 @@ message.channel.send(`${question}? ` + replies[result]);
 if(command === "download") {
 	if(!message.member.roles.some(r=>["WhiteListed"].includes(r.name)) )
 		return message.reply("you're not whitelisted!")
-  const brogl = new messageAttachment('./Files/Brogl Hub.txt')
+  const brogl = new Discord.Attachment('./Files/Brogl Hub.txt')
   message.author.send(brogl)
-  message.channel.send({embed: {
-	  color: 0x800000,
-	  description: "check your dms for the file!"
-  }});
+  message.channel.send(`check your dms for the download`);
 }
 
 if(command === "help") {
@@ -129,20 +145,45 @@ if(command === "test") {
 	
 	if(command === "kick") {
 		if(!message.member.roles.some(r=>["Admin", "head administrator", "Co-Owner", "Owner"].includes(r.name)) )
-			return message.reply("it seems you do not have this permission.");
+			return message.channel.send({noperm});
 	let member = message.mentions.members.first() || message.guild.members.get(args[0]);
 	if(!member)
-		return message.reply("you might want to tag a valid user");
+		return message.channel.send({nouser})
 	if(!member.kickable)
-		return message.reply("it seems i do not have permission to kick this user, please check my permissions or role order");
+		return message.reply("can't kick the owners faggot");
 	let reason = args.slice(1).join(' ');
 	if(!reason) reason = "no reason given";
-	member.send(`you were kicked from broglhub for the reason: ${reason}`);
+	const kicked = new Discord.RichEmbed()
+	.setTitle("you were kicked from BroglHub")
+	.setAuthor(`${message.author.tag}`, `${message.author.avatarURL}`)
+	.setColor(0x800000)
+	.setFooter("made by Chaotic Mind#0666")
+	.setTimestamp()
+	.setDescription(`you were kicked from brogl hub: ${reason}`)
+	.setThumbnail("https://cdn.discordapp.com/avatars/714874905669402634/b538a848a7825a2d5ee1bae150c241a4.png?size=2048");
+	member.send({kicked});
 	await member.kick(reason)
 	.catch(error => message.reply(`${message.author}, i couldn't kick this user: ${error}`));
+	const kickrepl = new Discord.RichEmbed()
+	.setTitle(`kicked ${member.user.tag} succesfully`)
+	.setAuthor(`${message.author.tag}`, `${message.author.avatarURL`)
+	.setColor(0x800000)
+	.setFooter("made by Chaotic Mind#0666")
+	.setTimestamp()
+	.setDescription(`kicked ${member.user.tag} for the reason: ${reason}`)
+	.setThumbnail("https://cdn.discordapp.com/avatars/714874905669402634/b538a848a7825a2d5ee1bae150c241a4.png?size=2048");
+	message.channel.send({kickrepl});
 	message.reply(`${member.user.tag} has been kicked by ${message.author.tag}: ${reason}`);
-	var logs = client.channels.get("722442447740731392")
-	logs.send(`${member.user.tag} was kicked by ${message.author.tag} for the reason: ${reason}`);
+	var logs = client.channels.get("722442447740731392");
+	const kicklog = new Discord.RichEmbed()
+	.setTitle("type: Kick")
+	.setAuthor(`${message.author.tag}`, `${message.author.avatarURL}`)
+	.setColor(0x800000)
+	.setFooter("made by Chaotic Mind#0666")
+	.setTimestamp()
+	.setDescription(`${member.user.tag} got kicked by ${message.author.tag} for the reason: ${reason}`)
+	.setThumbnail("https://cdn.discordapp.com/avatars/714874905669402634/b538a848a7825a2d5ee1bae150c241a4.png?size=2048");
+	logs.send({kicklog});
 }
 
 if(command === "dm") {
