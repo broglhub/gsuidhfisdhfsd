@@ -232,7 +232,7 @@ members: ${message.guild.memberCount}`);
 if(command === "embedtest") {
 	let member = message.mentions.members.first() || message.guild.members.get(args[0]);
 	if(!member)
-		return member = `${message.author}`
+		return message.channel.send(`please provide a user(working on no user = message author`)
 const embed = new Discord.RichEmbed()
   .setTitle("Here's your avatar!")
   .setAuthor(`${member.user.tag}`, `${member.user.avatarURL}`)
