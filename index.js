@@ -288,7 +288,7 @@ if(command === "poll") {
 		const pollping = await polls.send(`<@&717341239556440165>`);
 		const poll = new Discord.RichEmbed()
 		.setTitle("new poll!")
-		.setAuthor(`${message.author.tag}`, `${message.author.avatarURL}`
+		.setAuthor(`${message.author.tag}`, `${message.author.avatarURL}`)
 		.setColor(0x800000)
 		.setDescription(`${sayMessage}`)
 		.setFooter("made by Chaotic Mind#0666", "https://cdn.discordapp.com/avatars/655714844695330854/a_ac9969af8c3d41eeac55fc134b0412a4.gif?size=2048")
