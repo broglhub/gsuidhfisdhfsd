@@ -94,7 +94,7 @@ message.channel.send(`${question}? ` + replies[result]);
 if(command === "download") {
 	if(!message.member.roles.some(r=>["WhiteListed"].includes(r.name)) )
 		return message.reply("you're not whitelisted!")
-  const brogl = new Discord.Attachment('./Files/Brogl Hub.txt')
+  const brogl = new messageAttachment('./Files/Brogl Hub.txt')
   message.author.send(brogl)
   message.channel.send({embed: {
 	  color: 0x800000,
