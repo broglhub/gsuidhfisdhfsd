@@ -92,7 +92,7 @@ if(command === "8ball") {
 	
 message.channel.send({embed: {
   color: 3447003,
-  description: `${result[replies])`
+  description: `${result[replies]})`
 }});
 }
 
