@@ -157,10 +157,10 @@ if(command === "test") {
 	.setTitle("you were kicked from BroglHub")
 	.setAuthor(`${message.author.tag}`, `${message.author.avatarURL}`)
 	.setColor(0x800000)
+	.setDescription(`you were kicked from brogl hub: ${reason}`)
 	.setFooter("made by Chaotic Mind#0666")
 	.setTimestamp()
 	.addBlankField()
-	.setDescription(`you were kicked from brogl hub: ${reason}`)
 	.setThumbnail("https://cdn.discordapp.com/avatars/714874905669402634/b538a848a7825a2d5ee1bae150c241a4.png?size=2048");
 	member.send({kicked});
 	await member.kick(reason)
@@ -175,7 +175,6 @@ if(command === "test") {
 	.setDescription(`kicked ${member.user.tag} for the reason: ${reason}`)
 	.setThumbnail("https://cdn.discordapp.com/avatars/714874905669402634/b538a848a7825a2d5ee1bae150c241a4.png?size=2048");
 	message.channel.send({kickreply});
-	message.reply(`${member.user.tag} has been kicked by ${message.author.tag}: ${reason}`);
 	var logs = client.channels.get("722442447740731392");
 	const kicklog = new Discord.RichEmbed()
 	.setTitle("type: Kick")
