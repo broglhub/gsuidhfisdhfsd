@@ -96,7 +96,10 @@ if(command === "download") {
 		return message.reply("you're not whitelisted!")
   const brogl = new Discord.Attachment('./Files/Brogl Hub.txt')
   message.author.send(brogl)
-  message.channel.send(`check your dms for the download`);
+  message.channel.send({embed: {
+	  color: 0x800000,
+	  description: "check your dms for the file!"
+  }});
 }
 
 if(command === "help") {
