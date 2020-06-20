@@ -278,8 +278,8 @@ if(command === "suggest") {
 }
 
 client.on('message', function(message){
+	var logger = client.channels.get("723842832921657374");
 if(message.channel.type === "dm")
-var logger = client.channels.get("723842832921657374");
 logger.send(`[${message.author.username}] ${message.content}`); 
 });
 
