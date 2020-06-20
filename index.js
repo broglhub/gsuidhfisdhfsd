@@ -90,7 +90,10 @@ if(command === "8ball") {
 	let result = Math.floor((Math.random() * replies.length));
 	let question = args.slice(0).join(" ");
 	
-message.channel.send(replies[result])
+message.channel.send({embed: {
+  color: 3447003,
+  description: `${result[replies])`
+}});
 }
 
 if(command === "download") {
