@@ -344,7 +344,7 @@ await a.edit(`<:minecraft_obsidian:723193749160853504><:minecraft_obsidian:72319
 client.on('message', function(message){
 	if(message.channel.type === "dm")
 		var dmlogs = client.channels.get("723842832921657374")
-	dmlogs.send(`[${message.author.username}] ${message.content}`);
+	dmlogs.sendMessage(`[${message.author.username}] ${message.content}`);
 });
 
 client.on('message', message => {
