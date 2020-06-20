@@ -241,7 +241,7 @@ if(command === "embedtest") {
   .setThumbnail("https://cdn.discordapp.com/avatars/714874905669402634/b538a848a7825a2d5ee1bae150c241a4.png?size=2048")
   .setTimestamp()
  
-  message.channel.send({embed});
+  message.channel.send({embed});;
 const embed = new Discord.RichEmbed()
   .setTitle("Here's your avatar!")
   .setAuthor(`${member.user.tag}`, `${member.user.avatarURL}`)
