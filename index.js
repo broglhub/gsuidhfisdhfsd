@@ -259,8 +259,157 @@ const embed = new Discord.RichEmbed()
   message.channel.send({embed});
 }
 
+if(command === "tos") {
+	if(!message.member.roles.some(r=>["Owner"].includes(r.name)) ) return;
+	var tos = client.channels.get('715892657645158490')
+	let toses = new Discord.RichEmbed()
+	.setTitle("Terms of use")
+	.setAuthor(`${message.author.tag}`, `${message.author.avatarURL}`)
+	.setColor(0x800000)
+	.setDescription("here are the terms of use for Brogl Hub")
+	.setFooter("Made by Chaotic Mind#0666", "https://cdn.discordapp.com/avatars/655714844695330854/a_ac9969af8c3d41eeac55fc134b0412a4.gif?size=2048")
+	.setThumbnail("https://cdn.discordapp.com/avatars/714874905669402634/b538a848a7825a2d5ee1bae150c241a4.png?size=2048")
+	.addField("donating", "donating is at your own risk. we do not provide refunds.")
+	.addField("blacklists", "we have the rights to blacklist you whenever. although this will not happen often whatsoever, **do not complain about being blacklisted as it would usually have a good reason behind it**")
+	.setTimestamp()
+	tos.send({embed: toses});
+}
+
+if(command === "exploits") {
+	if(!message.member.roles.some(r=>["Owner"].includes(r.name)) ) return;
+	var support = client.channels.get('714873653241839656')
+	let supported = new Discord.RichEmbed()
+	.setTitle("these are the confirmed supported exploits")
+	.setAuthor(`${message.author.tag}`, `${message.author.avatarURL}`)
+	.setColor(0x800000)
+	.setDescription("if your exploit isn't on the list but works, please dm Chaotic Mind#0666")
+	.setFooter("Made by Chaotic Mind#0666", "https://cdn.discordapp.com/avatars/655714844695330854/a_ac9969af8c3d41eeac55fc134b0412a4.gif?size=2048")
+	.setThumbnail("https://cdn.discordapp.com/avatars/714874905669402634/b538a848a7825a2d5ee1bae150c241a4.png?size=2048")
+	.addField("Supported exploits", "Synapse X, protosmasher, sentinel")
+	.setTimestamp()
+	support.send({embed: supported});
+}
+
+if(command === "staffteam") {
+	if(!message.member.roles.some(r=>["Owner"].includes(r.name)) ) return;
+	var teamlist = client.channels.get('714878555489697793')
+	let staffteam = new Discord.RichEmbed()
+	.setTitle("Broglhub's staff team")
+	.setAuthor(`${message.author.tag}`, `${message.author.avatarURL}`)
+	.setColor(0x800000)
+	.setDescription("here's the epic staff team of brogl hub")
+	.addField("Owner", "<@!655714844695330854>, <@!642690347121639448>, <@!510237724104720402>, <@!265953382441680907>")
+	.addField("Co-Owner", "<@!263013950205984768>, <@!249469358466662410>")
+	.addField("Staff manager", "<@!642690347121639448>, <@!263013950205984768>, <@!655714844695330854>, <@!510237724104720402>, <@!249469358466662410>, <@!265953382441680907>")
+	.addField("Head Admin", "none here yet!")
+	.addField("Admin", "<@!564613376060424192>")
+	.addField("Head moderator", "<@!296346371454271490>")
+	.addField("Moderator", "<@!590271625761390613>, <@!307208717357678594>")
+	.addField("Trial mod", "<@!329358272341475330>, <@!283645221168742400>, <@!285149492678754305>")
+	.setTimestamp()
+	.setThumbnail("https://cdn.discordapp.com/avatars/714874905669402634/b538a848a7825a2d5ee1bae150c241a4.png?size=2048")
+	.setFooter("Made by Chaotic Mind#0666", "https://cdn.discordapp.com/avatars/655714844695330854/a_ac9969af8c3d41eeac55fc134b0412a4.gif?size=2048")
+	teamlist.send({embed: staffteam});
+}
+
+if(command === "appliesopen") {
+	if(!message.member.roles.some(r=>["staff manager"].includes(r.name)) ) return;
+	var stafflist = client.channels.get('714878555489697793')
+	stafflist.send({embed: {
+		color: 800000,
+		description: "Hey! did you know that you can apply for staff by a staff manager?"
+	}});
+}
+
+if(command === "games") {
+	if(!message.member.roles.some(r=>["Owner"].includes(r.name)) ) return;
+	var games = client.channels.get('714889851840888905')
+	let included = new Discord.RichEmbed()
+	.setTitle("these are the games currently included in brogl hub")
+	.setAuthor(`${message.author.tag}`, `${message.author.avatarURL}`)
+	.setColor(0x800000)
+	.setFooter("Made by Chaotic Mind#0666", "https://cdn.discordapp.com/avatars/655714844695330854/a_ac9969af8c3d41eeac55fc134b0412a4.gif?size=2048")
+	.setThumbnail("https://cdn.discordapp.com/avatars/714874905669402634/b538a848a7825a2d5ee1bae150c241a4.png?size=2048")
+	.addField("Army tycoon")
+	.addField("Jailbreal")
+	.addField("tower battles")
+	games.send({embed: included});
+}
+
+if(command === "howto") {
+	if(!message.member.roles.some(r=>["Owner"].includes(r.name)) ) return;
+	var howto = client.channels.get('714908421287313521')
+	let howtowl = new Discord.RichEmbed()
+	.setTitle("here's how to get whitelisted on brogl hub")
+	.setAuthor(`${message.author.tag}`, `${message.author.avatarURL}`)
+	.setColor(0x800000)
+	.setFooter("Made by Chaotic Mind#0666", "https://cdn.discordapp.com/avatars/655714844695330854/a_ac9969af8c3d41eeac55fc134b0412a4.gif?size=2048")
+	.setThumbnail("https://cdn.discordapp.com/avatars/714874905669402634/b538a848a7825a2d5ee1bae150c241a4.png?size=2048")
+	.addField("1", "do %apply in bot commands")
+	.addField("2", "give up the real information to the questions(we only ask for exploit and roblox username)")
+	.addField("3", "the bot will dm you when you're whitelisted. due to discord being a dick, that can take a bit.")
+	.addField("4", "if you find any errors within the script, please report it asap so we can fix it.")
+	.addField("5", "before reporting an issue, please make sure it hasn't already been reported.")
+	.addField("6", "keep in mind that this won't work on all exploits!")
+	.setTimestamp()
+	howto.send({embed: howtowl});
+	howto.send({embed: {
+		color: 800000,
+		description: "once whitelisted, do .download in bot commands to get the script"
+	}});
+}
+
+if(command === "devs") {
+	if(!message.member.roles.some(r=>["Owner"].includes(r.name)) ) return;
+	var devs = client.channels.get('715283247722135565')
+	let devlist = new Discord.RichEmbed()
+	.setTitle("Here are the devs of Brogl Hub")
+	.setAuthor(`${message.author.tag}`, `${message.author.avatarURL}`)   
+	.setColor(0x800000)
+	.setDescription("Read these first before complaining about being punished!")
+	.setFooter("Made by Chaotic Mind#0666", "https://cdn.discordapp.com/avatars/655714844695330854/a_ac9969af8c3d41eeac55fc134b0412a4.gif?size=2048")
+	.setThumbnail("https://cdn.discordapp.com/avatars/714874905669402634/b538a848a7825a2d5ee1bae150c241a4.png?size=2048")
+	.setTimestamp()
+	.addField("Bot developers", "<@!655714844695330854>")
+	.addField("Main scripter", "<@!655714844695330854")
+	.addField("Scripters", "<@!642690347121639448>, <@!296346371454271490>")
+	.addField("Ui designers", "<@!510237724104720402>, <@!590271625761390613>, <@!296346371454271490>")
+	devs.send({embed: devlist});
+}
+
+if(command === "staffrules") {
+	if(!message.member.roles.some(r=>["Owner"].includes(r.name)) ) return;
+	var srules = client.channels.get('714880542855790662')
+	let strules = new Discord.RichEmbed()
+	.setTitle("These are the staff rules of BroglHub")
+	.setAuthor(`${message.author.tag}`, `${message.author.avatarURL}`)   
+	.setColor(0x800000)
+	.setDescription("Read these first before complaining about being punished!")
+	.setFooter("Made by Chaotic Mind#0666", "https://cdn.discordapp.com/avatars/655714844695330854/a_ac9969af8c3d41eeac55fc134b0412a4.gif?size=2048")
+	.setThumbnail("https://cdn.discordapp.com/avatars/714874905669402634/b538a848a7825a2d5ee1bae150c241a4.png?size=2048")
+	.setTimestamp()
+	.addField("bot commands", "Bot commands can be done in any channel by staff spotlight, co owner and owner")
+	.addField("staff spotlight", "staff spotlight is a role that trial mod - head admin can get for a week, but cannot be chosen for the week after")
+	.addField("role control", "all role controls will be done by staff managers. if you do not have the staff manager role and add roles to someone(excluding member) will lead to a suspension or demotion. staff spotlight is allowed to ban as any role, BUT have to send proof after.")
+	.addField("trial mod - head mod", "trial mod to head mod can warn and mute people, and ban raiders")
+	.addField("warnings", "3 warnings = 5 hour mute. 6 warnings = 1 day mute. 8 warnings = kick. 9 warnings = ban")
+	.addField("crying in gen", "if you see anyone crying about something not working or anything, tell them to stop once, if they don't, mute and report it to me")
+	.addField("other staff", "respect other staff members, don't go around and harass them, if i catch you doing so, say goodbye to being staff.")
+	.addField("advertising", "advertising is a ban, no matter if it was staff doing so or not. partners can only advertise stuff in the partner announcements")
+	.addField("nword", "nword mutes stack, with 30 minutes each")
+	.addField("unmute", "no unmuting people if they ask for it, but double it")
+	.addField("broglhub", "if any issues are with brogl hub itself, please ping me so i can fix asap")
+	.addField("staff reporting", "if you see any staff asking for promotion or any staff abusing, dm a staff manager with screenshot proof and we'll take care of it.")
+	.addField("nsfw", "nsfw outside the nsfw channel is a 2 week mute")
+	.addField("mass mentioning", "mass mentioning is only allowed by their corresponding roles")
+	srules.send({embed: strules});
+}
+
+	
+
+
 if(command === "ruleview") {
-	if(!message.member.roles.some(r=>["Owner"].includes(r.name)) )	return;
+	if(!message.member.roles.some(r=>["Owner"].includes(r.name)) ) return;
 var ruleschannel = client.channels.get('714862522385170472')
 	let ruleview = new Discord.RichEmbed()
 	.setTitle("Here are BroglHubs rules")
