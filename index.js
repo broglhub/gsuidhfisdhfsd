@@ -1,6 +1,7 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
 const prefix = "."
+const moment = require('moment')
 
 
 client.on("ready", () => {
@@ -55,6 +56,27 @@ const embed = new Discord.RichEmbed()
 	if(command === "members") {
 	message.channel.send(`this server has ${message.guild.members} members`)
 	}
+	
+	if(command === "whois") {
+	let user = message.mentions.users.first() || message.author || message.guild.members.get(args[0]);
+	const joinDiscord = moment(user.createdAt).format('1111');
+	const joinServer = moment(user.joinedAt).format('1111');
+	let embed = new Discord.RichEmbed()
+	.setAuthor(`${member.user.tag}`, `${member.user.avatarURL}`)
+	.setDescription(`info about ${user}`)
+	.setThumbnail("https://cdn.discordapp.com/avatars/714874905669402634/b538a848a7825a2d5ee1bae150c241a4.png?size=2048")
+	.addField('Joined at:', `${moment.utc(user.joinedAt).format('dddd, MMMM Do YYYY, HH:mm:ss')}`, true)
+	.addField('Status:', user.presence.status, true)
+	.addField("Nickname:", `${member.nickname !== null ? `${member.nickname}` : 'None'}`, true)
+	.addField("Game:", `${user.presence.game ? user.presence.game.name : 'None'}`, true)
+	.addField("Bot:", `${user.bot}`, true)
+	.addField("Roles:", member.roles.map(roles => `${roles}`).join(', '), true)
+	.setFooter(`ID: ${user.id}`)
+	.setTimestamp()
+	message.channel.send({embed})
+	}
+	
+	
 
 if(command === "8ball") {
 	if(!args[0]) return message.reply(`please ask a question`);
@@ -208,6 +230,7 @@ if(command === "purge") {
 }
 
 if(command === "fixname") {
+	if(!message.member.roles.some(r=>["Admin", "head administrator", "Co-Owner", "Owner", "trial moderator", "moderator", "head moderator"].includes(r.name)) )	
 	let user = message.mentions.members.first() || message.guild.members.get(args[0]);
 	user.setNickname("I had a retarded username");
 	message.channel.send(`set ${user.user.tag}'s name to 'I had a retarded username'`);
