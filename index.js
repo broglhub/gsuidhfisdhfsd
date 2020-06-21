@@ -32,6 +32,10 @@ client.on("message", async message => {
 		message.delete().catch(O_o=>{});
 		message.channel.send(sayMessage);
 	}
+	
+	if(command === "prefix") {
+		const prefix = args.join(" ");
+	}
 		
 	
 	if(command === "announce") {
