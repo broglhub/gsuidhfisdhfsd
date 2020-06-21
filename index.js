@@ -280,7 +280,11 @@ if(command === "unmute") {
 	message.channel.send(`unmuted ${member.user.tag}`);
 }
 
-if(command === "sinfo") {  
+if(command === "sinfo") { 
+let sinfo = new Discord.RichEmbed()
+.setTitle("Server Info")
+.setDescription("info about the Broglhub Server")
+.setThumbnail("
 message.channel.send(`server created on 5/26/2002
 server id: ${message.guild.id}
 server owner: ${message.guild.owner.user.username}#${message.guild.owner.user.discriminator}
