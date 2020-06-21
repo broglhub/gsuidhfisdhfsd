@@ -245,7 +245,7 @@ if(command === "purge") {
 	message.channel.bulkDelete(fetched)
 	.catch(error => message.reply(`couldn't commit purge cuz ${error}`));
 	var logs = client.channels.get('724265992729002045')
-	logs.send(`${message.author.tag} purged ${deleteCount} in ${message.channel.channelName}`);
+	logs.send(`${message.author.tag} purged ${deleteCount} in broglhub`);
 }
 
 if(command === "invite") {
