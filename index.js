@@ -32,13 +32,6 @@ client.on("message", async message => {
 		message.delete().catch(O_o=>{});
 		message.channel.send(sayMessage);
 	}
-	
-	if(command === "nick") {
-		let user = message.mentions.users.first() || message.guild.members.get(args[0]) || message.author;
-		let nick = args.slice(1).join(' ');
-		client.user.setNickname(`${nick}`).catch(err)
-		client.channel.send(err)
-	}
 		
 	
 	if(command === "announce") {
@@ -76,7 +69,7 @@ const embed = new Discord.RichEmbed()
 	.addField("Status:", `${user.presence.status}`, true)
 	.addField("Game:", `${user.presence.game ? user.presence.game.name : 'None'}`, true)
 	.addField("Bot:", `${user.bot}`, true)
-	.addField("Roles:", message.member.roles.filter(role => role.name !== "@everyone").map(roles => `${roles}`).join(', '), true)
+	.addField("Roles:", member.roles.filter(role => role.name !== "@everyone").map(roles => `${roles}`).join(', '), true)
 	.setFooter(`made by Chaotic Mind#0666`, "https://cdn.discordapp.com/avatars/655714844695330854/a_ac9969af8c3d41eeac55fc134b0412a4.gif?size=2048")
 	message.channel.send({embed: userinf});
 	}	
