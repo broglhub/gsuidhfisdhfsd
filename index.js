@@ -260,7 +260,7 @@ const embed = new Discord.RichEmbed()
 }
 
 if(command === "ruleview") {
-	if(!message.member.roles.some(r=>["Owner"].includes(r.name)) )	
+	if(!message.member.roles.some(r=>["Owner"].includes(r.name)) )	return;
 var ruleschannel = client.channels.get('714862522385170472')
 	let ruleview = new Discord.RichEmbed()
 	.setTitle("Here are BroglHubs rules")
