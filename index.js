@@ -58,6 +58,7 @@ const embed = new Discord.RichEmbed()
 	
 	if(command === "whois") {
 	let user = message.mentions.users.first() || message.author || message.guild.members.get(args[0]);
+	const member = message.guild.member(user);
 	let userinf = new Discord.RichEmbed()
 	.setColor(0x800000)
 	.setThumbnail(`${message.author.avatarURL}`)
