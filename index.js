@@ -371,7 +371,7 @@ if(command === "devs") {
 	.setThumbnail("https://cdn.discordapp.com/avatars/714874905669402634/b538a848a7825a2d5ee1bae150c241a4.png?size=2048")
 	.setTimestamp()
 	.addField("Bot developers", "<@!655714844695330854>")
-	.addField("Main scripter", "<@!655714844695330854")
+	.addField("Main scripter", "<@!655714844695330854>")
 	.addField("Scripters", "<@!642690347121639448>, <@!296346371454271490>")
 	.addField("Ui designers", "<@!510237724104720402>, <@!590271625761390613>, <@!296346371454271490>")
 	devs.send({embed: devlist});
