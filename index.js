@@ -282,11 +282,16 @@ if(command === "unmute") {
 
 if(command === "sinfo") { 
 let sinfo = new Discord.RichEmbed()
-message.channel.send(`server created on 5/26/2002
-server id: ${message.guild.id}
-server owner: ${message.guild.owner.user.username}#${message.guild.owner.user.discriminator}
-members: ${message.guild.memberCount}`);
-}
+.setTitle("server info")
+.setDescription("info about the Broglhub server")
+.setThumbnail("https://cdn.discordapp.com/avatars/714874905669402634/b538a848a7825a2d5ee1bae150c241a4.png?size=2048")
+.setFooter("Made by Chaotic Mind#0666", "https://cdn.discordapp.com/avatars/655714844695330854/a_ac9969af8c3d41eeac55fc134b0412a4.gif?size=2048")
+.setTimestamp()
+.addField("server creation date", "5/26/2020")
+.addField("server id", `${message.guild.id}`
+.addField("server owner", `${message.guild.user.username}#${message.guild.owner.user.discriminator}`)
+.addField("member count", `${message.guild.memberCount}`)
+message.channel.send({embed: sinfo});
 
 if(command === "av") {
 	let member = message.mentions.members.first() || message.guild.members.get(args[0]);
