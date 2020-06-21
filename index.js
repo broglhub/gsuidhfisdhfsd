@@ -291,7 +291,10 @@ let sinfo = new Discord.RichEmbed()
 .addField("server creation date", "5/26/2020")
 .addField("server id", `${message.guild.id}`)
 .addField("server owner", `${message.guild.owner.user.username}#${message.guild.owner.user.discriminator}`)
-.addField("member count", `${message.guild.memberCount}`)
+.addField("Total | Humans | Bots", `${message.guild.members.size} | ${message.guild.members.filter(member => !member.user.bot).size} | ${message.guild.members.filter(member => member.user.bot).size}`)
+.addField('Location', message.guild.region)
+.addField("Roles", message.guild.roles.size)
+.addField("Channels", message.guild.channels.size)
 message.channel.send({embed: sinfo});
 }
 
