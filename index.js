@@ -237,9 +237,7 @@ if(command === "purge") {
 }
 
 if(command === "invite") {
-	message.guild.channels.get('714858360528437290').createInvite().then(invite =>
-	message.channel.send(invite.url)
-	);
+	message.channel.send("https://discord.gg/JkNC92e");
 }
 
 
