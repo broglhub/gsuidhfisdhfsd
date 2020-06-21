@@ -290,7 +290,7 @@ let sinfo = new Discord.RichEmbed()
 .setTimestamp()
 .addField("server creation date", "5/26/2020")
 .addField("server id", `${message.guild.id}`)
-.addField("server owner", `${message.guild.user.username}#${message.guild.owner.user.discriminator}`)
+.addField("server owner", `${message.guild.owner.user.username}#${message.guild.owner.user.discriminator}`)
 .addField("member count", `${message.guild.memberCount}`)
 message.channel.send({embed: sinfo});
 }
