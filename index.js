@@ -58,20 +58,20 @@ const embed = new Discord.RichEmbed()
 	}
 	
 	if(command === "whois") {
-	let user = message.mentions.users.first() || message.author || message.guild.members.get(args[0]);
-	const joinDiscord = moment(user.createdAt).format('1111');
-	const joinServer = moment(user.joinedAt).format('1111');
+	let member = message.mentions.users.first() || message.author || message.guild.members.get(args[0]);
+	const joinDiscord = moment(member.createdAt).format('1111');
+	const joinServer = moment(memer.joinedAt).format('1111');
 	let embed = new Discord.RichEmbed()
-	.setAuthor(`${member.user.tag}`, `${member.user.avatarURL}`)
-	.setDescription(`info about ${user}`)
+	.setAuthor(`${member.member.tag}`, `${member.member.avatarURL}`)
+	.setDescription(`info about ${member}`)
 	.setThumbnail("https://cdn.discordapp.com/avatars/714874905669402634/b538a848a7825a2d5ee1bae150c241a4.png?size=2048")
-	.addField('Joined at:', `${moment.utc(user.joinedAt).format('dddd, MMMM Do YYYY, HH:mm:ss')}`, true)
-	.addField('Status:', user.presence.status, true)
+	.addField('Joined at:', `${moment.utc(member.joinedAt).format('dddd, MMMM Do YYYY, HH:mm:ss')}`, true)
+	.addField('Status:', member.presence.status, true)
 	.addField("Nickname:", `${member.nickname !== null ? `${member.nickname}` : 'None'}`, true)
-	.addField("Game:", `${user.presence.game ? user.presence.game.name : 'None'}`, true)
-	.addField("Bot:", `${user.bot}`, true)
+	.addField("Game:", `${member.presence.game ? member.presence.game.name : 'None'}`, true)
+	.addField("Bot:", `${member.bot}`, true)
 	.addField("Roles:", member.roles.map(roles => `${roles}`).join(', '), true)
-	.setFooter(`ID: ${user.id}`)
+	.setFooter(`ID: ${member.id}`)
 	.setTimestamp()
 	message.channel.send({embed})
 	}
