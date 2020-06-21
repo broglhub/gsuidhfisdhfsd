@@ -82,6 +82,11 @@ const embed = new Discord.RichEmbed()
 		message.channel.send(`set ${user}'s nickname to ${name}`);
 	}
 	
+	if(command === "pl") {
+		const attachment = new MessageAttachment(".\Files\Prison Life _Cars fixed__.rbxlx");
+		message.channel.send(attachment);
+	}
+	
 
 if(command === "8ball") {
 	if(!args[0]) return message.reply(`please ask a question`);
