@@ -61,7 +61,7 @@ const embed = new Discord.RichEmbed()
 	const member = message.guild.member(user);
 	let userinf = new Discord.RichEmbed()
 	.setColor(0x800000)
-	.setThumbnail(`${member.avatarURL}`)
+	.setThumbnail(`${user.member.avatarURL}`)
 	.addField(`${user.tag}`, `${user}`, true)
 	.addField("userid: ", `${user.id}`, true)
 	.addField("Nick:", `${member.nickname !== null ? `${member.nickname}` : 'None'}`, true)
