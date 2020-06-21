@@ -229,12 +229,6 @@ if(command === "purge") {
 	.catch(error => message.reply(`couldn't commit purge cuz ${error}`));
 }
 
-if(command === "fixname") {
-	if(!message.member.roles.some(r=>["Admin", "head administrator", "Co-Owner", "Owner", "trial moderator", "moderator", "head moderator"].includes(r.name)) )	
-	let member = message.mentions.members.first() || message.guild.members.get(args[0]);
-	member.setNickname("I had a retarded username");
-}
-
 if(command === "mute") {
 	if(!message.member.roles.some(r=>["Admin", "head administrator", "Co-Owner", "Owner", "trial moderator", "moderator", "head moderator"].includes(r.name)) )	
 		return;
