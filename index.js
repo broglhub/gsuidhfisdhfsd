@@ -293,6 +293,7 @@ let sinfo = new Discord.RichEmbed()
 .addField("server owner", `${message.guild.user.username}#${message.guild.owner.user.discriminator}`)
 .addField("member count", `${message.guild.memberCount}`)
 message.channel.send({embed: sinfo});
+}
 
 if(command === "av") {
 	let member = message.mentions.members.first() || message.guild.members.get(args[0]);
