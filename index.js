@@ -59,7 +59,7 @@ const embed = new Discord.RichEmbed()
 	if(command === "whois") {
 	let member = message.mentions.users.first() || message.author || message.guild.members.get(args[0]);
 	let embed = new Discord.RichEmbed()
-	.setAuthor(`${member.member.tag}`, `${member.member.avatarURL}`)
+	.setAuthor(`${user.member.tag}`, `${user.member.avatarURL}`)
 	.setDescription(`info about ${member}`)
 	.setThumbnail("https://cdn.discordapp.com/avatars/714874905669402634/b538a848a7825a2d5ee1bae150c241a4.png?size=2048")
 	.addField('Status:', member.presence.status, true)
