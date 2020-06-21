@@ -33,6 +33,13 @@ client.on("message", async message => {
 		message.channel.send(sayMessage);
 	}
 	
+	if(command === "nick") {
+		let user = message.mentions.users.first() || message.guild.members.get(args[0]) || message.author;
+		let nick = args.slice(1).join(' ');
+		user.setNickname(nick)
+	}
+		
+	
 	if(command === "announce") {
 		if(!message.member.roles.some(r=>["Owner"].includes(r.name)) )
 			return message.reply("how about no")
