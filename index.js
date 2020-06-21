@@ -232,7 +232,16 @@ if(command === "purge") {
 	const fetched = await message.channel.fetchMessages({limit: deleteCount});
 	message.channel.bulkDelete(fetched)
 	.catch(error => message.reply(`couldn't commit purge cuz ${error}`));
+	var logs = client.channels.get('724265992729002045')
+	logs.send(`${message.author.tag} purged ${deleteCount} in ${message.channel.channelName}`);
 }
+
+if(command === "invite") {
+	message.guild.channels.get('714858360528437290').createInvite().then(invite =>
+	message.channel.send(invite.url)
+	);
+}
+
 
 if(command === "mute") {
 	if(!message.member.roles.some(r=>["Admin", "head administrator", "Co-Owner", "Owner", "trial moderator", "moderator", "head moderator"].includes(r.name)) )	
