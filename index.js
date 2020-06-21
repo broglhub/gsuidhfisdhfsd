@@ -54,7 +54,7 @@ const embed = new Discord.RichEmbed()
 	}
 	
 	if(command === "members") {
-	message.channel.send(`this server has ${message.guild.members} members`)
+	message.channel.send(`this server has ${message.guild.memberCount} members`)
 	}
 	
 	if(command === "whois") {
