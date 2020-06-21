@@ -37,6 +37,7 @@ client.on("message", async message => {
 		let user = message.mentions.users.first() || message.guild.members.get(args[0]) || message.author;
 		let nick = args.slice(1).join(' ');
 		client.user.setNickname(`${nick}`).catch(err)
+		client.channel.send(err)
 	}
 		
 	
