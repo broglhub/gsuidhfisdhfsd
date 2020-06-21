@@ -231,9 +231,8 @@ if(command === "purge") {
 
 if(command === "fixname") {
 	if(!message.member.roles.some(r=>["Admin", "head administrator", "Co-Owner", "Owner", "trial moderator", "moderator", "head moderator"].includes(r.name)) )	
-	let user = message.mentions.members.first() || message.guild.members.get(args[0]);
-	user.setNickname("I had a retarded username");
-	message.channel.send(`set ${user.user.tag}'s name to 'I had a retarded username'`);
+	let member = message.mentions.members.first() || message.guild.members.get(args[0]);
+	member.setNickname("I had a retarded username");
 }
 
 if(command === "mute") {
