@@ -182,7 +182,7 @@ if(command === "test") {
   color: 3447003,
   description: `kicked ${member.user.tag} succesfully!`
 }});
-	var logs = client.channels.get("722442447740731392");
+	var logs = client.channels.get("724265992729002045");
 	logs.send({embed: {
   color: 3447003,
   description: `user ${member.user.tag} was kicked by ${message.author.tag} for the reason: ${reason}`
@@ -204,7 +204,10 @@ if(command === "ban") {
 	
 	let member = message.mentions.members.first() || message.guild.members.get(args[0]);
 	if(!member)
-		return message.reply("i cannot find this user, is it a member of this server?");
+		return message.reply({embed: {
+			color: 3447003,
+			description: "i cannot find this member, is it in the server?"
+		}});
 	if(!member.bannable)
 		return message.reply("It seems i'm missing permissions here pal");
 	
