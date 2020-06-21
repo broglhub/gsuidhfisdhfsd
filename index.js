@@ -289,7 +289,7 @@ let sinfo = new Discord.RichEmbed()
 .setFooter("Made by Chaotic Mind#0666", "https://cdn.discordapp.com/avatars/655714844695330854/a_ac9969af8c3d41eeac55fc134b0412a4.gif?size=2048")
 .setTimestamp()
 .addField("server creation date", "5/26/2020")
-.addField("server id", `${message.guild.id}`
+.addField("server id", `${message.guild.id}`)
 .addField("server owner", `${message.guild.user.username}#${message.guild.owner.user.discriminator}`)
 .addField("member count", `${message.guild.memberCount}`)
 message.channel.send({embed: sinfo});
