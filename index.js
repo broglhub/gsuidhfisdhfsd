@@ -79,7 +79,7 @@ const embed = new Discord.RichEmbed()
 		let name = args.slice(1).join(' ');
 		message.delete().catch(O_o=>{});
 		user.setNickname(`${name}`)
-		client.channel.send(`set ${user}'s nickname to ${name}`);
+		message.channel.send(`set ${user}'s nickname to ${name}`);
 	}
 	
 
