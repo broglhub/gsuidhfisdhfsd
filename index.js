@@ -305,7 +305,7 @@ message.channel.send({embed: sinfo});
 if(command === "rr") {
 	if(!message.channel.guild) return;
 	for(let n in emojiname) {
-		var emoji =[messaeg.guild.emojis.find(r => r.name == emojiname[n])];
+		var emoji =[message.guild.emojis.find(r => r.name == emojiname[n])];
 		for(let i in emoji){
 			message.react(emoji[i]);
 		}
