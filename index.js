@@ -77,7 +77,9 @@ const embed = new Discord.RichEmbed()
 	if(command === "nick") {
 		let user = message.mentions.users.first() || message.guild.members.get(args[0]) || message.author;
 		let name = args.slice(1).join(' ');
+		message.delete().catch(O_o=>{});
 		user.setNickname(`${name}`)
+		client.channel.send(`set ${user}'s nickname to ${name}`);
 	}
 	
 
