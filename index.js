@@ -214,13 +214,22 @@ if(command === "ban") {
 	let reason = args.slice(1).join(' ');
 	if(!reason) reason = "No reason given";
 	
-	member.send(`you've been banned from brogl hub: ${reason}`);
+	member.send({embed: {
+		color: 3447003,
+		description: "you just got fucked ftwwwwww. now you're dead from brogl kthxbye"
+	}});
 	
 	await member.ban(reason)
 	.catch(error => message.reply(`sorry, i couldn't commit ban cuz ${error}`));
-	message.reply(`${member.user.tag} has been banned by ${message.author.tag}: ${reason}`);
+	message.reply({embed: {
+		color: 3447003,
+		description: `succesfully banned ${member.user.tag} for: ${reason}`
+	}});
 	var logs = client.channels.get("724265992729002045")
-	logs.send(`${member.user.tag} was banned by ${message.author.tag} because ${reason}`);
+	logs.send({embed: {
+		color: 3447003,
+		description: `${member.user.tag} got banned by ${message.author.tag} for the reason: ${reason}`
+	}});
 }
 
 if(command === "purge") {
