@@ -32,10 +32,6 @@ client.on("message", async message => {
 		message.delete().catch(O_o=>{});
 		message.channel.send(sayMessage);
 	}
-	
-	if(command === "prefix") {
-		const prefix = args.join(" ");
-	}
 		
 	
 	if(command === "announce") {
@@ -220,7 +216,7 @@ if(command === "ban") {
 	await member.ban(reason)
 	.catch(error => message.reply(`sorry, i couldn't commit ban cuz ${error}`));
 	message.reply(`${member.user.tag} has been banned by ${message.author.tag}: ${reason}`);
-	var logs = client.channels.get("722442447740731392")
+	var logs = client.channels.get("724265992729002045")
 	logs.send(`${member.user.tag} was banned by ${message.author.tag} because ${reason}`);
 }
 
@@ -242,7 +238,7 @@ if(command === "mute") {
 	if(!message.member.roles.some(r=>["Admin", "head administrator", "Co-Owner", "Owner", "trial moderator", "moderator", "head moderator"].includes(r.name)) )	
 		return;
 	let member = message.mentions.members.first() || message.guild.members.get(args[0]);
-	const role = message.guild.roles.get('715085241110495304');
+	const role = message.guild.roles.get('724265992729002045');
 	member.addRole(role)
 member.send(`you have been muted in brogl hub by ${message.author.tag}. if you wish to get unmuted, request an unmute at ${message.author.tag} with reason of why you were muted to see if we would unmute you.`);
 var logs = client.channels.get("722442447740731392")
@@ -257,7 +253,7 @@ if(command === "unmute") {
 	const role = message.guild.roles.get('715085241110495304');
 	member.removeRole(role)
 	member.send(`you have been unmuted in brogl. make sure to read rules to prevent another mute!`);
-	var logs = client.channels.get("722442447740731392")
+	var logs = client.channels.get("724265992729002045")
 	logs.send(`${message.author.tag} unmuted ${member.user.tag}`);
 	message.channel.send(`unmuted ${member.user.tag}`);
 }
