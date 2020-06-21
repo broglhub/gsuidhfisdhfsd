@@ -200,11 +200,14 @@ if(command === "dm") {
 
 if(command === "ban") {
 	if(!message.member.roles.some(r=>["Admin", "head administrator", "Co-Owner", "Owner"].includes(r.name)) )
-		return message.reply("it seems you do not have permission to use this!");
+		return message.channel.send({embed: {
+			color: 3447003
+			description: "you do not have permission to use this!"
+		}});
 	
 	let member = message.mentions.members.first() || message.guild.members.get(args[0]);
 	if(!member)
-		return message.reply({embed: {
+		return message.channel.send({embed: {
 			color: 3447003,
 			description: "i cannot find this member, is it in the server?"
 		}});
