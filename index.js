@@ -303,11 +303,11 @@ message.channel.send({embed: sinfo});
 }
 
 if(command === "rr") {
-	if(!msg.channel.guild) return;
+	if(!message.channel.guild) return;
 	for(let n in emojiname) {
-		var emoji =[msg.guild.emojis.find(r => r.name == emojiname[n])];
+		var emoji =[messaeg.guild.emojis.find(r => r.name == emojiname[n])];
 		for(let i in emoji){
-			msg.react(emoji[i]);
+			message.react(emoji[i]);
 		}
 	}
 }
