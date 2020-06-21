@@ -72,7 +72,14 @@ const embed = new Discord.RichEmbed()
 	.addField("Roles:", member.roles.filter(role => role.name !== "@everyone").map(roles => `${roles}`).join(', '), true)
 	.setFooter(`made by Chaotic Mind#0666`, "https://cdn.discordapp.com/avatars/655714844695330854/a_ac9969af8c3d41eeac55fc134b0412a4.gif?size=2048")
 	message.channel.send({embed: userinf});
-	}	
+	}
+	
+	if(command === "nick") {
+		let user = message.mentions.users.first() || message.guild.members.get(args[0]) || message.author;
+		let name = args.slice(1).join(' ');
+		user.setNickname(`${name}`)
+	}
+	
 
 if(command === "8ball") {
 	if(!args[0]) return message.reply(`please ask a question`);
