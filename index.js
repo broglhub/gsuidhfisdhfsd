@@ -201,7 +201,7 @@ if(command === "dm") {
 if(command === "ban") {
 	if(!message.member.roles.some(r=>["Admin", "head administrator", "Co-Owner", "Owner"].includes(r.name)) )
 		return message.channel.send({embed: {
-			color: 3447003
+			color: 3447003,
 			description: "you do not have permission to use this!"
 		}});
 	
@@ -282,9 +282,6 @@ if(command === "unmute") {
 
 if(command === "sinfo") { 
 let sinfo = new Discord.RichEmbed()
-.setTitle("Server Info")
-.setDescription("info about the Broglhub Server")
-.setThumbnail("
 message.channel.send(`server created on 5/26/2002
 server id: ${message.guild.id}
 server owner: ${message.guild.owner.user.username}#${message.guild.owner.user.discriminator}
@@ -419,7 +416,7 @@ if(command === "devs") {
 	.setTimestamp()
 	.addField("Bot developers", "<@!655714844695330854>")
 	.addField("Main scripter", "<@!655714844695330854>")
-	.addField("Scripters", "<@!642690347121639448>, <@!296346371454271490>")
+	.addField("Scripters", "<@!642690347121639448>, <@!296346371454271490>, <@!125984744826601472>")
 	.addField("Ui designers", "<@!510237724104720402>, <@!590271625761390613>, <@!296346371454271490>")
 	devs.send({embed: devlist});
 }
