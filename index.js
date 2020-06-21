@@ -1,7 +1,6 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
 const prefix = "."
-const moment = require('moment')
 
 
 client.on("ready", () => {
@@ -59,13 +58,10 @@ const embed = new Discord.RichEmbed()
 	
 	if(command === "whois") {
 	let member = message.mentions.users.first() || message.author || message.guild.members.get(args[0]);
-	const joinDiscord = moment(member.createdAt).format('1111');
-	const joinServer = moment(memer.joinedAt).format('1111');
 	let embed = new Discord.RichEmbed()
 	.setAuthor(`${member.member.tag}`, `${member.member.avatarURL}`)
 	.setDescription(`info about ${member}`)
 	.setThumbnail("https://cdn.discordapp.com/avatars/714874905669402634/b538a848a7825a2d5ee1bae150c241a4.png?size=2048")
-	.addField('Joined at:', `${moment.utc(member.joinedAt).format('dddd, MMMM Do YYYY, HH:mm:ss')}`, true)
 	.addField('Status:', member.presence.status, true)
 	.addField("Nickname:", `${member.nickname !== null ? `${member.nickname}` : 'None'}`, true)
 	.addField("Game:", `${member.presence.game ? member.presence.game.name : 'None'}`, true)
