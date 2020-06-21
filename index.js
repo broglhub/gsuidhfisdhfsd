@@ -283,8 +283,20 @@ var ruleschannel = client.channels.get('714862522385170472')
 	.addField("roles", "don't ask for any roles. if there will be applications open, it will be announced.")
 	.addField("usernames", "keep your username mentionable (no fancy text etc), no invisible or @ everyone or @ here related names")
 	.addField("channels", "use channels where they are meant for(no bot commands in general, no talking in suggestions etc")
+	.addField("staff", "impersonating staff or pretending like you are one will result in a permanent mute or a ban.")
+	.addField("discord", `[follow discord's terms of service](https://discordapp.com/terms)`)
 	.setTimestamp()
-		ruleschannel.send({embed: ruleview});
+	ruleschannel.send({embed: ruleview});
+	
+	let report = new Discord.RichEmbed()
+	.setTitle("How to report users breaking rules")
+	.setAuthor(`${message.author.tag}`, `${message.author.avatarURL}`)
+	.setColor(0x800000)
+	.setThumbnail("https://cdn.discordapp.com/avatars/714874905669402634/b538a848a7825a2d5ee1bae150c241a4.png?size=2048")
+	.setTimestamp()
+	.setFooter("Made by Chaotic Mind#0666", "https://cdn.discordapp.com/avatars/655714844695330854/a_ac9969af8c3d41eeac55fc134b0412a4.gif?size=2048")
+	.addField("reporting", "go to the user reports channel, send a screenshot or recording of the person breaking the rules, add their @ or userid and wait for it to be done")
+	ruleschannel.send({embed: report});
 }
 
 if(command === "suckadick") {
