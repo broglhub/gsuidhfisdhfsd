@@ -57,22 +57,20 @@ const embed = new Discord.RichEmbed()
 	}
 	
 	if(command === "whois") {
-	let member = message.mentions.users.first() || message.author || message.guild.members.get(args[0]);
-	let embed = new Discord.RichEmbed()
-	.setAuthor(`${user.member.tag}`, `${user.member.avatarURL}`)
-	.setDescription(`info about ${member}`)
-	.setThumbnail("https://cdn.discordapp.com/avatars/714874905669402634/b538a848a7825a2d5ee1bae150c241a4.png?size=2048")
-	.addField('Status:', member.presence.status, true)
-	.addField("Nickname:", `${member.nickname !== null ? `${member.nickname}` : 'None'}`, true)
-	.addField("Game:", `${member.presence.game ? member.presence.game.name : 'None'}`, true)
-	.addField("Bot:", `${member.bot}`, true)
+	let user = message.mentions.users.first() || message.author || message.guild.members.get(args[0]);
+	let userinf = new Discord.RichEmbed()
+	.setColor(0x800000)
+	.setThumbnail(`${message.author.avatarURL}`)
+	.addField(`${user.tag}`, `${user}`, true)
+	.addField("ID:" `${user.id}`, true)
+	.addField("Nick:", `${member.nickname !== null ? `${member.nickname}` : 'None'}`, true)
+	.addField("Status:", `${user.presence.status}`, true)
+	.addField("Game:", `${user.presence.game ? user.presence.game.name : 'None'}`, true)
+	.addField("Bot:", `${user.bot}`, true)
 	.addField("Roles:", member.roles.map(roles => `${roles}`).join(', '), true)
-	.setFooter(`ID: ${member.id}`)
-	.setTimestamp()
-	message.channel.send({embed})
-	}
-	
-	
+	.setFooter(`made by Chaotic Mind#0666`, "https://cdn.discordapp.com/avatars/655714844695330854/a_ac9969af8c3d41eeac55fc134b0412a4.gif?size=2048")
+	message.channel.send({embed: userinf});
+	}	
 
 if(command === "8ball") {
 	if(!args[0]) return message.reply(`please ask a question`);
