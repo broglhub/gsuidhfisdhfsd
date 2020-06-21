@@ -558,8 +558,9 @@ await a.edit(`<:minecraft_obsidian:723193749160853504><:minecraft_obsidian:72319
 
 });
 
-const brogllog = client.channels.get('724265992729002045')
+
 client.on('message', async message => {
+	var brogllog = client.channels.get('724265992729002045')
 	if(message.channel.type === "dm")
 var log = await console.log(`[${message.author.tag}] ${message.content}`);
 brogllog.send(log);
