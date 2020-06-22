@@ -378,8 +378,7 @@ if(command === "join") {
 	channel.join().then(connection => {
 		console.log("look dad i did it");
 	}).catch(e => {
-			console.error(e);
-		});
+		console.error(e);
 	});
 }
 
