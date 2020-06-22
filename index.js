@@ -268,7 +268,7 @@ if(command === "mute") {
 	let member = message.mentions.members.first() || message.guild.members.get(args[0]);
 	if(!member) return message.channel.send({embed: {
 		color: 3447003,
-		description("mention a valid user dipshit")
+		description: "mention a valid user dipshit"
 	}});
 	const role = message.guild.roles.get('715085241110495304');
 	member.addRole(role)
@@ -281,7 +281,10 @@ var logs = client.channels.get("724265992729002045")
 color: 3447003,
 description: `${message.author.tag} muted ${member.user.tag}`
 }});
-	message.channel.send(`muted ${member.user.tag}`);
+	message.channel.send({embed: {
+color: 3447003,
+description: `muted ${member.user.tag}`
+}});
 }
 
 if(command === "unmute") {
@@ -303,7 +306,10 @@ if(command === "unmute") {
 		color: 3447003,
 		description: `${message.author.tag} unmuted ${member.user.tag}`
 	}});
-	message.channel.send(`unmuted ${member.user.tag}`);
+	message.channel.send({embed: {
+color: 3447003,
+description: `unmuted ${member.user.tag}`
+}});
 }
 
 if(command === "sinfo") { 
