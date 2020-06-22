@@ -117,12 +117,15 @@ if(command === "8ball") {
     	'What difference does it make?',
     	'Not my problem.',
         'Ask someone else.'
+'how about fuck you'
+'go fuck yourself'
+'lol what'
 	];
 	
 	let result = Math.floor((Math.random() * replies.length));
 	let question = args.slice(0).join(" ");
 	
-message.channel.send(`${question}? ` + replies[result]);
+message.channel.send(replies[result]);
 }
 
 if(command === "download") {
