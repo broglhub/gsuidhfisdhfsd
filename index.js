@@ -356,7 +356,7 @@ if(command === "av") {
 	let member = message.mentions.members.first() || message.guild.members.get(args[0]) || message.author;
 const embed = new Discord.RichEmbed()
   .setTitle("Here you go!")
-  .setAuthor(`<@!${member.user.id}>`, `${member.user.avatarURL}`)
+  .setAuthor(`${member.user.tag}`, `${member.user.avatarURL}`)
   .setColor(0x800000)
   .setFooter("made by Chaotic Mind#0666", "https://cdn.discordapp.com/avatars/655714844695330854/a_ac9969af8c3d41eeac55fc134b0412a4.gif?size=2048")
   .setImage(`${member.user.avatarURL}`)
