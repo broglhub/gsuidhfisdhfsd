@@ -117,9 +117,9 @@ if(command === "8ball") {
     	'What difference does it make?',
     	'Not my problem.',
         'Ask someone else.'
-'how about fuck you'
-'go fuck yourself'
-'lol what'
+'how about fuck you.'
+'go fuck yourself.'
+'lol what?'
 	];
 	
 	let result = Math.floor((Math.random() * replies.length));
