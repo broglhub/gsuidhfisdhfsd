@@ -1,45 +1,7 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
-const config = require('./config.json');
-client.config = config
 const fs = require('fs');
 const prefix = "."
-
-const { GiveawaysManager } = require('discord-giveaways');
-client.giveawaysManager = new GiveawaysManager(client, {
-	storage: "./database.json",
-	updateCountdownEvery: 3000,
-	default: {
-		botsCanWin: false,
-		exemptPermissions: [ "MANAGE_MESSAGES", "ADMINISTRATOR" ],
-		embedColor: "#FF0000",
-		reaction: "<a:pufferfish:723108839779729428>"
-	}
-});
-
-
-fs.readdir("./events/", (_err, files) => {
-	files.forEach((file) => {
-		if (!file.endsWith(".js")) return;
-		const event = require(`./events/${file}`);
-		let eventName = file.split(".")[0];
-		console.log(`loaded ${eventName}`);
-		client.on(eventName, event.bind(null, client));
-		delete require.cache[require.resolve(`./events/${file}`)];
-	});
-});
-
-client.commands = new Discord.Collection();
-
-fs.readdir("./commands/", (_err, files) => {
-    files.forEach((file) => {
-        if (!file.endsWith(".js")) return;
-        let props = require(`./commands/${file}`);
-        let commandName = file.split(".")[0];
-        client.commands.set(commandName, props);
-        console.log(`?? Command loaded: ${commandName}`);
-    });
-});
 
 
 var emojiname = ["Rainbowcockroach", "RainbowJotaro"];
@@ -66,9 +28,17 @@ client.on("message", async message => {
 	
 	
 	if(command === "ping") {
-		
-		const m = await message.channel.send("ping?");
-		m.edit(`pong! latency is ${m.createdTimestamp - message.createdTimestamp}ms. API latency = ${Math.round(client.ping)}ms`);
+	const m = await message.channel.send("ping?")
+  
+  let pong = new Discord.MessageEmbed()
+  .setTitle("Pong!")
+  .setColor('RANDOM')
+  .setTimestamp()
+  .addField("Latency", `${m.createdTimestamp - message.createdTimestamp}ms`, true)
+  .addField("API Latency", `${Math.round(client.ws.ping)}ms`, true)
+  .setFooter(`made by Chaotic Mind#0666`, `https://cdn.discordapp.com/avatars/655714844695330854/a_ac9969af8c3d41eeac55fc134b0412a4.gif?size=2048`);
+
+  m.edit(pong)
 	}
 	
 	if(command === "say") {
