@@ -116,9 +116,8 @@ if(command === "8ball") {
     	'There is a high probability.',
     	'What difference does it make?',
     	'Not my problem.',
-        'Ask someone else.'
-'how about fuck you.'
-'go fuck yourself.'
+        'Ask someone else.',
+'go fuck yourself.',
 'lol what?'
 	];
 	
