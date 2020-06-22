@@ -16,6 +16,7 @@ client.giveawaysManager = new GiveawaysManager(client, {
 	}
 });
 
+
 fs.readdir("./events/", (_err, files) => {
 	files.forEach((file) => {
 		if (!file.endsWith(".js")) return;
