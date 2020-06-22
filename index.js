@@ -30,7 +30,7 @@ client.on("message", async message => {
 	if(command === "ping") {
 	const m = await message.channel.send("ping?")
   
-  let pong = new Discord.MessageEmbed()
+  let pong = new Discord.RichEmbed()
   .setTitle("Pong!")
   .setColor('RANDOM')
   .setTimestamp()
