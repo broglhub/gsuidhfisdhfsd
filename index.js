@@ -32,7 +32,7 @@ client.on("message", async message => {
   
   let pong = new Discord.RichEmbed()
   .setTitle("Pong!")
-  .setColor('RANDOM')
+  .setColor(0x800000)
   .setTimestamp()
   .addField("Latency", `${m.createdTimestamp - message.createdTimestamp}ms`, true)
   .addField("API Latency", `${Math.round(client.ping)}ms`, true)
