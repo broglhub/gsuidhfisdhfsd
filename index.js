@@ -352,8 +352,7 @@ if(command === "rr") {
 
 
 if(command === "av") {
-	let member = message.mentions.members.first() || message.guild.members.get(args[0]);
-	if(!member) member = message.guild.members.get(`${message.author.id}`)
+	let member = message.mentions.members.first() || message.guild.members.get(args[0]) || message.author;
 const embed = new Discord.RichEmbed()
   .setTitle("Here you go!")
   .setAuthor(`${member.user.tag}`, `${member.user.avatarURL}`)
