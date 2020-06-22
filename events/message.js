@@ -37,5 +37,5 @@ if(message.content.includes(`<@!714874905669402634>`)) {
 	message.channel.send(`my prefix here is .`)
 }
 
-});
+
 };
