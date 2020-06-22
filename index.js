@@ -680,7 +680,6 @@ client.on('message', async message => {
 var log = await console.log(`[${message.author.tag}] ${message.content}`);
 });
 
-	message.channel.send(`Shut the fuck up. We don't care <@!${message.author.id}> if anyone asked or not. just shut up. the world isn't just about you. just don't.`)
 client.on("messageReactionAdd",(reaction,user)=>{
   if(!user) return;
   if(user.bot)return;
