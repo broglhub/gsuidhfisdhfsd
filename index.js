@@ -163,7 +163,7 @@ if(command === "test") {
 		let member = message.mentions.members.first() || message.guild.members.get(args[0]);
 				if(!message.member.roles.some(r=>["Admin", "head administrator", "Co-Owner", "Owner"].includes(r.name)) )
 			return message.channel.send({embed: {
-  color: 3447003,
+  color: 255,
   description: "you don't have permission to use this!"
 }});
   
