@@ -9,6 +9,7 @@
   "dependencies": {
     "discord-giveaways": "^4.1.8",
     "discord.js": "11.1.0",
+    "ffmpeg": "0.0.4",
     "fs": "0.0.1-security",
     "ms": "^2.1.2",
     "request": "2.81.0"
