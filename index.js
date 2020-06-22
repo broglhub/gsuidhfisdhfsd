@@ -365,6 +365,14 @@ const embed = new Discord.RichEmbed()
   message.channel.send({embed});
 }
 
+if(command === "emoji") {
+	let emoji = args.slice(0).join(' ');
+	let emojiname = args.slice(1).join(' ');
+	guild.createEmoji(`${emoji}`, `${emojiname}`)
+	.then(emoji => message.channel.send(`created emoji succesfully`)
+	.catch(console.error);
+}
+
 if(command === "tos") {
 	if(!message.member.roles.some(r=>["Owner"].includes(r.name)) ) return;
 	var tos = client.channels.get('715892657645158490')
