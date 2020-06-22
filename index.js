@@ -373,6 +373,16 @@ if(command === "emoji") {
 	.catch(console.error);
 }
 
+if(command === "join") {
+	const channel = client.channels.get("714857072986030150");
+	channel.join().then(connection => {
+		console.log("look dad i did it");
+		]).catch(e => {
+			console.error(e);
+		});
+	});
+}
+
 if(command === "tos") {
 	if(!message.member.roles.some(r=>["Owner"].includes(r.name)) ) return;
 	var tos = client.channels.get('715892657645158490')
