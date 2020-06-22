@@ -3,6 +3,7 @@ const client = new Discord.Client();
 const config = require('./config.json');
 client.config = config
 const fs = require('fs');
+const prefix = "."
 
 const { GiveawaysManager } = require('discord-giveaways');
 client.giveawaysManager = new GiveawaysManager(client, {
