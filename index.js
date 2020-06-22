@@ -266,11 +266,21 @@ if(command === "mute") {
 	if(!message.member.roles.some(r=>["Admin", "head administrator", "Co-Owner", "Owner", "trial moderator", "moderator", "head moderator"].includes(r.name)) )	
 		return;
 	let member = message.mentions.members.first() || message.guild.members.get(args[0]);
+	if(!member) return message.channel.send({embed: {
+		color: 3447003,
+		description("mention a valid user dipshit")
+	}});
 	const role = message.guild.roles.get('715085241110495304');
 	member.addRole(role)
-member.send(`you have been muted in brogl hub by ${message.author.tag}. if you wish to get unmuted, request an unmute at ${message.author.tag} with reason of why you were muted to see if we would unmute you.`);
-var logs = client.channels.get("722442447740731392")
-	logs.send(`${message.author.tag} muted ${member.user.tag}`);
+member.send({embed: {
+	color: 3447003,
+	description: `you have been muted in brogl hub by ${message.author.tag}. if you wish to get unmuted, request an unmute at ${message.author.tag} with reason of why you were muted to see if we would unmute you.`
+}});
+var logs = client.channels.get("724265992729002045")
+	logs.send({embed: {
+color: 3447003,
+description: `${message.author.tag} muted ${member.user.tag}`
+}});
 	message.channel.send(`muted ${member.user.tag}`);
 }
 
@@ -278,11 +288,21 @@ if(command === "unmute") {
 	if(!message.member.roles.some(r=>["Admin", "head administrator", "Co-Owner", "Owner", "trial moderator", "moderator", "head moderator"].includes(r.name)) )
 		return;
 	let member = message.mentions.members.first() || message.guild.members.get(args[0]);
+	if(!member) return message.channel.send({embed: {
+		color: 3447003,
+		description: "i cannot find this member, is it in the server? or did you forget to mention someone?"
+	}});
 	const role = message.guild.roles.get('715085241110495304');
 	member.removeRole(role)
-	member.send(`you have been unmuted in brogl. make sure to read rules to prevent another mute!`);
+	member.send({embed: {
+		color: 3447003,
+		description: `you have been unmuted in brogl. make sure to read rules to prevent another mute!`
+	}});
 	var logs = client.channels.get("724265992729002045")
-	logs.send(`${message.author.tag} unmuted ${member.user.tag}`);
+	logs.send({embed: {
+		color: 3447003,
+		description: `${message.author.tag} unmuted ${member.user.tag}`
+	}});
 	message.channel.send(`unmuted ${member.user.tag}`);
 }
 
