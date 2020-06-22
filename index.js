@@ -368,7 +368,7 @@ const embed = new Discord.RichEmbed()
 if(command === "emoji") {
 	let emoji = args.slice(0).join(' ');
 	let emojiname = args.slice(1).join(' ');
-	guild.createEmoji(`${emoji}`, `${emojiname}`)
+	message.guild.createEmoji(`${emoji}`, `${emojiname}`)
 	.then(emoji => message.channel.send(`created emoji succesfully`))
 	.catch(console.error);
 }
