@@ -266,7 +266,7 @@ if(command === "mute") {
 	if(!message.member.roles.some(r=>["Admin", "head administrator", "Co-Owner", "Owner", "trial moderator", "moderator", "head moderator"].includes(r.name)) )	
 		return;
 	let member = message.mentions.members.first() || message.guild.members.get(args[0]);
-	const role = message.guild.roles.get('724265992729002045');
+	const role = message.guild.roles.get('715085241110495304');
 	member.addRole(role)
 member.send(`you have been muted in brogl hub by ${message.author.tag}. if you wish to get unmuted, request an unmute at ${message.author.tag} with reason of why you were muted to see if we would unmute you.`);
 var logs = client.channels.get("722442447740731392")
