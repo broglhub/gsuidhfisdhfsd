@@ -40,9 +40,9 @@ fs.readdir("./commands/", (_err, files) => {
 });
 
 
-var emojiname = ["Rainbowcockroach"];
+var emojiname = ["Rainbowcockroach", "RainbowJotaro"];
 
-var rolename = ["giveaway reminder"];
+var rolename = ["giveaway reminder", "polls"];
 
 
 client.on("ready", () => {
@@ -154,13 +154,15 @@ if(command === "8ball") {
     	'There is a high probability.',
     	'What difference does it make?',
     	'Not my problem.',
-        'Ask someone else.'
+        'Ask someone else.',
+'go fuck yourself.',
+'lol what?'
 	];
 	
 	let result = Math.floor((Math.random() * replies.length));
 	let question = args.slice(0).join(" ");
 	
-message.channel.send(`${question}? ` + replies[result]);
+message.channel.send(replies[result]);
 }
 
 if(command === "download") {
@@ -199,7 +201,7 @@ if(command === "test") {
 		let member = message.mentions.members.first() || message.guild.members.get(args[0]);
 				if(!message.member.roles.some(r=>["Admin", "head administrator", "Co-Owner", "Owner"].includes(r.name)) )
 			return message.channel.send({embed: {
-  color: 3447003,
+  color: 255,
   description: "you don't have permission to use this!"
 }});
   
@@ -302,24 +304,50 @@ if(command === "mute") {
 	if(!message.member.roles.some(r=>["Admin", "head administrator", "Co-Owner", "Owner", "trial moderator", "moderator", "head moderator"].includes(r.name)) )	
 		return;
 	let member = message.mentions.members.first() || message.guild.members.get(args[0]);
-	const role = message.guild.roles.get('724265992729002045');
+	if(!member) return message.channel.send({embed: {
+		color: 3447003,
+		description: "mention a valid user dipshit"
+	}});
+	const role = message.guild.roles.get('715085241110495304');
 	member.addRole(role)
-member.send(`you have been muted in brogl hub by ${message.author.tag}. if you wish to get unmuted, request an unmute at ${message.author.tag} with reason of why you were muted to see if we would unmute you.`);
-var logs = client.channels.get("722442447740731392")
-	logs.send(`${message.author.tag} muted ${member.user.tag}`);
-	message.channel.send(`muted ${member.user.tag}`);
+member.send({embed: {
+	color: 3447003,
+	description: `you have been muted in brogl hub by ${message.author.tag}. if you wish to get unmuted, request an unmute at ${message.author.tag} with reason of why you were muted to see if we would unmute you.`
+}});
+var logs = client.channels.get("724265992729002045")
+	logs.send({embed: {
+color: 3447003,
+description: `${message.author.tag} muted ${member.user.tag}`
+}});
+	message.channel.send({embed: {
+color: 3447003,
+description: `muted ${member.user.tag}`
+}});
 }
 
 if(command === "unmute") {
 	if(!message.member.roles.some(r=>["Admin", "head administrator", "Co-Owner", "Owner", "trial moderator", "moderator", "head moderator"].includes(r.name)) )
 		return;
 	let member = message.mentions.members.first() || message.guild.members.get(args[0]);
+	if(!member) return message.channel.send({embed: {
+		color: 3447003,
+		description: "i cannot find this member, is it in the server? or did you forget to mention someone?"
+	}});
 	const role = message.guild.roles.get('715085241110495304');
 	member.removeRole(role)
-	member.send(`you have been unmuted in brogl. make sure to read rules to prevent another mute!`);
+	member.send({embed: {
+		color: 3447003,
+		description: `you have been unmuted in brogl. make sure to read rules to prevent another mute!`
+	}});
 	var logs = client.channels.get("724265992729002045")
-	logs.send(`${message.author.tag} unmuted ${member.user.tag}`);
-	message.channel.send(`unmuted ${member.user.tag}`);
+	logs.send({embed: {
+		color: 3447003,
+		description: `${message.author.tag} unmuted ${member.user.tag}`
+	}});
+	message.channel.send({embed: {
+color: 3447003,
+description: `unmuted ${member.user.tag}`
+}});
 }
 
 if(command === "sinfo") { 
@@ -560,7 +588,7 @@ if(command === "suckadick") {
 }
 
 if(command === "jail") {
-	let user = message.mentions.members.first() || message.guild.members.get(args[0]);
+	let user = message.mentions.members.first() || message.guild.members.get(args[0]) || message.author;
 	message.channel.send(`<:minecraft_iron_bars:722913387020943541><:minecraft_iron_bars:722913387020943541><:minecraft_iron_bars:722913387020943541><:minecraft_iron_bars:722913387020943541><:minecraft_iron_bars:722913387020943541><:minecraft_iron_bars:722913387020943541><:minecraft_iron_bars:722913387020943541><:minecraft_iron_bars:722913387020943541>
 <:minecraft_iron_bars:722913387020943541> <@!${user.id}> <:minecraft_iron_bars:722913387020943541>
 <:Minecraft_Stone:722917154340733078><:Minecraft_Stone:722917154340733078><:Minecraft_Stone:722917154340733078><:Minecraft_Stone:722917154340733078><:Minecraft_Stone:722917154340733078><:Minecraft_Stone:722917154340733078><:Minecraft_Stone:722917154340733078><:Minecraft_Stone:722917154340733078><:Minecraft_Stone:722917154340733078>`)
@@ -664,6 +692,10 @@ if(message.content.includes(`didn't ask`)) {
 
 if(message.content.includes(`did not ask`)) {
 	message.channel.send(`Shut the fuck up. We don't care <@!${message.author.id}> if anyone asked or not. just shut up. the world isn't just about you. just don't.`)
+}
+
+if(message.content.includes(`did i ask`)) {
+message.channel.send(`shut the fuck up.we don't care <@${message.author.id}> if anyone asked or not. just shut up. the world isn't about you. just shut the fuck up and don't`)
 }
 
 if(message.content.includes(`<@!265953382441680907>`)) {
