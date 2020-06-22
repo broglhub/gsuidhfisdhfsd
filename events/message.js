@@ -6,8 +6,6 @@ const command = args.shift().toLowerCase();
 const cmd = client.commands.get(command);
 if(!cmd) return;
 cmd.run(client, message, args);
-
-client.on('message', message => {
 if(message.content.includes(`who asked`)) {
 	message.channel.send(`Shut the fuck up. We don't care <@!${message.author.id}> if anyone asked or not. just shut up. the world isn't just about you. just don't.`)
 }
