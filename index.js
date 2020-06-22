@@ -2,9 +2,9 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 const prefix = "."
 
-var emojiname = ["Rainbowcockroach"];
+var emojiname = ["Rainbowcockroach" "RainbowJorato"];
 
-var rolename = ["giveaway reminder"];
+var rolename = ["giveaway reminder" "polls"];
 
 
 client.on("ready", () => {
