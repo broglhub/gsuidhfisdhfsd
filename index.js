@@ -356,7 +356,7 @@ if(command === "av") {
 	let member = message.mentions.members.first() || message.guild.members.get(args[0]) || message.author;
 const embed = new Discord.RichEmbed()
   .setTitle("Here you go!")
-  .setAuthor(`${member.user.tag}`, `${member.user.avatarURL}`)
+  .setAuthor(`<@!${member.user.id}>`, `${member.user.avatarURL}`)
   .setColor(0x800000)
   .setFooter("made by Chaotic Mind#0666", "https://cdn.discordapp.com/avatars/655714844695330854/a_ac9969af8c3d41eeac55fc134b0412a4.gif?size=2048")
   .setImage(`${member.user.avatarURL}`)
@@ -372,15 +372,6 @@ if(command === "emoji") {
 	message.guild.createEmoji(`${emoji}`, `${emojiname}`)
 	.then(emoji => message.channel.send(`created emoji succesfully`))
 	.catch(console.error);
-}
-
-if(command === "join") {
-	const channel = client.channels.get("714857072986030150");
-	channel.join().then(connection => {
-		console.log("look dad i did it");
-	}).catch(e => {
-		console.error(e);
-	});
 }
 
 if(command === "tos") {
