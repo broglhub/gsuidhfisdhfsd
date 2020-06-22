@@ -377,7 +377,7 @@ if(command === "join") {
 	const channel = client.channels.get("714857072986030150");
 	channel.join().then(connection => {
 		console.log("look dad i did it");
-		]).catch(e => {
+	}).catch(e => {
 			console.error(e);
 		});
 	});
