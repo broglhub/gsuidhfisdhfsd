@@ -370,8 +370,8 @@ if(command === "emoji") {
 	let emojiname = args.slice(1).join(' ');
 	message.guild.createEmoji(`${emoji}`, `${emojiname}`)
 	.then(emoji => message.channel.send(`created emoji succesfully`))
-	message.channel.send(`\:${emojiname}:`);
 	.catch(console.error);
+	message.channel.send(`\:${emojiname}:`);
 }
 
 if(command === "tos") {
