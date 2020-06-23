@@ -580,6 +580,10 @@ if(command === "suggest") {
 	owner.send(suggestion + ` (suggested by ${message.author.tag})`);
 }
 	
+if(command === "enemyspotted") {
+	message.channel.send("<:g1:724923153603887105><:g2:724923201045659668><:g3:724923254606790666>");
+}
+	
 
 if(command === "poll") {
 	if(!message.member.roles.some(r=>["Admin", "head administrator", "Co-Owner", "Owner"].includes(r.name)) )
