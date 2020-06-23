@@ -2,7 +2,6 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 const fs = require('fs');
 const prefix = "."
-const ffmpeg = 'ffmpeg'
 
 
 var emojiname = ["Rainbowcockroach", "RainbowJotaro"];
@@ -714,6 +713,18 @@ if(message.content.includes(`<@!655714844695330854>`)) {
 if(message.content.includes(`<@!714874905669402634>`)) {
 	message.channel.send(`my prefix here is .`)
 }
+});
+
+client.on("guildMemberAdd", member => {
+	client.on('message',
+		  var role = message.guild.roles.get('714860139274043423');
+	member.addRole(role)
+	
+	member.guild.channels.get('724898889252995132').send({embed: {
+		color: 3447003,
+		title: 'welcome to brogl hub' + member,
+		description: "read the rules before continuing to not get in trouble!"
+	}});
 });
 
 client.login(process.env.BOT_TOKEN);
