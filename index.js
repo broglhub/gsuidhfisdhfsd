@@ -581,6 +581,7 @@ if(command === "suggest") {
 }
 	
 if(command === "enemyspotted") {
+	message.delete().catch(O_o=>{});
 	message.channel.send("<:g1:724923153603887105><:g2:724923201045659668><:g3:724923254606790666>");
 }
 	
