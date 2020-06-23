@@ -717,7 +717,7 @@ if(message.content.includes(`<@!714874905669402634>`)) {
 
 client.on("guildMemberAdd", member => {
 	client.on('message',
-		  var role = message.guild.roles.get('714860139274043423');
+		  let role = message.guild.roles.get('714860139274043423');
 	member.addRole(role)
 	
 	member.guild.channels.get('724898889252995132').send({embed: {
