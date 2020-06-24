@@ -12,6 +12,7 @@ var rolename = ["giveaway reminder", "polls"];
 client.on("ready", () => {
 console.log(`bot launched, watching ${client.users.size} users`)
 client.user.setStatus('dnd')
+client.user.setActivity("The cool users of BroglHub.", {type: "WATCHING"});
 var gen = client.channels.get('606126678070001666')
 gen.send(`(re)loaded succesfully`);
 });
