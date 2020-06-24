@@ -3,7 +3,6 @@ const fs = require('fs');
 const config = require('./config.json');
 const chalk = require('chalk');
 
-// create a new discord client
 const client = new Discord.Client();
 const cooldowns = new Discord.Collection();
 client.commands = new Discord.Collection();
@@ -46,30 +45,6 @@ client.on("message", async message => {
 client.on('message', async message => {
 	if(message.channel.type === "dm")
 var log = await console.log(`[${message.author.tag}] ${message.content}`);
-});
-
-client.on("messageReactionAdd",(reaction,user)=>{
-  if(!user) return;
-  if(user.bot)return;
-  if(!reaction.message.channel.guild) return;
-  for(let n in emojiname){
-  if(reaction.emoji.name == emojiname[n]){
-    let role = reaction.message.guild.roles.find(r => r.name == rolename[n]);          
-    reaction.message.guild.member(user).addRole(role).catch(console.error);
-  }
-}
-});
-
-client.on("messageReactionRemove",(reaction,user)=>{
-  if(!user) return;
-  if(user.bot)return;
-  if(!reaction.message.channel.guild) return;
-  for(let n in emojiname){
-  if(reaction.emoji.name == emojiname[n]){
-    let role = reaction.message.guild.roles.find(r => r.name == rolename[n]);   
-    reaction.message.guild.member(user).removeRole(role).catch(console.error);
-  }
-  }
 });
 
 client.on('message', async message => {
