@@ -78,7 +78,7 @@ if(message.content.includes(`<@!655714844695330854>`)) {
 	message.channel.send(`stfu? :clown:`)
 }
 
-if(message.content.includes(`<@!723784687591489536>`)) {
+if(message.content.includes(`<@!714874905669402634>`)) {
 	message.channel.send(`my prefix here is ;`)
 }
 });
