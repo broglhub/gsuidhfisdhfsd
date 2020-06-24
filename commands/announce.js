@@ -9,7 +9,7 @@ async execute(client, config, message, args) {
     var announcements = client.channels.get("714858360528437290")
     let announced = args.join(" ");
     message.delete().catch(O_o=>{});
-    const announce = new Discord.RichEmbed()
+    const announced = new Discord.RichEmbed()
     .setTitle(`new announcement from ${message.author.tag}`)
     .setAuthor(`${message.author.tag}`, "https://cdn.discordapp.com/avatars/655714844695330854/a_ac9969af8c3d41eeac55fc134b0412a4.gif?size=2048")
     .setColor(0x800000)
