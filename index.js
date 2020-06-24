@@ -15,6 +15,7 @@ for (const file of commandFlies) {
 
 client.on('ready', () => {
     console.log('Ready!');
+    client.user.setStatus('dnd', 'Made by Chaotic Mind#0666')
 });
 
 client.on("message", async message => {
