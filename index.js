@@ -79,7 +79,7 @@ if(message.content.includes(`<@!655714844695330854>`)) {
 }
 
 if(message.content.includes(`<@!714874905669402634>`)) {
-	message.channel.send(`my prefix here is ;`)
+	message.channel.send(`my prefix here is ${config.prefix}`)
 }
 });
 client.login(process.env.BOT_TOKEN);
