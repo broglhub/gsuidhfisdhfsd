@@ -10,7 +10,7 @@ async execute(client, config, message, args) {
 	let emojiname = args.slice(1).join(' ');
 	let m = await message.guild.createEmoji(`${emoji}`, `${emojiname}`)
 	.then(emoji => message.channel.send(`created emoji succesfully`))
-	.catch(console.error);
-	message.channel.send(`:${m.Name}:${m.id}`);
+	.catch(console.error)
+	message.channel.send(`:${emojiname}:${m.id}`);
 },
 };
