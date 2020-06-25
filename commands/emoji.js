@@ -11,6 +11,6 @@ async execute(client, config, message, args) {
 	let m = await message.guild.createEmoji(`${emoji}`, `${emojiname}`)
 	.then(emoji => message.channel.send(`created emoji succesfully`))
 	.catch(console.error);
-	message.channel.send(`<${m.name}${m.id}>`);
+	message.channel.send(`<:${emojiname}:${m.id}>`);
 },
 };
