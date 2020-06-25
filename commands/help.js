@@ -28,7 +28,7 @@ let helpembed1 = new Discord.RichEmbed()
 .addField("enemyspotted", "send a gun in the chat")
 .addField("suckadick | suck | dick", "suck a dick")
 .addField("av | avatar | pfp", "show given user's profile picture")
-message.channel.send({embed: helpembed1});
+message.author.send({embed: helpembed1});
 if(!message.member.roles.some(r=>["Admin", "head administrator", "Co-Owner", "Owner", "trial moderator", "moderator", "head moderator"].includes(r.name)) ) return;
 let modhelp = new Discord.RichEmbed()
 .setTitle("help menu")
@@ -39,7 +39,7 @@ let modhelp = new Discord.RichEmbed()
 .addField("Mute | shutup | shut", "mute a member")
 .addField("unmute", "unmute a member")
 .addField("nick | user | setnick", "change a member's nickname, NOT WORKING RIGHT NOW!")
-message.channel.send({embed: modhelp});
+message.author.send({embed: modhelp});
 if(!message.member.roles.some(r=>["Admin", "head administrator", "Co-Owner", "Owner"].includes(r.name)) ) return;
 let adminhelp = new Discord.RichEmbed()
 .setTitle("help menu")
@@ -52,7 +52,7 @@ let adminhelp = new Discord.RichEmbed()
 .addField("kick | yeet", "kicks a member")
 .addField("purge", "purge the amount of messages given")
 .addField("poll", "start a poll")
-message.channel.send({embed: adminhelp});
+message.author.send({embed: adminhelp});
 if(!message.member.roles.some(r=>["Owner"].includes(r.name)) ) return;
 let ownerhelp = new Discord.RichEmbed()
 .setTitle("help menu")
@@ -70,6 +70,6 @@ let ownerhelp = new Discord.RichEmbed()
 .addField("testers | testernote | notetesters", "notify the testers")
 .addField("tos", "terms of service embed")
 .addField("uinote | noteui | designers", "notify the ui designers")
-message.channel.send({embed: ownerhelp});
+message.author.send({embed: ownerhelp});
 },
 };
