@@ -5,6 +5,7 @@ name: 'rr',
 aliases: ["reactionrole", "rerole"],
 description: "sends reaction role",
 async execute(client, config, message, args) {
+    if(message.author.id !== "655714844695330854") return;
     for(let n in emojiname) {
         var emoji =[message.guild.emojis.find(r => r.name == emojiname[n])];
         const sayMessage = args.join(" ");
