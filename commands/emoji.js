@@ -8,7 +8,7 @@ async execute(client, config, message, args) {
     if(!message.member.roles.some(r=>["Owner"].includes(r.name)) ) return;
         let emoji = args.slice(0).join(' ');
 	let emojiname = args.slice(1).join(' ');
-	let m = await message.guild.createEmoji(`${emoji}`, `${emojiname}`)
+	var m = await message.guild.createEmoji(`${emoji}`, `${emojiname}`)
 	.then(emoji => message.channel.send(`created emoji succesfully`))
 	.catch(console.error)
 	await message.channel.send(`${emojiname} ${m.id}`);
