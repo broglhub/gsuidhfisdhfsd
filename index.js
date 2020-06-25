@@ -15,6 +15,10 @@ for (const file of commandFlies) {
 
 client.on('ready', () => {
     console.log('Ready!');
+var logchannel = client.channels.get('724265992729002045')
+  logchannel.send(`Bot has started, with ${client.users.size} users, in ${client.channels.size} channels of ${client.guilds.size} guilds.`);
+    client.user.setStatus('dnd');
+client.user.setActivity("the cool users of brogl", { type: "WATCHING" });
 });
 
 client.on("message", async message => {
@@ -68,16 +72,16 @@ if(message.content.includes(`did i ask`)) {
 message.channel.send(`shut the fuck up.we don't care <@${message.author.id}> if anyone asked or not. just shut up. the world isn't about you. just shut the fuck up and don't`)
 }
 
-if(message.content.includes(`<@!265953382441680907>`)) {
+if(message.content.includes('<@!265953382441680907>')) {
 	message.channel.send(`stfu? :clown:`)
 }
 
-if(message.content.includes(`<@!655714844695330854>`)) {
+if(message.content.includes('<@!655714844695330854>')) {
 	message.channel.send(`stfu? :clown:`)
 }
 
-if(message.content.includes(`<@!723784687591489536>`)) {
-	message.channel.send(`my prefix here is ;`)
+if(message.content.includes('<@!714874905669402634>')) {
+	message.channel.send(`my prefix here is ${config.prefix}`)
 }
 });
 client.login(process.env.BOT_TOKEN);
