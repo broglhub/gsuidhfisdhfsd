@@ -12,6 +12,5 @@ async execute(client, config, message, args) {
 	.then(emoji => message.channel.send(`created emoji succesfully`))
 	.catch(console.error)
 	await message.channel.send(`<:${emojiname}:${m.id}>`);
-	message.channel.send("if the emoji is animated, add an a <HERE:emojiname:id>");
 },
 };
