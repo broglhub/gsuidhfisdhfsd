@@ -14,6 +14,6 @@ let nikki = new Discord.RichEmbed()
 .addField("yes, this was one of my dreams. you'll get a lot more of these ^.^")
 .addField("no, it did not end like this, but the rest will be a second part ;D")
 message.author.send({embed: nikki}).catch(err)
-message.channel.send(err)
+message.channel.send(err);
 },
 };
