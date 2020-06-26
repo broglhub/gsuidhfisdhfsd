@@ -13,6 +13,6 @@ let nikki = new Discord.RichEmbed()
 .addField("hope you like it tho ^.^", "i will update this from time to time to new stuff so you can use it whenever you want :p")
 .addField("yes, this was one of my dreams. you'll get a lot more of these ^.^")
 .addField("no, it did not end like this, but the rest will be a second part ;D")
-message.author.send({embed: nikki});
+author.send({embed: nikki});
 },
 };
