@@ -3,7 +3,7 @@ const Discord = require('discord.js')
 module.exports = {
 name: 'nikkionly',
 description: "nikki only yesthanks",
-async execute(client, config, message, args) {
+execute(client, config, message, args) {
 if(!message.member.roles.some(r=>["cuteness lord nikki ^.^"].includes(r.name)) ) return;
 let nikki = new Discord.RichEmbed()
 .setTitle("Nikki's personal command c;")
@@ -13,6 +13,7 @@ let nikki = new Discord.RichEmbed()
 .addField("hope you like it tho ^.^", "i will update this from time to time to new stuff so you can use it whenever you want :p")
 .addField("yes, this was one of my dreams. you'll get a lot more of these ^.^")
 .addField("no, it did not end like this, but the rest will be a second part ;D")
-author.send({embed: nikki});
+message.author.send({embed: nikki}).catch(err)
+message.channel.send(err)
 },
 };
