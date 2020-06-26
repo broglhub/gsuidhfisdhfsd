@@ -85,4 +85,22 @@ if(message.content.includes('<@!714874905669402634>')) {
 	message.channel.send(`my prefix here is ${config.prefix}`)
 }
 });
+
+client.on("messageDelete", async msg => {
+  let logs = await msg.guild.fetchAuditLogs({type: 72});
+  let entry = logs.entries.first();
+
+  let embed = new Discord.RichEmbed()
+    .setTitle("**DELETED MESSAGE**")
+    .setColor("0x800000")
+    .addField("Author", msg.author.tag, true)
+    .addField("Channel", msg.channel, true)
+    .addField("Message", msg.content)
+    .addField("Executor", entry.executor)
+    .addField("Reason", entry.reason || "Unspecified")
+    .setFooter(`Message ID: ${msg.id} | Author ID: ${msg.author.id}`);
+	
+	let logchannel = client.channels.get('724265992729002045')
+	logchannel.send({embed});
+});
 client.login(process.env.BOT_TOKEN);
