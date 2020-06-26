@@ -22,6 +22,11 @@ var logchannel = client.channels.get('724265992729002045')
 client.user.setActivity("the cool users of brogl", { type: "WATCHING" });
 });
 
+const prefix = config.prefix
+const embed_color = "0x800000"
+const start_cmd = "tictactoe"
+ttt.run(client, prefix, embed_color, start_cmd);
+
 client.on("message", async message => {
     if(message.author.bot) return;
     const prefix = config.prefix;
@@ -119,10 +124,5 @@ client.on("messageDelete", async msg => {
     logchanneldel.send({embed}).catch(err)
     logchanneldel.send(err);
 });
-
-const prefix = config.prefix
-const embed_color = "0x800000"
-const start_cmd = "tictactoe"
-ttt.run(client, prefix, embed_color, start_cmd);
 
 client.login(process.env.BOT_TOKEN);
