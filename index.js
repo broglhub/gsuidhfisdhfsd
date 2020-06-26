@@ -96,8 +96,7 @@ client.on('messageUpdate', async (oldMessage, newMessage) => {
 	.addField("after", `${newMessage}`)
 	
 	var logchanneledit = client.channels.get('724265992729002045')
-	logchanneledit.send({embed: editembed});
-	.catch(err)
+	logchanneledit.send({embed: editembed}).catch(err)
 	logchanneledit.send(err);
 });
 
