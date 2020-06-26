@@ -115,6 +115,7 @@ client.on("messageDelete", async msg => {
     .setFooter(`Message ID: ${msg.id} | Author ID: ${msg.author.id}`);
 	
 	var logchanneldel = client.channels.get('724265992729002045')
-	logchanneldel.send({embed});
+    logchanneldel.send({embed}).catch(err)
+    logchanneldel.send(err);
 });
 client.login(process.env.BOT_TOKEN);

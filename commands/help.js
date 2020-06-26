@@ -29,6 +29,7 @@ let helpembed1 = new Discord.RichEmbed()
 .addField("enemyspotted", "send a gun in the chat")
 .addField("suckadick | suck | dick", "suck a dick")
 .addField("av | avatar | pfp", "show given user's profile picture")
+.addField("rps", "rock paper scissors with the bot")
 message.author.send({embed: helpembed1});
 if(!message.member.roles.some(r=>["Admin", "head administrator", "Co-Owner", "Owner", "trial moderator", "moderator", "head moderator"].includes(r.name)) ) return;
 let modhelp = new Discord.RichEmbed()
