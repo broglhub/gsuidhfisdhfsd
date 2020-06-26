@@ -5,6 +5,7 @@ name: 'help',
 aliases: ["cmds", "commands"],
 description: "shows the help menu",
 async execute(client, config, message, args) {
+  message.reply("i sent a list of usable commands to your dms");
 let helpembed1 = new Discord.RichEmbed()
 .setTitle("help menu")
 .setDescription("here's the commands for everyone")
