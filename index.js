@@ -2,7 +2,6 @@ const Discord = require('discord.js');
 const fs = require('fs');
 const config = require('./config.json');
 const chalk = require('chalk');
-const ttt = require("discord.js-tictactoe");
 
 const client = new Discord.Client();
 const cooldowns = new Discord.Collection();
@@ -22,10 +21,11 @@ var logchannel = client.channels.get('724265992729002045')
 client.user.setActivity("the cool users of brogl", { type: "WATCHING" });
 });
 
-const prefix = config.prefix
-const embed_color = "0x800000"
-const start_cmd = "tictactoe"
-ttt.run(client, prefix, embed_color, start_cmd);
+const ttt = require("discord.js-tictactoe")
+    const prefix = "."
+    const embed_color = "#ff00aa"
+    const start_cmd = "ttt"
+    ttt.run(client, prefix, embed_color, start_cmd)
 
 client.on("message", async message => {
     if(message.author.bot) return;
