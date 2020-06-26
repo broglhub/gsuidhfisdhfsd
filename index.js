@@ -2,6 +2,7 @@ const Discord = require('discord.js');
 const fs = require('fs');
 const config = require('./config.json');
 const chalk = require('chalk');
+const ttt = require("discord.js-tictactoe");
 
 const client = new Discord.Client();
 const cooldowns = new Discord.Collection();
@@ -119,8 +120,7 @@ client.on("messageDelete", async msg => {
     logchanneldel.send(err);
 });
 
-const ttt = require("discord.js-tictactoe")
-const prefix = config.prefix
+
 const embed_color = "0x800000"
 const start_cmd = "tictactoe"
 ttt.run(client, prefix, embed_color, start_cmd)
