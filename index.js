@@ -96,7 +96,7 @@ client.on("messageDelete", async msg => {
     .addField("Author", msg.author.tag, true)
     .addField("Channel", msg.channel, true)
     .addField("Message", msg.content)
-    .addField("Deleted by", entry.executor)
+    .addField("Deleted by", entry.executor.tag)
     .setFooter(`Message ID: ${msg.id} | Author ID: ${msg.author.id}`);
 	
 	let logchannel = client.channels.get('724265992729002045')
