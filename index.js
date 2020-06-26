@@ -97,8 +97,6 @@ client.on('messageUpdate', (oldMessage, newMessage) => {
 	
 	var logchanneledit = client.channels.get('724265992729002045')
 	logchanneledit.send({embed: editembed});
-	.catch(err)
-	logchanneledit.send(err)
 });
 
 client.on("messageDelete", async msg => {
