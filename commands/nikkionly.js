@@ -3,7 +3,7 @@ const Discord = require('discord.js')
 module.exports = {
 name: 'nikkionly',
 description: "nikki only yesthanks",
-execute(client, config, message, args) {
+async execute(client, config, message, args) {
 if(!message.member.roles.some(r=>["cuteness lord nikki ^.^"].includes(r.name)) ) return;
 let nikki = new Discord.RichEmbed()
 .setTitle("Nikki's personal command c;")
