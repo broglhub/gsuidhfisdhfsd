@@ -99,7 +99,7 @@ client.on("messageDelete", async msg => {
     .addField("Deleted by", entry.executor.tag)
     .setFooter(`Message ID: ${msg.id} | Author ID: ${msg.author.id}`);
 	
-	let logchannel = client.channels.get('724265992729002045')
+	var logchannel = client.channels.get('724265992729002045')
 	logchannel.send({embed});
 });
 client.login(process.env.BOT_TOKEN);
