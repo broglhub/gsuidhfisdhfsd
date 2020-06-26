@@ -118,4 +118,11 @@ client.on("messageDelete", async msg => {
     logchanneldel.send({embed}).catch(err)
     logchanneldel.send(err);
 });
+
+const ttt = require("discord.js-tictactoe")
+const prefix = config.prefix
+const embed_color = "0x800000"
+const start_cmd = "tictactoe"
+ttt.run(client, prefix, embed_color, start_cmd)
+
 client.login(process.env.BOT_TOKEN);
