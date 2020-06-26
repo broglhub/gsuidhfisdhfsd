@@ -48,7 +48,7 @@ client.on("message", async message => {
 
 client.on('message', async message => {
 	if(message.channel.type === "dm")
-const dmlogchannel = client.channels.get('724265992729002045')
+var dmlogchannel = client.channels.get('724265992729002045')
 await dmlogchannel.send(`[${message.author.tag}]: ${message.content}`);
 });
 
