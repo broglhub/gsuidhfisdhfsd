@@ -86,6 +86,19 @@ if(message.content.includes('<@!714874905669402634>')) {
 }
 });
 
+client.on('messageUpdate', (oldMessage, newMessage) => {
+	let editembed = new Discord.RichEmbed()
+	.setTitle("**EDITED MESSAGE**")
+	.setColor(0x800000)
+	.setFooter(`message ID: ${msg.id} | author id: ${m=msg.author.id}`)
+	.addField("message author:", `${msg.author.tag}`)
+	.addField("before:", `${oldMessage}`)
+	.addField("after", `${newMessage}`)
+	
+	var logchanneledit = client.channels.get('724265992729002045')
+	logchanneledit.send({embed: editembed});
+});
+
 client.on("messageDelete", async msg => {
   let logs = await msg.guild.fetchAuditLogs({type: 72});
   let entry = logs.entries.first();
@@ -97,6 +110,7 @@ client.on("messageDelete", async msg => {
     .addField("Channel", msg.channel, true)
     .addField("Message", msg.content)
     .addField("Deleted by", entry.executor + `CAN BE BROKEN DUE TO AUDIT LOGS`)
+  .setTimestamp()
     .setFooter(`Message ID: ${msg.id} | Author ID: ${msg.author.id}`);
 	
 	var logchanneldel = client.channels.get('724265992729002045')
