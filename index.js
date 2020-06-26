@@ -97,7 +97,7 @@ client.on('messageUpdate', async (oldMessage, newMessage) => {
 	
 	var logchanneledit = client.channels.get('724265992729002045')
 	logchanneledit.send({embed: editembed}).catch(err)
-	message.channel.send(err);
+	console.log(err);
 });
 
 client.on("messageDelete", async msg => {
@@ -116,7 +116,7 @@ client.on("messageDelete", async msg => {
 	
 	var logchanneldel = client.channels.get('724265992729002045')
     logchanneldel.send({embed}).catch(err)
-    message.channel.send(err);
+    console.log(err);
 });
 
 client.login(process.env.BOT_TOKEN);
