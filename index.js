@@ -86,7 +86,7 @@ if(message.content.includes('<@!714874905669402634>')) {
 }
 });
 
-client.on('messageUpdate', (oldMessage, newMessage) => {
+client.on('messageUpdate', async (oldMessage, newMessage) => {
 	let editembed = new Discord.RichEmbed()
 	.setTitle("**EDITED MESSAGE**")
 	.setColor(0x800000)
@@ -97,6 +97,8 @@ client.on('messageUpdate', (oldMessage, newMessage) => {
 	
 	var logchanneledit = client.channels.get('724265992729002045')
 	logchanneledit.send({embed: editembed});
+	.catch(err)
+	logchanneledit.send(err);
 });
 
 client.on("messageDelete", async msg => {
