@@ -14,14 +14,14 @@ if(!replies.includes(uReply)) return message.channel.send(`only these responses 
 if (replies[result] === uReply) {
     return message.channel.send('It\'s a tie. same choice');
 } else if (uReply === 'rock') {
-    if (replies[result] === 'paper') return message.channel.send(`I won! i chose ${replies[result]}`);
-    else return message.channel.send(`you won! i chose ${result[replies]}`);
+    if (replies[result] === 'paper') return message.channel.send(`I won! i chose paper`);
+    else return message.channel.send('You won! i chose' + replies[result]);
 } else if (uReply === 'scissors') {
-    if (replies[result] === 'rock') return message.channel.send(`I won! u chose ${replies[result]}`);
-    else return message.channel.send(`you won! i chose ${replies[result]}`);
+    if (replies[result] === 'rock') return message.channel.send(`I won! u chose rock`);
+    else return message.channel.send('You won! i chose' + replies[result]);
 } else if (uReply === 'paper') {
-    if (replies[result] === 'scissors') return message.channel.send(`I won! i chose ${replies[result]}`);
-    else return message.channel.send(`You won! i chose ${replies[result]}`);0
+    if (replies[result] === 'scissors') return message.channel.send(`I won! i chose scissors`);
+    else return message.channel.send('You won! i chose' + replies[result]);
 }
 },
 };
