@@ -90,8 +90,8 @@ client.on('messageUpdate', (oldMessage, newMessage) => {
 	let editembed = new Discord.RichEmbed()
 	.setTitle("**EDITED MESSAGE**")
 	.setColor(0x800000)
-	.setFooter(`message ID: ${msg.id} | author id: ${m=msg.author.id}`)
-	.addField("message author:", `${msg.author.tag}`)
+	.setFooter(`message ID: ${message.id} | author id: ${message.author.id}`)
+	.addField("message author:", `${message.author.tag}`)
 	.addField("before:", `${oldMessage}`)
 	.addField("after", `${newMessage}`)
 	
