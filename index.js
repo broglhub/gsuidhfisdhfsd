@@ -95,8 +95,9 @@ client.on('messageUpdate', async (oldMessage, newMessage) => {
 	.setFooter(`message ID: ${oldMessage.id} | author id: ${oldMessage.author.id}`)
 	.addField("message author:", `${oldMessage.author.tag}`)
 	.addField("before:", `${oldMessage}`)
-	.addField("after", `${newMessage}`)
-	
+    .addField("after", `${newMessage}`)
+    
+    if(!newMessage) return;
 	var logchanneledit = client.channels.get('724265992729002045')
 	logchanneledit.send({embed: editembed}).catch(err)
 	console.log(err);
