@@ -38,7 +38,7 @@ let modhelp = new Discord.RichEmbed()
 .setThumbnail("https://cdn.discordapp.com/avatars/714874905669402634/b538a848a7825a2d5ee1bae150c241a4.png?size=2048")
 .addField("Mute | shutup | shut", "mute a member")
 .addField("unmute", "unmute a member")
-.addField("nick | user | setnick", "change a member's nickname, NOT WORKING RIGHT NOW!")
+.addField("nick | user | setnick", "change a member's nickname")
 message.author.send({embed: modhelp});
 if(!message.member.roles.some(r=>["Admin", "head administrator", "Co-Owner", "Owner"].includes(r.name)) ) return;
 let adminhelp = new Discord.RichEmbed()
