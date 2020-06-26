@@ -21,12 +21,6 @@ var logchannel = client.channels.get('724265992729002045')
 client.user.setActivity("the cool users of brogl", { type: "WATCHING" });
 });
 
-const ttt = require("discord.js-tictactoe")
-    const prefix = "."
-    const embed_color = "#ff00aa"
-    const start_cmd = "ttt"
-    ttt.run(client, prefix, embed_color, start_cmd);
-
 client.on("message", async message => {
     if(message.author.bot) return;
     const prefix = config.prefix;
