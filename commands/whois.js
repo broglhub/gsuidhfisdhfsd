@@ -15,6 +15,8 @@ module.exports = {
         .addField("Status:", `${user.presence.status}`, true)
         .addField("Game:", `${user.presence.game ? user.presence.game.name : 'None'}`, true)
         .addField("Bot:", `${user.bot}`, true)
+        .addField("joined at:", `${member.joinedAt}`,true)
+        .addField("created", `${member.createdAt}`, true)
         .addField("Roles:", member.roles.filter(role => role.name !== "@everyone").map(roles => `${roles}`).join(', '), true)
         .setFooter(`made by Chaotic Mind#0666`, "https://cdn.discordapp.com/avatars/655714844695330854/a_ac9969af8c3d41eeac55fc134b0412a4.gif?size=2048")
         .setTimestamp()
