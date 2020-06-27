@@ -20,7 +20,7 @@ async execute(client, config, message, args) {
     .setTitle("role removed")
     .setDescription("someone removed a damn role")
     .setFooter("Made by Chaotic Mind#0666", "https://cdn.discordapp.com/avatars/655714844695330854/a_ac9969af8c3d41eeac55fc134b0412a4.gif")
-    .addField("information", `role ${role.name} removed from ${member.tag} by ${message.author.tag}`)
+    .addField("information", `role ${role.name} removed from ${member} by ${message.author.tag}`)
     logchannel.send({embed: roleremovelog});
 },
 };
