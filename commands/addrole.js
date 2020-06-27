@@ -11,9 +11,6 @@ async execute(client, config, message, args) {
     let rname = message.content.split(" ").splice(2).join(" ");
     let role = message.guild.roles.find(val => val.name === rname);
     if(!role) return message.reply("i failed finding this role!");
-    let rolepos = role.position;
-    let userrole = message.member.roles.highest.position;
-    if (userrole <= rolepos) return message.channel.send("sorry! you cannot give roles higher than your own role!");
     member.roles.add(role).catch(e => {
         return message.channel.send(`failed to add role because of ${e}`);
     });
