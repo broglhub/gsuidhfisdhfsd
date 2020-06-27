@@ -12,11 +12,9 @@ if(!member) return message.channel.send({embed: {
     color: 3447003,
     description: "mention a valid user dipshit"
 }});
-const role = message.guild.roles.Find(role => role.name === "Moderators");
+const role = roles.Find(role => role.name === "Muted");
 if(!role) return guild.createRole({ name: 'Muted'});
-message.guild.createOverwrite(role, { 
-    SEND_MESSAGES: false
-})
+role.setPermissions(['SEND_MESSAGES', false])
 member.addRole(role)
 member.send({embed: {
 color: 3447003,
