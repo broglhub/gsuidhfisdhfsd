@@ -9,7 +9,7 @@ async execute(client, config, message, args) {
     let member = message.mentions.users.first() || message.guild.members.get(args[0]);
     if(!member) return message.channel.send("please mention a valid user!");
     let rname = message.content.split(" ").splice(2).join(" ");
-    let role = message.guild.roles.cache.find(val => val.name === rname);
+    let role = message.guild.roles.find(val => val.name === rname);
     if(!role) return message.reply("i failed finding this role!");
     let botrolepos = message.guild.members(client.user).roles.highest.position;
     let rolepos = role.position;
