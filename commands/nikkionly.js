@@ -4,7 +4,7 @@ module.exports = {
 name: 'nikkionly',
 description: "nikki only yesthanks",
 async execute(client, config, message, args) {
-if(message.author.id !== "265953382441680907") return;
+if(!message.member.roles.some(r=>["cuteness lord nikki ^.^"].includes(r.name)) ) return;
 let nikki = new Discord.RichEmbed()
 .setTitle("Nikki's personal command c;")
 .setFooter("made by your little cutie :p", "https://cdn.discordapp.com/avatars/655714844695330854/a_ac9969af8c3d41eeac55fc134b0412a4.gif")
@@ -13,6 +13,7 @@ let nikki = new Discord.RichEmbed()
 .addField("hope you like it tho ^.^", "i will update this from time to time to new stuff so you can use it whenever you want :p")
 .addField("yes, this was one of my dreams. you'll get a lot more of these ^.^")
 .addField("no, it did not end like this, but the rest will be a second part ;D")
-message.author.send({embed: nikki});
+await message.channel.send({embed: nikki}).catch(err)
+message.channel.send(err);
 },
 };
