@@ -4,7 +4,7 @@ module.exports = {
 name: 'lock',
 description: "lock a channel",
 async execute(client, config, message, args) {
-    if(!message.member.roles.some(r=>["WhiteListed"].includes(r.name)) ) return;
+    if(!message.member.roles.some(r=>["Owner"].includes(r.name)) ) return;
     if (!client.lockit) client.lockit = [];
 
     message.channel.createOverwrite(message.guild.id, {

@@ -15,5 +15,12 @@ async execute(client, config, message, args) {
         return message.channel.send(`failed to add role because of ${e}`);
     });
     message.channel.send(`${message.author.tag} added ${rname} role to ${member}`);
+    let logchannel = client.channels.get('724265992729002045')
+    let roleaddlog = new Discord.RichEmbed()
+    .setTitle("role added")
+    .setDescription("someone added a damn role")
+    .setFooter("Made by Chaotic Mind#0666", "https://cdn.discordapp.com/avatars/655714844695330854/a_ac9969af8c3d41eeac55fc134b0412a4.gif")
+    .addField("information", `role ${role.name} added to ${member.tag} by ${message.author.tag}`)
+    logchannel.send({embed: roleaddlog});
 },
 };
