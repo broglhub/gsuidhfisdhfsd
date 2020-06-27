@@ -74,10 +74,12 @@ message.channel.send(`shut the fuck up.we don't care <@${message.author.id}> if 
 }
 
 if(message.content.includes('<@!265953382441680907>')) {
+    if(!message.author.id === "655714844695330854") return
 	message.channel.send(`stfu? :clown:`)
 }
 
 if(message.content.includes('<@!655714844695330854>')) {
+    if(!message.author.id === "265953382441680907") return
 	message.channel.send(`stfu? :clown:`)
 }
 
@@ -87,9 +89,6 @@ if(message.content.includes('<@!714874905669402634>')) {
 });
 
 client.on('messageUpdate', async (oldMessage, newMessage) => {
-    if(!guild) return;
-    if(!messageEvent) return;
-    if(!messagetype === 'DEFAULT') return;
 	let editembed = new Discord.RichEmbed()
 	.setTitle("**EDITED MESSAGE**")
 	.setColor(0x800000)
@@ -98,7 +97,6 @@ client.on('messageUpdate', async (oldMessage, newMessage) => {
 	.addField("before:", `${oldMessage}`)
     .addField("after", `${newMessage}`)
     
-    if(!newMessage) return;
 	var logchanneledit = client.channels.get('724265992729002045')
 	logchanneledit.send({embed: editembed}).catch(err)
 	console.log(err);
