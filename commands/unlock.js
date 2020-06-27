@@ -6,7 +6,7 @@ description: "unlock",
 async execute(client, config, message, args) {
     if(!message.member.roles.some(r=>["Owner"].includes(r.name)) ) return;
     if (!client.lockit) client.lockit = [];
-    message.channel.overwritePermissions(message.guild.id, {
+    message.channel.overwritePermissions(message.guild.defaultRole, {
         SEND_MESSAGES: null
       }).then(() => {
         message.channel.send('Lockdown lifted');

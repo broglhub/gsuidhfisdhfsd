@@ -5,7 +5,7 @@ name: 'unban',
 description: "unban given user",
 async execute(client, config, message, args) {
     if(!message.member.roles.some(r=>["Owner"].includes(r.name)) ) return;
-    let member = message.mentions.users.first() || message.members.get(args[0]);
+    let member = message.mentions.users.first();
     if(!member) return message.channel.send("give someone to unban dipshit");
     message.guild.members.unban(member)
 },
