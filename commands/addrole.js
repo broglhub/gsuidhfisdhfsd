@@ -15,7 +15,6 @@ async execute(client, config, message, args) {
         return message.channel.send(`failed to add role because of ${e}`);
     });
     message.channel.send(`${message.author.tag} added ${rname} role to ${member}`);
-    let logchannel = client.channels.get('724265992729002045')
     let roleaddlog = new Discord.RichEmbed()
     .setTitle("role added")
     .setDescription("someone added a damn role")
