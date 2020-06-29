@@ -14,5 +14,6 @@ async execute(client, config, message, args) {
       }).catch(error => {
         console.log(error);
       })
+    logchannel.send(`${message.author.tag} unlocked ${message.channel}`);
 },
 };
