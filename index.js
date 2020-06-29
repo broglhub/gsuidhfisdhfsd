@@ -38,7 +38,6 @@ client.on("message", async message => {
     if (command.guildOnly && message.channel.type !== 'text') {
         return message.replay('I can\'t execute the command inside DMS!');
     }
-	const logchannel = client.channels.get('727050928544546856');
     try {
         command.execute(client, config, message, args);
     }
