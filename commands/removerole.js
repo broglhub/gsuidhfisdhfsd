@@ -20,6 +20,7 @@ async execute(client, config, message, args) {
     .setDescription("someone removed a damn role")
     .setFooter("Made by Chaotic Mind#0666", "https://cdn.discordapp.com/avatars/655714844695330854/a_ac9969af8c3d41eeac55fc134b0412a4.gif")
     .addField("information", `role ${role.name} removed from ${member} by ${message.author.tag}`)
+    let logchannel = client.channels.get('727050928544546856');
     logchannel.send({embed: roleremovelog});
 },
 };
