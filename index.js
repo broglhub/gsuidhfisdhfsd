@@ -21,8 +21,6 @@ let logchannel = client.channels.get('727050928544546856');
 client.user.setActivity("the cool users of brogl", { type: "WATCHING" });
 });
 
-
-
 client.on("message", async message => {
     if(message.author.bot) return;
     const prefix = config.prefix;
