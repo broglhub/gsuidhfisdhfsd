@@ -98,7 +98,7 @@ client.on('messageUpdate', async (oldMessage, newMessage) => {
 	.addField("message author:", `${oldMessage.author.tag}`)
 	.addField("before:", `${oldMessage}`)
     .addField("after", `${newMessage}`)
-    let logchannel = client.channels.get('727050928544546856');
+    var logchannel = client.channels.get('727050928544546856');
 	logchannel.send({embed: editembed}).catch(err)
 	console.log(err);
 });
@@ -116,7 +116,7 @@ client.on("messageDelete", async msg => {
     .addField("Deleted by", entry.executor + `CAN BE BROKEN DUE TO AUDIT LOGS`)
   .setTimestamp()
     .setFooter(`Message ID: ${msg.id} | Author ID: ${msg.author.id}`);
-	let logchannel = client.channels.get('727050928544546856');
+	var logchannel = client.channels.get('727050928544546856');
     logchannel.send({embed}).catch(err)
     console.log(err);
 });
