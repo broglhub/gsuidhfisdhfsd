@@ -59,6 +59,12 @@ client.on('message', async message => {
 if(message.content.includes(`didnt ask`)) {
 	message.channel.send(`Shut the fuck up. We don't care <@!${message.author.id}> if anyone asked or not. just shut up. the world isn't just about you. just don't.`)
 }
+	
+if(message.content.startsWith(`f`)) {
+	message.channel.send({embed: {
+		color: 3447003,
+		description: `${message.author.tag} has paid respects`
+	}});
 
 if(message.content.includes(`didn't ask`)) {
 	message.channel.send(`Shut the fuck up. We don't care <@!${message.author.id}> if anyone asked or not. just shut up. the world isn't just about you. just don't.`)
