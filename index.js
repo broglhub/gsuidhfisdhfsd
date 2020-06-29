@@ -2,6 +2,7 @@ const Discord = require('discord.js');
 const fs = require('fs');
 const config = require('./config.json');
 const chalk = require('chalk');
+const logchannel = client.channels.get('727050928544546856');
 
 const client = new Discord.Client();
 const cooldowns = new Discord.Collection();
