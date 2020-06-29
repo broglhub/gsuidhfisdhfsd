@@ -15,7 +15,6 @@ async execute(client, config, message, args) {
         return message.channel.send("error found okbye");
     });
     message.channel.send(`${message.author.tag} removed ${role.name} from ${member}`);
-    let logchannel = client.channels.get('724265992729002045')
     let roleremovelog = new Discord.RichEmbed()
     .setTitle("role removed")
     .setDescription("someone removed a damn role")
