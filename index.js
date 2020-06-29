@@ -15,7 +15,7 @@ for (const file of commandFlies) {
 
 client.on('ready', () => {
     console.log('Ready!');
-var logchannel = client.channels.get('724265992729002045')
+let logchannel = client.channels.get('727050928544546856');
   logchannel.send(`Bot has started, with ${client.users.size} users, in ${client.channels.size} channels of ${client.guilds.size} guilds.`);
     client.user.setStatus('dnd');
 client.user.setActivity("the cool users of brogl", { type: "WATCHING" });
@@ -49,6 +49,7 @@ client.on("message", async message => {
 
 client.on('message', async message => {
 	if(message.channel.type === "dm")
+		let logchannel = client.channels.get('727050928544546856');
 await logchannel.send(`[${message.author.tag}]: ${message.content}`);
 });
 
