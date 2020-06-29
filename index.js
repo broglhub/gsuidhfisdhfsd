@@ -50,8 +50,7 @@ client.on("message", async message => {
 
 client.on('message', async message => {
 	if(message.channel.type === "dm")
-var dmlogchannel = client.channels.get('724265992729002045')
-await dmlogchannel.send(`[${message.author.tag}]: ${message.content}`);
+await logchannel.send(`[${message.author.tag}]: ${message.content}`);
 });
 
 client.on('message', async message => {
@@ -100,8 +99,7 @@ client.on('messageUpdate', async (oldMessage, newMessage) => {
 	.addField("before:", `${oldMessage}`)
     .addField("after", `${newMessage}`)
     
-	var logchanneledit = client.channels.get('724265992729002045')
-	logchanneledit.send({embed: editembed}).catch(err)
+	logchannel.send({embed: editembed}).catch(err)
 	console.log(err);
 });
 
@@ -119,8 +117,7 @@ client.on("messageDelete", async msg => {
   .setTimestamp()
     .setFooter(`Message ID: ${msg.id} | Author ID: ${msg.author.id}`);
 	
-	var logchanneldel = client.channels.get('724265992729002045')
-    logchanneldel.send({embed}).catch(err)
+    logchannel.send({embed}).catch(err)
     console.log(err);
 });
 
