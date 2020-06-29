@@ -89,6 +89,7 @@ if(message.content.includes('<@!714874905669402634>')) {
 });
 
 client.on('messageUpdate', async (oldMessage, newMessage) => {
+	if(message.author.bot) return;
 	let editembed = new Discord.RichEmbed()
 	.setTitle("**EDITED MESSAGE**")
 	.setColor(0x800000)
