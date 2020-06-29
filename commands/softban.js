@@ -10,6 +10,7 @@ async execute(client, config, message, args) {
     message.guild.members.ban(member);
     message.guild.members.unban(member);
     message.channel.send(`softbanned ${member.tag} succesfully`);
+    let logchannel = client.channels.get('727050928544546856');
     logchannel.send(`${message.author.tag} softbanned ${member}`);
 },
 };
