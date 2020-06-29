@@ -17,6 +17,7 @@ member.send({embed: {
     color: 3447003,
     description: `you have been unmuted in brogl. make sure to read rules to prevent another mute!`
 }});
+    let logchannel = client.channels.get('727050928544546856');
 logchannel.send({embed: {
     color: 3447003,
     description: `${message.author.tag} unmuted ${member.user.tag}`
