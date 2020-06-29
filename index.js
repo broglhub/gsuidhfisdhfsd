@@ -104,7 +104,6 @@ client.on('messageUpdate', async (oldMessage, newMessage) => {
     .addField("after", `${newMessage}`)
     var logchannel = client.channels.get('727050928544546856');
 	logchannel.send({embed: editembed}).catch(err)
-	console.log(err);
 });
 
 client.on("messageDelete", async msg => {
@@ -121,7 +120,6 @@ client.on("messageDelete", async msg => {
     .setFooter(`Message ID: ${msg.id} | Author ID: ${msg.author.id}`);
 	var logchannel = client.channels.get('727050928544546856');
     logchannel.send({embed}).catch(err)
-    console.log(err);
 });
 
 client.login(process.env.BOT_TOKEN);
