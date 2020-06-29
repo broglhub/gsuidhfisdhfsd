@@ -11,6 +11,7 @@ async execute(client, config, message, args) {
         SEND_MESSAGES: false
       });
         message.channel.send(`Damn, **${message.author.username}** just locked the channel down. Don't worry, it'll be unlocked soon!`);
+    let logchannel = client.channels.get('727050928544546856');
     logchannel.send(`${message.author.tag} locked ${message.channel}`);
     },
 };
