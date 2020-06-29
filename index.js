@@ -2,7 +2,6 @@ const Discord = require('discord.js');
 const fs = require('fs');
 const config = require('./config.json');
 const chalk = require('chalk');
-const logchannel = client.channels.get('727050928544546856');
 
 const client = new Discord.Client();
 const cooldowns = new Discord.Collection();
@@ -21,6 +20,8 @@ var logchannel = client.channels.get('724265992729002045')
     client.user.setStatus('dnd');
 client.user.setActivity("the cool users of brogl", { type: "WATCHING" });
 });
+
+const logchannel = client.channels.get('727050928544546856');
 
 client.on("message", async message => {
     if(message.author.bot) return;
