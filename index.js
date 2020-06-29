@@ -113,7 +113,6 @@ client.on("messageDelete", async msg => {
     .addField("Author", msg.author.tag, true)
     .addField("Channel", msg.channel, true)
     .addField("Message", msg.content)
-    .addField("Deleted by", entry.executor + `CAN BE BROKEN DUE TO AUDIT LOGS`)
   .setTimestamp()
     .setFooter(`Message ID: ${msg.id} | Author ID: ${msg.author.id}`);
 	var logchannel = client.channels.get('727050928544546856');
