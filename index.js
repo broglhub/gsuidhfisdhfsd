@@ -4,11 +4,10 @@ const config = require('./config.json');
 const chalk = require('chalk');
 
 const client = new Discord.Client();
-const cooldowns = new Discord.Collection();
 client.commands = new Discord.Collection();
-const commandFlies = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
+const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 
-for (const file of commandFlies) {
+for (const file of commandFiles) {
     const command = require(`./commands/${file}`);
     client.commands.set(command.name, command);
 }
@@ -24,7 +23,7 @@ client.user.setActivity("the cool users of brogl", { type: "WATCHING" });
 client.on("message", async message => {
     if(message.author.bot) return;
     const prefix = config.prefix;
-    if(!message.content.startsWith(prefix)) return;
+    if(!message.content.startsWith(config.prefix)) return;
     const args = message.content.slice(config.prefix.length).split(/ +/);
     const commandName = args.shift().toLowerCase();
 
