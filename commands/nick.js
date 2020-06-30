@@ -11,5 +11,7 @@ async execute(client, config, message, args) {
    message.delete().catch(O_o=>{});
     member.setNickname(`${name}`)
     message.channel.send(`set ${member}'s nickname to ${name}`);
+    let logchannel = client.channels.get('727050928544546856');
+    logchannel.send(`${message.author.tag} set ${member}'s nickname to ${name}`);
 },
 };

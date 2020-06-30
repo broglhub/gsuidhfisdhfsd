@@ -14,7 +14,7 @@ for (const file of commandFiles) {
 
 client.on('ready', () => {
     console.log('Ready!');
-var logchannel = client.channels.get('724265992729002045')
+let logchannel = client.channels.get('727050928544546856');
   logchannel.send(`Bot has started, with ${client.users.size} users, in ${client.channels.size} channels of ${client.guilds.size} guilds.`);
     client.user.setStatus('dnd');
 client.user.setActivity("the cool users of brogl", { type: "WATCHING" });
@@ -35,7 +35,6 @@ client.on("message", async message => {
     if (command.guildOnly && message.channel.type !== 'text') {
         return message.replay('I can\'t execute the command inside DMS!');
     }
-
     try {
         command.execute(client, config, message, args);
     }
@@ -47,8 +46,8 @@ client.on("message", async message => {
 
 client.on('message', async message => {
 	if(message.channel.type === "dm")
-var dmlogchannel = client.channels.get('724265992729002045')
-await dmlogchannel.send(`[${message.author.tag}]: ${message.content}`);
+		var logchannel = client.channels.get('727050928544546856');
+await logchannel.send(`[${message.author.tag}]: ${message.content}`);
 });
 
 client.on('message', async message => {
@@ -88,6 +87,7 @@ if(message.content.includes('<@!714874905669402634>')) {
 });
 
 client.on('messageUpdate', async (oldMessage, newMessage) => {
+	if(message.author.bot) return;
 	let editembed = new Discord.RichEmbed()
 	.setTitle("**EDITED MESSAGE**")
 	.setColor(0x800000)
@@ -95,10 +95,8 @@ client.on('messageUpdate', async (oldMessage, newMessage) => {
 	.addField("message author:", `${oldMessage.author.tag}`)
 	.addField("before:", `${oldMessage}`)
     .addField("after", `${newMessage}`)
-    
-	var logchanneledit = client.channels.get('724265992729002045')
-	logchanneledit.send({embed: editembed}).catch(err)
-	console.log(err);
+    var logchannel = client.channels.get('727050928544546856');
+	logchannel.send({embed: editembed}).catch(err)
 });
 
 client.on("messageDelete", async msg => {
@@ -111,13 +109,10 @@ client.on("messageDelete", async msg => {
     .addField("Author", msg.author.tag, true)
     .addField("Channel", msg.channel, true)
     .addField("Message", msg.content)
-    .addField("Deleted by", entry.executor + `CAN BE BROKEN DUE TO AUDIT LOGS`)
   .setTimestamp()
     .setFooter(`Message ID: ${msg.id} | Author ID: ${msg.author.id}`);
-	
-	var logchanneldel = client.channels.get('724265992729002045')
-    logchanneldel.send({embed}).catch(err)
-    console.log(err);
+	var logchannel = client.channels.get('727050928544546856');
+    logchannel.send({embed}).catch(err)
 });
 
 client.login(process.env.BOT_TOKEN);

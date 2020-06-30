@@ -33,8 +33,8 @@ async execute(client, config, message, args) {
     color: 3447003,
     description: `kicked ${member.user.tag} succesfully!`
   }});
-      var logs = client.channels.get("724265992729002045");
-      logs.send({embed: {
+          let logchannel = client.channels.get('727050928544546856');
+      logchannel.send({embed: {
     color: 3447003,
     description: `user ${member.user.tag} was kicked by ${message.author.tag} for the reason: ${reason}`
   }});

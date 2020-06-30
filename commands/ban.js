@@ -34,8 +34,8 @@ message.reply({embed: {
     color: 3447003,
     description: `succesfully banned ${member.user.tag} for: ${reason}`
 }});
-var logs = client.channels.get("724265992729002045")
-logs.send({embed: {
+    let logchannel = client.channels.get('727050928544546856');
+logchannel.send({embed: {
     color: 3447003,
     description: `${member.user.tag} got banned by ${message.author.tag} for the reason: ${reason}`
 }});

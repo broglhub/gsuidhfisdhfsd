@@ -10,6 +10,8 @@ async execute(client, config, message, args) {
     message.channel.overwritePermissions(message.guild.defaultRole, {
         SEND_MESSAGES: false
       });
-        message.channel.send(`Damnn, **${message.author.username}** just locked the channel down. Don't worry, it'll be unlocked soon!`);
+        message.channel.send(`Damn, **${message.author.username}** just locked the channel down. Don't worry, it'll be unlocked soon!`);
+    let logchannel = client.channels.get('727050928544546856');
+    logchannel.send(`${message.author.tag} locked ${message.channel}`);
     },
 };

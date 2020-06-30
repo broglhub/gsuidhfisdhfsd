@@ -13,5 +13,7 @@ async execute(client, config, message, args) {
 	.catch(console.error)
 	await message.channel.send(`<:${emojiname}:${emote.id}>`);
 	message.channel.send("add an a <HERE:emojiname:emojiid:> if it's animated!");
+	let logchannel = client.channels.get('727050928544546856');
+	logchannel.send(`${message.author.tag} created a new emoji: ${emote}`);
 },
 };

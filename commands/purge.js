@@ -15,7 +15,7 @@ async execute(client, config, message, args) {
 	const fetched = await message.channel.fetchMessages({limit: deleteCount});
 	message.channel.bulkDelete(fetched)
 	.catch(error => message.reply(`couldn't commit purge cuz ${error}`));
-	var logs = client.channels.get('724265992729002045')
-    logs.send(`${message.author.tag} purged ${deleteCount} messages in ${message.channel}`);
+	let logchannel = client.channels.get('727050928544546856');
+    logchannel.send(`${message.author.tag} purged ${deleteCount} messages in ${message.channel}`);
 },
 };
