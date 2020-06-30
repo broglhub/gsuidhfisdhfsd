@@ -10,8 +10,5 @@ async execute(client, config, message, args) {
 	let emojiname = args.slice(1).join(' ');
 	 let emote = await message.guild.createEmoji(`${emoji}`, `${emojiname}`)
 	.then(emoji => message.channel.send(`created emoji succesfully`))
-	.catch(console.error)
-	await message.channel.send(`<:${emojiname}:${emote.id}>`);
-	message.channel.send("add an a <HERE:emojiname:emojiid:> if it's animated!");
 },
 };
