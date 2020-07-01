@@ -3,7 +3,7 @@ const Discord = require('discord.js')
 module.exports = {
 name: 'shadowrules',
 description: "yes"
-async execute(client, config, message, args) {
+execute(client, config, message, args) {
 if(!message.member.roles.some(r=>["Co-Owner"].includes(r.name)) ) return;
 var shadowrules = client.channels.get('721448818419171419');
 let shadowruleslist = new Discord.RichEmbed()
