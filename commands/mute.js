@@ -18,7 +18,7 @@ member.send({embed: {
 color: 3447003,
 description: `you have been muted in brogl hub by ${message.author.tag}. if you wish to get unmuted, request an unmute at ${message.author.tag} with reason of why you were muted to see if we would unmute you.`
 }});
-    let logchannel = client.channels.get('727050928544546856');
+    let logchannel = message.guild.roles.get('727050928544546856');
 logchannel.send({embed: {
 color: 3447003,
 description: `${message.author.tag} muted ${member.user.tag}`
