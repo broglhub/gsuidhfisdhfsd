@@ -23,7 +23,6 @@ let shadowruleslist = new Discord.RichEmbed()
 .addField("🔟", "Do not spam songs, this will result in a warning.")
 .addField("1️⃣1️⃣", "Any inappropriate sounds or language in voice calls will lead to you being warned and disconnected. If you continue you will be kicked.")
 .addField("1️⃣2️⃣", "Do not purposely \"ear rape\" other people in voice calls. It will lead to you being disconnected and warned.")
-.addField("**NOTE**", "Moderators are allowed to warn, kick, or ban you in any situation. If you disagree please confront them in DMs")
 shadowrules.send({embed: shadowruleslist});
 },
 };
