@@ -24,7 +24,6 @@ let shadowruleslist = new Discord.RichEmbed()
 .addField("1️⃣1️⃣", "Any inappropriate sounds or language in voice calls will lead to you being warned and disconnected. If you continue you will be kicked.")
 .addField("1️⃣2️⃣", "Do not purposely \"ear rape\" other people in voice calls. It will lead to you being disconnected and warned.")
 .addField("**NOTE**", "Moderators are allowed to warn, kick, or ban you in any situation. If you disagree please confront them in DMs")
-.addField("Pinging Shadow", `Please do not ping Shadow. If a moderator catches you pinging, you will be asked to refrain from doing it again. However, it does not result in a warning. This does not apply to important pings`)
 shadowrules.send({embed: shadowruleslist});
 },
 };
