@@ -8,7 +8,7 @@ module.exports = {
         const member = message.mentions.members.first() || message.guild.members.get(args[0]) || message.author;
         let av = new Discord.RichEmbed()
         .setTitle("Here you go fam!")
-        .setAuthor(`${member.tag}`, `${member.member.avatarURL}`)
+        .setAuthor(`${member.tag}`, `${member.avatarURL}`)
         .setColor(0x800000)
         .setFooter("Made by Chaotic Mind#0666", "https://cdn.discordapp.com/avatars/655714844695330854/a_ac9969af8c3d41eeac55fc134b0412a4.gif?size=2048")
         .setImage(`${member.avatarURL}`)
