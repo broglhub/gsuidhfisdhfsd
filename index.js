@@ -2,6 +2,8 @@ const Discord = require('discord.js');
 const fs = require('fs');
 const config = require('./config.json');
 const chalk = require('chalk');
+const Constants = require('discord.js/src/util/Constants.js')
+Constants.DefaultOptions.ws.Properties.$browser = 'Discord Android'
 
 const client = new Discord.Client();
 client.commands = new Discord.Collection();
@@ -16,7 +18,7 @@ client.on('ready', () => {
     console.log('Ready!');
 let logchannel = client.channels.get('727050928544546856');
   logchannel.send(`Bot has started, with ${client.users.size} users, in ${client.channels.size} channels of ${client.guilds.size} guilds.`);
-    client.user.setStatus('dnd');
+    client.user.setStatus('online');
 client.user.setActivity("the cool users of brogl", { type: "WATCHING" });
 });
 
