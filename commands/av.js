@@ -5,6 +5,7 @@ module.exports = {
     aliases: ['avatar', 'pfp'],
     description: 'display your avatar',
     execute(client, config, message, args) {
+if(message.author.bot) return;
         let user = message.guild.members.get(args[0]) || message.mentions.members.first() || message.author;
         let av = new Discord.RichEmbed()
         .setTitle("Here you go fam!")
