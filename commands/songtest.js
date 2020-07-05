@@ -5,7 +5,7 @@ name: 'testsong',
 aliases: ["heartless"],
 description: "yes",
 async execute(client, config, message, args) {
-const dispatcher = connection.playFile('./songs/Tha Playah & Angerfist - The Heartless (Official Video).mp3')
+const dispatcher = connection.playFile('./heartless.mp3')
 dispatcher.pause();
 dispatcher.setVolume(1);
 dispatcher.resume();
