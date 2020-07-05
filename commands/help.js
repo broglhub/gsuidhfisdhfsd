@@ -32,6 +32,13 @@ let helpembed1 = new Discord.RichEmbed()
 .addField("rps", "rock paper scissors with the bot")
 .addField("meme", "gibs meme yes mk")
 .addField("dmeme", "gibs dank meme yes ok")
+.addField("asshole | assholedesign", "shows a random asshole design")
+.addField("aww | cute | adorable", "shows a random cute picture")
+.addField("bunny | booney| hoppyboi", "shows a random bunny picture")
+.addField("cat | pussy | meow", "sends a random pussy pic")
+.addField("dog | doggo | wooflord", "sends a random dog picture")
+.addField("snek | snake | booper", "random snake image")
+.addField("zodiac", "usage: MONTHNUMBER, DAYNUMBER. shows your zodiac sign")
 message.author.send({embed: helpembed1});
 if(!message.member.roles.some(r=>["Admin", "head administrator", "Co-Owner", "Owner", "trial moderator", "moderator", "head moderator"].includes(r.name)) ) return;
 let modhelp = new Discord.RichEmbed()
