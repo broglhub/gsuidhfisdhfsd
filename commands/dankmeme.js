@@ -2,7 +2,7 @@ const Discord = require('discord.js')
 const got = require('got')
 
 module.exports = {
-name: 'meme',
+name: 'dmeme',
 description: "gib meme",
 async execute(client, config, message, args) {
     const memer = new Discord.RichEmbed();
