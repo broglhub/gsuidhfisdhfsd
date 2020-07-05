@@ -5,7 +5,7 @@ module.exports = {
 name: 'meme',
 description: "gib meme",
 async execute(client, config, message, args) {
-    const embed = new Discord.RichEmbed();
+    const meme = new Discord.RichEmbed();
     got('https://www.reddit.com/r/memes/random/.json').then(response => {
         let content = JSON.parse(response.body);
         let permalink = content[0].data.children[0].data.permalink;
@@ -18,7 +18,7 @@ async execute(client, config, message, args) {
         embed.addField(`${memeTitle}`, `[View thread](${memeUrl})`);
         embed.setImage(memeImage);
         embed.setFooter(`👍 ${memeUpvotes} 👎 ${memeDownvotes} 💬 ${memeNumComments}`);
-        msg.channel.send(embed)
+        msg.channel.send({embed: meme})
             .then(sent => console.log(`Sent a reply to ${sent.author.username}`))
         console.log('Bot responded with: ' + memeImage);
     }).catch(console.error);
