@@ -8,7 +8,7 @@ async execute(client, config, message, args) {
 if(message.member.voiceChannel) {
     message.member.voiceChannel.join()
     .then(connection => {
-        message.reply("it seems i have joined vc");
+        message.channel.send("i have joined the voice channel.")
     })
     .catch(console.log);
 }else {
