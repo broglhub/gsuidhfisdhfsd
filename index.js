@@ -89,19 +89,6 @@ if(message.content.includes('<@!714874905669402634>')) {
 }
 });
 
-client.on('messageUpdate', async (oldMessage, newMessage) => {
-	if(message.author.bot) return;
-	let editembed = new Discord.RichEmbed()
-	.setTitle("**EDITED MESSAGE**")
-	.setColor(0x800000)
-	.setFooter(`message ID: ${oldMessage.id} | author id: ${oldMessage.author.id}`)
-	.addField("message author:", `${oldMessage.author.tag}`)
-	.addField("before:", `${oldMessage}`)
-    .addField("after", `${newMessage}`)
-    var logchannel = client.channels.get('727050928544546856');
-	logchannel.send({embed: editembed}).catch(err)
-});
-
 client.on("messageDelete", async msg => {
   let logs = await msg.guild.fetchAuditLogs({type: 72});
   let entry = logs.entries.first();
