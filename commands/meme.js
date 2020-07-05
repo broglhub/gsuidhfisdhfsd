@@ -15,10 +15,10 @@ async execute(client, config, message, args) {
         let memeUpvotes = content[0].data.children[0].data.ups;
         let memeDownvotes = content[0].data.children[0].data.downs;
         let memeNumComments = content[0].data.children[0].data.num_comments;
-        embed.addField(`${memeTitle}`, `[View thread](${memeUrl})`);
-        embed.setImage(memeImage);
-        embed.setFooter(`👍 ${memeUpvotes} 👎 ${memeDownvotes} 💬 ${memeNumComments}`);
-        msg.channel.send({embed: memer})
+        memer.addField(`${memeTitle}`, `[View thread](${memeUrl})`);
+        memer.setImage(memeImage);
+        memer.setFooter(`👍 ${memeUpvotes} 👎 ${memeDownvotes} 💬 ${memeNumComments}`);
+        message.channel.send({embed: memer})
             .then(sent => console.log(`Sent a reply to ${sent.author.username}`))
         console.log('Bot responded with: ' + memeImage);
     }).catch(console.error);
