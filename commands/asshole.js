@@ -7,7 +7,7 @@ aliases: ["assholedesign"],
 description: "asshole design",
 async execute(client, config, message, args) {
     const ass = new Discord.RichEmbed();
-    got('https://www.reddit.com/r/assholedesign/random/.json?limit=100').then(response => {
+    got('https://www.reddit.com/r/assholedesign/random/.json').then(response => {
         let content = JSON.parse(response.body);
         let permalink = content[0].data.children[0].data.permalink;
         let memeUrl = `https://reddit.com${permalink}`;

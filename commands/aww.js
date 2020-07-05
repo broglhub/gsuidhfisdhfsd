@@ -7,7 +7,7 @@ aliases: ["cute", "adorable"],
 description: "EXPLAINTHECOMMAND",
 async execute(client, config, message, args) {
     const aww = new Discord.RichEmbed();
-    got('https://www.reddit.com/r/aww/random/.json?limit=100').then(response => {
+    got('https://www.reddit.com/r/aww/random/.json').then(response => {
         let content = JSON.parse(response.body);
         let permalink = content[0].data.children[0].data.permalink;
         let memeUrl = `https://reddit.com${permalink}`;
