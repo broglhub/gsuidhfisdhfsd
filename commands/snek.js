@@ -19,7 +19,7 @@ async execute(client, config, message, args) {
         snek.addField(`${memeTitle}`, `[View thread](${memeUrl})`);
         snek.setImage(memeImage);
         snek.setFooter(`👍 ${memeUpvotes} 👎 ${memeDownvotes} 💬 ${memeNumComments}`);
-        message.channel.send({embed: flawwed})
+        message.channel.send({embed: snek})
             .then(sent => console.log(`Sent a reply to ${sent.author.username}`))
         console.log('Bot responded with: ' + memeImage);
     }).catch(console.error);
