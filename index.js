@@ -17,7 +17,7 @@ for (const file of commandFiles) {
 
 client.on('ready', () => {
     console.log('Ready!');
-let logchannel = client.channels.get('727050928544546856');
+let logchannel = client.channels.get('729318199283286107');
   logchannel.send(`Bot has started, with ${client.users.size} users, in ${client.channels.size} channels of ${client.guilds.size} guilds.`);
     client.user.setStatus('online');
 client.user.setActivity("the cool users of brogl", { type: "WATCHING" });
@@ -50,7 +50,7 @@ client.on("message", async message => {
 client.on('message', async message => {
     if(message.guild) return;
 	if(message.channel.type === "dm")
-		var logchannel = client.channels.get('727050928544546856');
+		var logchannel = client.channels.get('729318148914020392');
 await logchannel.send(`[${message.author.tag}]: ${message.content}`);
 });
 
@@ -103,7 +103,7 @@ client.on("messageDelete", async msg => {
   .setTimestamp()
     .setFooter(`Message ID: ${msg.id} | Author ID: ${msg.author.id}`);
 	var logchannel = client.channels.get('727050928544546856');
-    logchannel.send({embed}).catch(err)
+    logchannel.send({embed}).catch()
 });
 
 client.login(process.env.BOT_TOKEN);
