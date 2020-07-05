@@ -6,6 +6,6 @@ aliases: ["fuckoff"],
 description: "leaves vc yes",
 async execute(client, config, message, args) {
 if(!message.member.voice.channel) return message.channel.send("no");
-client.leaveVoiceChannel(message.author.voiceChannel.id);
+client.leaveVoiceChannel(client.voiceConnection.voiceChannel);
 },
 };
