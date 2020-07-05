@@ -7,7 +7,7 @@ aliases: ["snake", "booper"],
 description: "snek cute",
 async execute(client, config, message, args) {
     const snek = new Discord.RichEmbed();
-    got('https://www.reddit.com/r/Snek/random/.json').then(response => {
+    got('https://www.reddit.com/r/Snek/random/.json?limit=100').then(response => {
         let content = JSON.parse(response.body);
         let permalink = content[0].data.children[0].data.permalink;
         let memeUrl = `https://reddit.com${permalink}`;
