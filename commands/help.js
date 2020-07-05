@@ -37,9 +37,16 @@ let helpembed1 = new Discord.RichEmbed()
 .addField("bunny | booney| hoppyboi", "shows a random bunny picture")
 .addField("cat | pussy | meow", "sends a random pussy pic")
 .addField("dog | doggo | wooflord", "sends a random dog picture")
+message.author.send({embed: helpembed1});
+let helpembed2 = new Discord.RichEmbed()
+.setTitle("help menu")
+.setDescription("here's the commands for everyone")
+.setTimestamp()
+.setFooter("Made by Chaotic Mind#0666", "https://cdn.discordapp.com/avatars/655714844695330854/a_ac9969af8c3d41eeac55fc134b0412a4.gif")
+.setThumbnail("https://cdn.discordapp.com/avatars/714874905669402634/b538a848a7825a2d5ee1bae150c241a4.png?size=2048")
 .addField("snek | snake | booper", "random snake image")
 .addField("zodiac", "usage: MONTHNUMBER, DAYNUMBER. shows your zodiac sign")
-message.author.send({embed: helpembed1});
+message.author.send({embed: helpembed2});
 if(!message.member.roles.some(r=>["Admin", "head administrator", "Co-Owner", "Owner", "trial moderator", "moderator", "head moderator"].includes(r.name)) ) return;
 let modhelp = new Discord.RichEmbed()
 .setTitle("help menu")
