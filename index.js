@@ -5,7 +5,6 @@ const Constants = require('discord.js/src/util/Constants.js')
 Constants.DefaultOptions.ws.properties.$browser = 'Discord Android'
 const chalk = require('chalk');
 const got = require('got');
-const queue = new Map();
 const ytdl = require("ytdl-core");
 
 const queue = new Map();
