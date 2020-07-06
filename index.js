@@ -9,7 +9,7 @@ const ytdl = require("ytdl-core");
 
 const queue = new Map();
 
-client.once("ready", () => {
+client.on("ready", () => {
   console.log("Ready!");
 });
 
