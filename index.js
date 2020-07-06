@@ -43,9 +43,9 @@ client.on('message', async message => {
 		stop(message, serverQueue);
 		return;
     } else if (message.content.startsWith(`${prefix}queue`)) {
-        message.channel.send(`${queue[0].songTitle}. requested by ${queue[0].requester}`);
+        message.channel.send(`${queue[0].title}. requested by ${queue[0].requester}`);
         for (var i = 1; i < queue.length; i++) {
-            resp += `${i}. ${queue[i].songTitle}. requested by ${queue[1].requester}`;
+            resp += `${i}. ${queue[i].title}. requested by ${queue[1].requester}`;
         }
         message.channel.send(resp);
     }
