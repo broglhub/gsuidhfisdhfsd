@@ -145,7 +145,7 @@ queue.set(message.guild.id, queueConstruct);
 queueConstruct.songs.push(song);
 
 try {
-    var connaction = await voiceChannel.join();
+    var connection = await voiceChannel.join();
     queueConstruct.connection = connection;
 
     play(message.guild, queueConstruct.songs[0]);
