@@ -117,7 +117,7 @@ async function execute(message, serverQueue) {
     return message.channel.send("you need to be in a voice channel to use this")
 }
 
-const songInfo = await ytdl.getInfo(args[1]);
+const songInfo = ytdl.getInfo(args[1]);
 const song = {
     title: songInfo.title,
     url: songInfo.video_url,
