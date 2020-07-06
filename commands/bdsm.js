@@ -2,8 +2,8 @@ const Discord = require('discord.js')
 const got = require('got');
 
 module.exports = {
-name: 'bondage',
-aliases: ["bdsm"],
+name: 'bdsm',
+aliases: ["bondage"],
 description: "some bdsm fun",
 async execute(client, config, message, args) {
 if(!message.channel.nsfw) return message.channel.send("hey horny fuck, go to an nsfw channel right this instant");
