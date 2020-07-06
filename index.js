@@ -27,21 +27,19 @@ client.once("disconnect", () => {
 
 client.on("message", async message => {
   if (message.author.bot) return;
-  if (!message.content.startsWith(prefix)) return;
+  if (!message.content.startsWith(config.prefix)) return;
 
   const serverQueue = queue.get(message.guild.id);
 
-  if (message.content.startsWith(`${prefix}play`)) {
+  if (message.content.startsWith(config.prefix + `play`)) {
     execute(message, serverQueue);
     return;
-  } else if (message.content.startsWith(`${prefix}skip`)) {
+  } else if (message.content.startsWith(config.prefix + `skip`)) {
     skip(message, serverQueue);
     return;
-  } else if (message.content.startsWith(`${prefix}stop`)) {
+  } else if (message.content.startsWith(config.prefix + `stop`)) {
     stop(message, serverQueue);
     return;
-  } else {
-    message.channel.send("You need to enter a valid command!");
   }
 });
 
