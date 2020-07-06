@@ -44,7 +44,7 @@ client.on('message', async message => {
 		return;
     }
     else if (message.content.startsWith(`${prefix}queue`))
-    message.channel.send(`${guild.queue}`);
+    message.channel.send(`${queue.first(10)}`);
 });
 
 async function execute(message, serverQueue) {
