@@ -7,9 +7,13 @@ const chalk = require('chalk');
 const got = require('got');
 const ytdl = require("ytdl-core");
 
+const client = new Discord.Client();
+client.commands = new Discord.Collection();
+const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
+
 const queue = new Map();
 
-client.on("ready", () => {
+client.once("ready", () => {
   console.log("Ready!");
 });
 
@@ -128,10 +132,6 @@ function play(guild, song) {
   dispatcher.setVolumeLogarithmic(serverQueue.volume / 5);
   serverQueue.textChannel.send(`Start playing: **${song.title}**`);
 }
-
-const client = new Discord.Client();
-client.commands = new Discord.Collection();
-const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 
 for (const file of commandFiles) {
     const command = require(`./commands/${file}`);
