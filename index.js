@@ -42,9 +42,9 @@ client.on('message', async message => {
 	} else if (message.content.startsWith(`${prefix}stop`)) {
 		stop(message, serverQueue);
 		return;
-	} else {
-		message.channel.send('You need to enter a valid command!')
-	}
+    }
+    else if (message.content.startsWith(`${prefix}queue`))
+    message.channel.send(`${queue}`);
 });
 
 async function execute(message, serverQueue) {
