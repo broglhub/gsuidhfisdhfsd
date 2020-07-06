@@ -43,11 +43,7 @@ client.on('message', async message => {
 		stop(message, serverQueue);
 		return;
     } else if (message.content.startsWith(`${prefix}queue`)) {
-        message.channel.send(`${serverQueue[0].title}. requested by ${serverQueue[0].requester}`);
-        for (var i = 1; i < queue.length; i++) {
-            resp += `${i}. ${serverQueue[i].title}. requested by ${serverQueue[1].requester}`;
-        }
-        message.channel.send(resp);
+        message.channel.send(`${serverQueue}`);
     }
 });
 
