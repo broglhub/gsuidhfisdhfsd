@@ -42,9 +42,14 @@ client.on('message', async message => {
 	} else if (message.content.startsWith(`${prefix}stop`)) {
 		stop(message, serverQueue);
 		return;
+    } else if (message.content.startsWith(`${prefix}queue`)) {
+        let nowPlaying = queue[0];
+        message.channel.send(`${nowPlaying.songTitle}. requested by ${nowPlaying.requester}`);
+        for (var i = 1; i < queue.length; i++) {
+            resp += `${i}. ${queue[i].songTitle}. requested by ${queue[1].requester}`;
+        }
+        message.channel.send(resp);
     }
-    else if (message.content.startsWith(`${prefix}queue`))
-    message.channel.send(`${queue.first(10)}`);
 });
 
 async function execute(message, serverQueue) {
