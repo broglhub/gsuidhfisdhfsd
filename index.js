@@ -211,16 +211,16 @@ if(message.content.includes('<@!714874905669402634>')) {
 });
 
 client.on("messageDelete", async msg => {
-	if(!message.guild) return;
+	if(!msg.guild) return;
 	var logchannel = client.channels.get('727050928544546856');
-const fetchedLogs = await message.guild.fetchAuditLogs({
+const fetchedLogs = await msg.guild.fetchAuditLogs({
 	limit: 1,
 	type: 'MESSAGE_DELETE',
 });
 	const whomst = fetchedLogs.entries.first()
 	if(!whomst) return logchannel.send('couldn\'t figure out who deleted this message');
 	const { executor, target } = whomst;
-	if(target.id === message.author.id) {
+	if(target.id === msg.author.id) {
 		var lo = `${executor.tag}`;
 	} else {
 		var lo = `not found`;
