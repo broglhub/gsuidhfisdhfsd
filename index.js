@@ -210,6 +210,9 @@ if(message.content.includes('<@!714874905669402634>')) {
 client.on("messageDelete", async msg => {
   let logs = await msg.guild.fetchAuditLogs({type: 72});
   let entry = logs.entries.first();
+	
+	if(!message.guild) return;
+	if(message.content.startsWith(".") return;
 
   let embed = new Discord.RichEmbed()
     .setTitle("**DELETED MESSAGE**")
