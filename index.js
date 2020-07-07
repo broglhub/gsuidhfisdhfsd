@@ -43,9 +43,9 @@ client.on('message', async message => {
 		stop(message, serverQueue);
 		return;
 	}else if (message.content.startsWith(`${prefix}np`)) {
-		message.channel.send(`now playing: ${serverQueue.song.songInfo.title}`);
+		message.channel.send(`now playing: ${serverQueue[0].title}`);
 	}else if (message.content.startsWith(`${prefix}queue`)) {
-		message.channel.send(`${serverQueue.songs}`)
+		message.channel.send(`${serverQueue.songs.map()}`)
     }
 });
 
@@ -106,6 +106,7 @@ function stop(message, serverQueue) {
 	if (!message.member.voiceChannel) return message.channel.send('You have to be in a voice channel to stop the music!');
 	serverQueue.songs = [];
 	serverQueue.connection.dispatcher.end();
+	message.channel.send("i have stopped music");
 }
 
 function play(guild, song) {
@@ -210,10 +211,20 @@ if(message.content.includes('<@!714874905669402634>')) {
 });
 
 client.on("messageDelete", async msg => {
-  let logs = await msg.guild.fetchAuditLogs({type: 72});
-  let entry = logs.entries.first();
-	
 	if(!message.guild) return;
+	var logchannel = client.channels.get('727050928544546856');
+const fetchedLogs = await message.guild.fetchAuditLogs({
+	limit: 1,
+	type: 'MESSAGE_DELETE',
+});
+	const whomst = fetchedLogs.entries.first()
+	if(!whomst) return logchannel.send('couldn\'t figure out who deleted this message');
+	const { executor, target } = whomst;
+	if(target.id === message.author.id) {
+		var lo = `${executor.tag}`;
+		else
+			var lo = `unknown`;
+	}
 
   let embed = new Discord.RichEmbed()
     .setTitle("**DELETED MESSAGE**")
@@ -221,9 +232,10 @@ client.on("messageDelete", async msg => {
     .addField("Author", msg.author.tag, true)
     .addField("Channel", msg.channel, true)
     .addField("Message", msg.content)
+  .addField("Possibly deleted by: ", `${lo}`);
   .setTimestamp()
     .setFooter(`Message ID: ${msg.id} | Author ID: ${msg.author.id}`);
-	var logchannel = client.channels.get('727050928544546856');
+
     logchannel.send({embed}).catch()
 });
 
