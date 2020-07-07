@@ -225,7 +225,7 @@ const fetchedLogs = await msg.guild.fetchAuditLogs({
 	} else {
 		var lo = `not found`;
 	}
-  let embed = new Discord.RichEmbed()
+  let dellog = new Discord.RichEmbed()
     .setTitle("**DELETED MESSAGE**")
     .setColor("0x800000")
     .addField("Author", msg.author.tag, true)
@@ -235,7 +235,7 @@ const fetchedLogs = await msg.guild.fetchAuditLogs({
   .setTimestamp
     .setFooter(`Message ID: ${msg.id} | Author ID: ${msg.author.id}`);
 
-    logchannel.send({embed}).catch()
+    logchannel.send({embed: dellog}).catch()
 });
 
 client.on('messageUpdate', (oldMessage, newMessage) => {
