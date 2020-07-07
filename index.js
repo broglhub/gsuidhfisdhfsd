@@ -220,14 +220,14 @@ const fetchedLogs = await msg.guild.fetchAuditLogs({
 	const whomst = fetchedLogs.entries.first()
 	
   let dellog = new Discord.RichEmbed()
-    .setTitle("**DELETED MESSAGE**")
-    .setColor("0x800000")
-    .addField("Author", msg.author.tag, true)
-    .addField("Channel", msg.channel, true)
-    .addField("Message", msg.content)
-  .addField("Possibly deleted by: ", `${whomst}`)
-  .setTimestamp
-    .setFooter(`Message ID: ${msg.id} | Author ID: ${msg.author.id}`);
+    dellog.setTitle("**DELETED MESSAGE**")
+    dellog.setColor("0x800000")
+    dellog.addField("Author", msg.author.tag, true)
+    dellog.addField("Channel", msg.channel, true)
+    dellog.addField("Message", msg.content)
+  dellog.addField("Possibly deleted by: ", `${whomst}`)
+  dellog.setTimestamp
+    dellog.setFooter(`Message ID: ${msg.id} | Author ID: ${msg.author.id}`);
 
     logchannel.send({embed: dellog}).catch()
 });
