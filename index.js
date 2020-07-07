@@ -225,7 +225,7 @@ const fetchedLogs = await msg.guild.fetchAuditLogs({
     dellog.addField("Author", msg.author.tag, true)
     dellog.addField("Channel", msg.channel, true)
     dellog.addField("Message", msg.content)
-  dellog.addField("Possibly deleted by: ", `${whomst}`)
+  dellog.addField("Possibly deleted by: ", `${whomst.executor}`)
   dellog.setTimestamp
     dellog.setFooter(`Message ID: ${msg.id} | Author ID: ${msg.author.id}`);
 
