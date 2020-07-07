@@ -212,26 +212,20 @@ if(message.content.includes('<@!714874905669402634>')) {
 
 client.on("messageDelete", async msg => {
 	if(!msg.guild) return;
-	var logchannel = client.channels.get('727050928544546856');
+	const logchannel = client.channels.get('727050928544546856');
 const fetchedLogs = await msg.guild.fetchAuditLogs({
 	limit: 1,
 	type: 'MESSAGE_DELETE',
 });
 	const whomst = fetchedLogs.entries.first()
-	if(!whomst) return logchannel.send('couldn\'t figure out who deleted this message');
-	const { executor, target } = whomst;
-	if(target.id === msg.author.id) {
-		var lo = `${executor.tag}`;
-	} else {
-		var lo = `not found`;
-	}
+	
   let dellog = new Discord.RichEmbed()
     .setTitle("**DELETED MESSAGE**")
     .setColor("0x800000")
     .addField("Author", msg.author.tag, true)
     .addField("Channel", msg.channel, true)
     .addField("Message", msg.content)
-  .addField("Possibly deleted by: ", `${lo}`)
+  .addField("Possibly deleted by: ", `${whomst}`)
   .setTimestamp
     .setFooter(`Message ID: ${msg.id} | Author ID: ${msg.author.id}`);
 
