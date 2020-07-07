@@ -235,6 +235,7 @@ const fetchedLogs = await msg.guild.fetchAuditLogs({
 client.on('messageUpdate', (oldMessage, newMessage) => {
 	if(!oldMessage.guild) return;
 	if(oldMessage.author.bot) return;
+	if(oldMessage.contains("https://" || "http://") return;
 	let logedit = new Discord.RichEmbed()
 	.setTitle("**EDITED MESSAGE**")
 	.setColor("0x800000")
