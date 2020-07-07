@@ -217,7 +217,7 @@ const fetchedLogs = await msg.guild.fetchAuditLogs({
 	limit: 1,
 	type: 'MESSAGE_DELETE',
 });
-	const whomst = fetchedLogs.entries.first()
+	const whomst = await fetchedLogs.entries.first(msg.id)
 	
   let dellog = new Discord.RichEmbed()
     dellog.setTitle("**DELETED MESSAGE**")
