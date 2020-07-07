@@ -221,8 +221,7 @@ const fetchedLogs = await message.guild.fetchAuditLogs({
 	if(!whomst) return logchannel.send('couldn\'t figure out who deleted this message');
 	const { executor, target } = whomst;
 	if(target.id === message.author.id) return 
-		var lo = `${executor.tag}`;
-		else
+		var lo = `${executor.tag}` else
 		var lo = `unknown`;
 
   let embed = new Discord.RichEmbed()
