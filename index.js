@@ -231,8 +231,8 @@ const fetchedLogs = await message.guild.fetchAuditLogs({
     .addField("Author", msg.author.tag, true)
     .addField("Channel", msg.channel, true)
     .addField("Message", msg.content)
-  .addField("Possibly deleted by: ", `${lo}`);
-  .setTimestamp()
+  .addField("Possibly deleted by: ", `${lo}`)
+  .setTimestamp
     .setFooter(`Message ID: ${msg.id} | Author ID: ${msg.author.id}`);
 
     logchannel.send({embed}).catch()
