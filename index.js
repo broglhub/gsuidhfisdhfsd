@@ -212,7 +212,6 @@ client.on("messageDelete", async msg => {
   let entry = logs.entries.first();
 	
 	if(!message.guild) return;
-	if(message.content.startsWith(".") return;
 
   let embed = new Discord.RichEmbed()
     .setTitle("**DELETED MESSAGE**")
