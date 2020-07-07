@@ -223,4 +223,19 @@ client.on("messageDelete", async msg => {
     logchannel.send({embed}).catch()
 });
 
+client.on('messageUpdate', (oldMessage, newMessage) => {
+	if(!message.guild) return;
+	if(message.author.bot) return;
+	let logedit = new Discord.RichEmbed()
+	.setTitle("**EDITED MESSAGE**")
+	.setColor(0x800000)
+	.setTimestamp()
+	.addField("Author", message.author.tag)
+	.addField("Channel", message.channel)
+	.addField("old message", oldMessage)
+	.addField("new message", newMessage)
+	var logchannel = client.channels.get('729959886842101761')
+	logchannel.send({embed: logedit});
+});
+
 client.login(process.env.BOT_TOKEN);
