@@ -220,11 +220,11 @@ const fetchedLogs = await message.guild.fetchAuditLogs({
 	const whomst = fetchedLogs.entries.first()
 	if(!whomst) return logchannel.send('couldn\'t figure out who deleted this message');
 	const { executor, target } = whomst;
-	if(target.id === message.author.id) return 
+	if(target.id === message.author.id) {
 		var lo = `${executor.tag}`;
-	else return
-		var lo = `unknown`;
-
+	} else {
+		var lo = `not found`;
+	}
   let embed = new Discord.RichEmbed()
     .setTitle("**DELETED MESSAGE**")
     .setColor("0x800000")
