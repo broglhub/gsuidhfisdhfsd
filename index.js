@@ -224,14 +224,14 @@ client.on("messageDelete", async msg => {
 });
 
 client.on('messageUpdate', (oldMessage, newMessage) => {
-	if(!message.guild) return;
-	if(message.author.bot) return;
+	if(!oldMessage.guild) return;
+	if(oldMessage.author.bot) return;
 	let logedit = new Discord.RichEmbed()
 	.setTitle("**EDITED MESSAGE**")
 	.setColor(0x800000)
 	.setTimestamp()
-	.addField("Author", message.author.tag)
-	.addField("Channel", message.channel)
+	.addField("Author", oldMessage.author.tag)
+	.addField("Channel", oldMessage.channel)
 	.addField("old message", oldMessage)
 	.addField("new message", newMessage)
 	var logchannel = client.channels.get('729959886842101761')
