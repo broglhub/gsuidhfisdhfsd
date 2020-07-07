@@ -196,12 +196,12 @@ message.channel.send(`shut the fuck up.we don't care <@${message.author.id}> if 
 }
 
 if(message.content.includes('<@!265953382441680907>')) {
-    if(!message.author.id === "655714844695330854") return
+    if(message.author.id === "655714844695330854") return;
 	message.channel.send(`stfu? :clown:`)
 }
 
 if(message.content.includes('<@!655714844695330854>')) {
-    if(!message.author.id === "265953382441680907") return
+    if(message.author.id === "265953382441680907") return;
 	message.channel.send(`stfu? :clown:`)
 }
 
