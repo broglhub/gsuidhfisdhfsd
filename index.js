@@ -243,7 +243,7 @@ client.on('messageUpdate', (oldMessage, newMessage) => {
 	if(oldMessage.author.bot) return;
 	let logedit = new Discord.RichEmbed()
 	.setTitle("**EDITED MESSAGE**")
-	.setColor(0x800000)
+	.setColor("0x800000")
 	.setTimestamp()
 	.addField("Author", oldMessage.author.tag)
 	.addField("Channel", oldMessage.channel)
