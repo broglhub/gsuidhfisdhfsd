@@ -43,7 +43,7 @@ client.on('message', async message => {
 		stop(message, serverQueue);
 		return;
 	}else if (message.content.startsWith(`${prefix}np`)) {
-		message.channel.send(`now playing: ${songInfo.title}`);
+		message.channel.send(`now playing: ${serverQueue.song.songInfo.title}`);
 	}else if (message.content.startsWith(`${prefix}queue`)) {
 		message.channel.send(`${serverQueue.songs}`)
     }
