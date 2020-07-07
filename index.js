@@ -217,7 +217,7 @@ const fetchedLogs = await msg.guild.fetchAuditLogs({
 	limit: 1,
 	type: 'MESSAGE_DELETE',
 });
-	const whomst = await fetchedLogs.entries.first(msg.id)
+	const whomst = await fetchedLogs.entries.first()
 	
   let dellog = new Discord.RichEmbed()
     dellog.setTitle("**DELETED MESSAGE**")
@@ -225,7 +225,7 @@ const fetchedLogs = await msg.guild.fetchAuditLogs({
     dellog.addField("Author", msg.author.tag, true)
     dellog.addField("Channel", msg.channel, true)
     dellog.addField("Message", msg.content)
-  dellog.addField("Possibly deleted by: ", `${whomst.executor}`)
+  dellog.addField("Possibly deleted by: BROKEN DUE TO AUDIT LOGS BEING SLOW", `${whomst.executor}`)
   dellog.setTimestamp
     dellog.setFooter(`Message ID: ${msg.id} | Author ID: ${msg.author.id}`);
 
