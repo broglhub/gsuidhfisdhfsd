@@ -235,7 +235,7 @@ const fetchedLogs = await msg.guild.fetchAuditLogs({
 client.on('messageUpdate', (oldMessage, newMessage) => {
 	if(!oldMessage.guild) return;
 	if(oldMessage.author.bot) return;
-	if(oldMessage.includes("https://"  || "http://") return;
+	if(oldMessage.includes("https://") return;
 	let logedit = new Discord.RichEmbed()
 	.setTitle("**EDITED MESSAGE**")
 	.setColor("0x800000")
@@ -247,5 +247,7 @@ client.on('messageUpdate', (oldMessage, newMessage) => {
 	var logchannel = client.channels.get('729959886842101761')
 	logchannel.send({embed: logedit});
 });
+
+
 
 client.login(process.env.BOT_TOKEN);
