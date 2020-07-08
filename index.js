@@ -42,8 +42,10 @@ client.on('message', async message => {
 	} else if (message.content.startsWith(`${prefix}stop`)) {
 		stop(message, serverQueue);
 		return;
-    } else if (message.content.startsWith(`${prefix}queue`)) {
-        message.channel.send(`${serverQueue[0].songTitle}`);
+	}else if (message.content.startsWith(`${prefix}np`)) {
+		message.channel.send(`now playing: ${serverQueue[0].title}`);
+	}else if (message.content.startsWith(`${prefix}queue`)) {
+		message.channel.send(`${serverQueue.songs.map()}`)
     }
 });
 
@@ -104,6 +106,7 @@ function stop(message, serverQueue) {
 	if (!message.member.voiceChannel) return message.channel.send('You have to be in a voice channel to stop the music!');
 	serverQueue.songs = [];
 	serverQueue.connection.dispatcher.end();
+	message.channel.send("i have stopped music");
 }
 
 function play(guild, song) {
@@ -193,12 +196,12 @@ message.channel.send(`shut the fuck up.we don't care <@${message.author.id}> if 
 }
 
 if(message.content.includes('<@!265953382441680907>')) {
-    if(!message.author.id === "655714844695330854") return
+    if(message.author.id === "655714844695330854") return;
 	message.channel.send(`stfu? :clown:`)
 }
 
 if(message.content.includes('<@!655714844695330854>')) {
-    if(!message.author.id === "265953382441680907") return
+    if(message.author.id === "265953382441680907") return;
 	message.channel.send(`stfu? :clown:`)
 }
 
@@ -208,19 +211,43 @@ if(message.content.includes('<@!714874905669402634>')) {
 });
 
 client.on("messageDelete", async msg => {
-  let logs = await msg.guild.fetchAuditLogs({type: 72});
-  let entry = logs.entries.first();
-
-  let embed = new Discord.RichEmbed()
-    .setTitle("**DELETED MESSAGE**")
-    .setColor("0x800000")
-    .addField("Author", msg.author.tag, true)
-    .addField("Channel", msg.channel, true)
-    .addField("Message", msg.content)
-  .setTimestamp()
-    .setFooter(`Message ID: ${msg.id} | Author ID: ${msg.author.id}`);
-	var logchannel = client.channels.get('727050928544546856');
-    logchannel.send({embed}).catch()
+	if(!msg.guild) return;
+	const logchannel = client.channels.get('727050928544546856');
+const fetchedLogs = await msg.guild.fetchAuditLogs({
+	limit: 1,
+	type: 'MESSAGE_DELETE',
 });
+	const whomst = await fetchedLogs.entries.first()
+	
+  let dellog = new Discord.RichEmbed()
+    dellog.setTitle("**DELETED MESSAGE**")
+    dellog.setColor("0x800000")
+    dellog.addField("Author", msg.author.tag, true)
+    dellog.addField("Channel", msg.channel, true)
+    dellog.addField("Message", msg.content)
+  dellog.addField("Possibly deleted by: BROKEN DUE TO AUDIT LOGS BEING SLOW", `${whomst.executor}`)
+  dellog.setTimestamp
+    dellog.setFooter(`Message ID: ${msg.id} | Author ID: ${msg.author.id}`);
+
+    logchannel.send({embed: dellog}).catch()
+});
+
+client.on('messageUpdate', (oldMessage, newMessage) => {
+	if(!oldMessage.guild) return;
+	if(oldMessage.author.bot) return;
+	if(oldMessage.content.includes("https://")) return;
+	let logedit = new Discord.RichEmbed()
+	.setTitle("**EDITED MESSAGE**")
+	.setColor("0x800000")
+	.setTimestamp()
+	.addField("Author", oldMessage.author.tag)
+	.addField("Channel", oldMessage.channel)
+	.addField("old message", oldMessage)
+	.addField("new message", newMessage)
+	var logchannel = client.channels.get('729959886842101761')
+	logchannel.send({embed: logedit});
+});
+
+
 
 client.login(process.env.BOT_TOKEN);
