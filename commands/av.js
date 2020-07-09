@@ -6,7 +6,8 @@ module.exports = {
     description: 'display your avatar',
     execute(client, config, message, args) {
 if(message.author.bot) return;
-let member = message.mentions.members.first() || message.guild.members.get(args[0]) || message.author;
+let member = message.mentions.members.first() || message.guild.members.get(args[0]);
+        if(!member) return member = message.author;
         const av = new Discord.RichEmbed()
         .setTitle("Here you go fam!")
         .setAuthor(`${member.tag}`)
