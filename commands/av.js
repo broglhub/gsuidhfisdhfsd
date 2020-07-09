@@ -7,7 +7,7 @@ module.exports = {
     execute(client, config, message, args) {
 if(message.author.bot) return;
 let member = message.mentions.members.first() || message.guild.members.get(args[0]) || message.author;
-        var av = new Discord.RichEmbed()
+        const av = new Discord.RichEmbed()
         .setTitle("Here you go fam!")
         .setAuthor(`${member.tag}`)
         .setColor(0x800000)
