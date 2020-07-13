@@ -9,7 +9,7 @@ async execute(client, config, message, args) {
     let member = message.mentions.users.first() || message.guild.members.get(args[0]);
     if(!member) return message.channel.send("please mention a valid user!");
     let rname = message.content.split(" ").splice(2).join(" ");
-    let role = message.guild.roles.find(val => val.name === rname);
+    let role = message.guild.roles.find(val => val.name === rname) || message.guild.roles.get(args[1]);
     if(!role) return message.reply("i failed finding this role!");
     member.addRole(role).catch(e => {
         return message.channel.send(`failed to add role because of ${e}`);
